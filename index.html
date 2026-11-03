@@ -135,9 +135,10 @@
         aspect-ratio: 16 / 9; box-shadow: var(--shadow);
       }
       .stage video { width: 100%; height: 100%; display: block; object-fit: contain; background: var(--video-bg); }
-      .stage iframe { width: 100%; height: 100%; display: none; border: 0; background: var(--video-bg); }
+      .stage .yt-mount { width: 100%; height: 100%; display: none; background: var(--video-bg); }
+      .stage.yt .yt-mount { display: block; }
+      .stage .yt-mount iframe { width: 100%; height: 100%; display: block; border: 0; background: var(--video-bg); }
       .stage.yt video { display: none; }
-      .stage.yt iframe { display: block; }
       .stage-tag {
         position: absolute; top: 12px; left: 12px; display: flex; gap: 8px; align-items: center; pointer-events: none;
       }
@@ -150,6 +151,36 @@
       .live-badge .pulse { width: 7px; height: 7px; border-radius: 50%; background: #ff4d42; animation: blink 1.6s infinite; }
       .live-badge.off .pulse { background: #8b979f; animation: none; }
       .stage:has(.stage-msg.show) .stage-tag { display: none; }
+      .stage:has(.yt-err.show) .stage-tag { display: none; }
+      /* YouTube labelling + friendly error (red #ff0000 badge everywhere a stream appears) */
+      .yt-badge {
+        display: inline-flex; align-items: center; flex: none; white-space: nowrap;
+        background: #ff0000; color: #fff; border-radius: 4px;
+        font-size: 10.5px; font-weight: 700; letter-spacing: .05em; line-height: 1;
+        padding: 4px 6px 3px;
+      }
+      .yt-badge[hidden] { display: none; }
+      .yt-err {
+        position: absolute; inset: 0; display: none; place-items: center; text-align: center;
+        background: rgba(5, 7, 8, .92); color: #f2f4f5; padding: 18px; z-index: 4;
+      }
+      .yt-err.show { display: grid; }
+      .yt-err .box, .yt-err .yt-err-box { max-width: 440px; display: grid; justify-items: center; gap: 8px; }
+      .yt-err h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: 24px; letter-spacing: .03em; text-transform: uppercase; }
+      .yt-err p { color: #c3ccd1; font-size: 14.5px; margin: 0; }
+      .yt-err .yt-err-acts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
+      .yt-act {
+        border: 1px solid #46525b; background: rgba(255,255,255,.08); color: #fff; border-radius: 7px;
+        padding: 6px 10px; font-size: 12.5px; font-weight: 600; text-decoration: none;
+        display: inline-flex; align-items: center;
+      }
+      .yt-act:hover { border-color: #ff0000; color: #fff; }
+      .yt-act.primary { background: #ff0000; border-color: #ff0000; }
+      .tile .yt-err { padding: 10px; }
+      .tile .yt-err p { font-size: 12px; }
+      .tile .yt-err .yt-err-title { color: #fff; font-weight: 700; font-size: 13px; }
+      .tile .tile-yt { width: 100%; height: 100%; background: var(--video-bg); }
+      .tile .tile-yt iframe { width: 100%; height: 100%; display: block; border: 0; pointer-events: none; background: var(--video-bg); }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
       @media (prefers-reduced-motion: reduce) { .live-badge .pulse { animation: none; } }
       .stage-cam {
@@ -175,7 +206,7 @@
 
       .stage-meta { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 12px 2px 0; }
       .stage-meta .who { min-width: 0; flex: 1 1 240px; }
-      .stage-meta .who .name { font-weight: 700; font-size: 19px; line-height: 1.2; }
+      .stage-meta .who .name { font-weight: 700; font-size: 19px; line-height: 1.2; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
       .stage-meta .who .meta {
         font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-2);
         display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 3px;
@@ -268,6 +299,8 @@
       .row .cdot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
       .row .txt { flex: 1; min-width: 0; }
       .row .txt .nm { display: block; font-weight: 600; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .row .txt .nm-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
+      .row .txt .nm-row .nm { flex: 0 1 auto; min-width: 0; }
       .row .txt .gp { display: block; font-size: 12px; color: var(--ink-3); }
       .row .add {
         border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); border-radius: 7px;
@@ -295,6 +328,12 @@
         box-shadow: 0 1px 4px rgba(0,0,0,.45); cursor: pointer;
       }
       .cam-dot.on { width: 19px; height: 19px; border-width: 3px; box-shadow: 0 0 0 4px rgba(255,178,36,.45), 0 1px 5px rgba(0,0,0,.5); }
+      .cam-wrap { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+      .cam-yt-badge {
+        background: #ff0000; color: #fff; font-size: 9.5px; font-weight: 700; letter-spacing: .03em;
+        padding: 2px 5px; border-radius: 3px; line-height: 1.2; white-space: nowrap;
+        box-shadow: 0 1px 4px rgba(0,0,0,.45);
+      }
 
       /* ---------- recording ---------- */
       .rec-badge {
@@ -375,11 +414,12 @@
         <section aria-label="Viewer">
           <div class="stage" id="stage">
             <video id="mainVideo" playsinline muted autoplay></video>
-            <iframe id="mainFrame" title="YouTube live stream" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div id="mainFrame" class="yt-mount"><div id="mainYtMount"></div></div>
             <div class="stage-tag">
               <span class="live-badge" id="liveBadge" style="display:none"><span class="pulse"></span><span id="liveBadgeText">LIVE</span></span>
               <span class="rec-badge" id="recBadge"><span class="pulse"></span>REC&nbsp;<span id="recTime">00:00</span></span>
               <span class="stage-cam" id="stageCamName">—</span>
+              <span class="yt-badge" id="stageYtBadge" hidden>YouTube</span>
             </div>
             <div class="stage-msg" id="stageMsg">
               <div class="box">
@@ -389,11 +429,22 @@
                 <button class="btn primary" id="stageRetry" type="button" style="display:none">Retry this camera</button>
               </div>
             </div>
+            <div class="yt-err" id="stageYtErr" role="alert">
+              <div class="box">
+                <span class="yt-badge">YouTube</span>
+                <h3>Stream unavailable</h3>
+                <p id="stageYtErrText">This YouTube live stream is currently unavailable.</p>
+                <div class="yt-err-acts">
+                  <button class="btn primary" id="stageYtRecheck" type="button">Recheck</button>
+                  <a class="btn" id="stageYtWatch" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="stage-meta">
             <div class="who">
-              <div class="name" id="metaName">—</div>
+              <div class="name"><span id="metaName">—</span><span class="yt-badge" id="metaYtBadge" hidden>YouTube</span></div>
               <div class="meta">
                 <span class="g"><span class="cdot" id="metaDot"></span><span id="metaGroup">—</span></span>
                 <span id="metaCoords">—</span>
@@ -500,7 +551,7 @@
       <footer>
         <span>Sources: <a href="https://cctv.jogjaprov.go.id" target="_blank" rel="noopener">cctv.jogjaprov.go.id</a> (Pemda DIY portal) · <a href="https://bantulkab.go.id/cctv.html" target="_blank" rel="noopener">bantulkab.go.id</a> (Bantul regency) · <a href="https://www.youtube.com/@JITVPemdaDIY" target="_blank" rel="noopener">JITV Pemda DIY</a> on YouTube · <a href="https://cctv.dishub.magelangkab.go.id/live" target="_blank" rel="noopener">cctv.dishub.magelangkab.go.id</a> (Dishub Kabupaten Magelang) · <a href="https://www.webcamtaxi.com" target="_blank" rel="noopener">webcamtaxi.com</a> and <a href="https://webcamera24.com" target="_blank" rel="noopener">webcamera24.com</a> (Gunungkidul webcams) · <a href="https://cctv.jogjakota.go.id" target="_blank" rel="noopener">cctv.jogjakota.go.id</a> (Kota Yogyakarta ATCS). · <a href="https://24jam.slemankab.go.id" target="_blank" rel="noopener">24jam.slemankab.go.id</a> (Sleman regency).</span>
         <span class="mono">682 cameras · DIY full check 2 Nov 2026, offline list spot-checked 3 Nov 2026 · Magelang + Merapi additions validated 3 Nov 2026 · Gunungkidul + afarTV Merapi additions validated 3 Nov 2026 · Kota Yogyakarta ATCS additions validated 3 Nov 2026 · Sleman 24jam additions validated 3 Nov 2026 · Bantul + Gunungkidul YouTube and Frekom Merapi additions validated 3 Nov 2026 · HLS (.m3u8) + 63 YouTube lives</span>
-        <span>These cameras flap — they drop for maintenance, at night, or for a few seconds mid-stream — so the cameras on stage and on the wall re-test from your connection each time it opens, players keep reconnecting instead of giving up, and the Recheck button re-tests all 682 streams on demand. YouTube lives (JITV, Magelang Dishub, the Bantul and Gunungkidul regency channels, the Gunungkidul webcams and the Merapi streams) can move to a new video ID when their channels restart them &mdash; the Magelang IDs here were read from the Dishub portal on 3 Nov 2026, and the Bantul, Gunungkidul and Frekom IDs were pulled fresh and live-validated the same day.</span>
+        <span>These cameras flap — they drop for maintenance, at night, or for a few seconds mid-stream — so the cameras on stage and on the wall re-test from your connection each time it opens, players keep reconnecting instead of giving up, and the Recheck button re-tests all 682 streams on demand. YouTube lives (JITV, Magelang Dishub, the Bantul and Gunungkidul regency channels, the Gunungkidul webcams and the Merapi streams) can move to a new video ID when their channels restart them &mdash; the Magelang IDs here were read from the Dishub portal on 3 Nov 2026, and the Bantul, Gunungkidul and Frekom IDs were pulled fresh and live-validated the same day. Streams labelled with the red YouTube badge play through YouTube embeds; if one reports an error (such as 153), its player shows a Recheck button and a Watch on YouTube link instead of YouTube&rsquo;s raw error screen.</span>
       </footer>
     </div>
 
@@ -580,6 +631,56 @@
       }
       function statusText(s) {
         return { verified: "Verified live at the last check", online: "Live now", offline: "Offline at last check", checking: "Checking…" }[s];
+      }
+      var YT_BADGE = '<span class="yt-badge">YouTube</span>';
+
+      /* ---------------- YouTube IFrame Player API ----------------
+         Plain embed iframes surface YouTube's own cryptic error screen
+         (notably "Error 153" when a live ends, its ID rotates, or embedding
+         is disabled) with no way for the page to react. Loading the IFrame
+         API and creating every YouTube player through YT.Player gives each
+         embed an onError handler; on error the player is replaced visually
+         by a friendly overlay with Recheck + Watch on YouTube actions.
+         If the API itself cannot load, players fall back to plain embeds. */
+      var YT_ERR_CODES = { 2: 1, 5: 1, 100: 1, 101: 1, 150: 1, 153: 1 };
+      var ytApiState = "idle"; // idle | loading | ready | failed
+      var ytApiQueue = [];
+      var ytApiTimer = null;
+      function flushYtApi(ok) {
+        var q = ytApiQueue; ytApiQueue = [];
+        q.forEach(function (cb) { try { cb(ok); } catch (err) {} });
+      }
+      function withYtApi(cb) {
+        if (ytApiState === "ready" && window.YT && window.YT.Player) { cb(true); return; }
+        if (ytApiState === "failed") { cb(false); return; }
+        ytApiQueue.push(cb);
+        if (ytApiState === "loading") return;
+        ytApiState = "loading";
+        window.onYouTubeIframeAPIReady = function () {
+          if (ytApiTimer) { clearTimeout(ytApiTimer); ytApiTimer = null; }
+          ytApiState = "ready";
+          flushYtApi(true);
+        };
+        var tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        tag.async = true;
+        tag.onerror = function () {
+          if (ytApiState !== "loading") return;
+          ytApiState = "failed"; flushYtApi(false);
+        };
+        document.head.appendChild(tag);
+        ytApiTimer = setTimeout(function () {
+          if (ytApiState !== "loading") return;
+          ytApiState = "failed"; flushYtApi(false);
+        }, 8000);
+      }
+      function ytErrorText(code, name) {
+        var base = "The live stream for " + name + " is currently unavailable. The live ID may have rotated \u2014 these channels issue new IDs when streams restart.";
+        if (code === 153) return base + " YouTube reported error 153: the stream may have ended or embedding was disabled for this video.";
+        if (code === 100) return base + " YouTube reported error 100: this video was not found \u2014 it may have ended or been removed.";
+        if (code === 101 || code === 150) return base + " YouTube reported error " + code + ": the channel has disabled embedding for this video.";
+        if (code === 2 || code === 5) return base + " YouTube reported error " + code + " while loading the player.";
+        return base;
       }
 
       /* ---------------- HLS plumbing ----------------
@@ -723,6 +824,95 @@
       }
 
       var mainFrame = $("#mainFrame");
+      var mainYt = { player: null, ready: false, creating: false, wantedId: "", loadedId: "" };
+      function hideStageYtErr() { $("#stageYtErr").classList.remove("show"); }
+      function showStageYtErr(code) {
+        var i = state.mainIdx;
+        if (i < 0 || !isYt(CAMS[i])) return;
+        showStageMsg(null);
+        $("#stageYtErrText").textContent = ytErrorText(code, CAMS[i][0]);
+        $("#stageYtWatch").href = CAMS[i][4];
+        $("#stageYtErr").classList.add("show");
+        setBadge("offline");
+        if (state.status[i] !== "offline") setStatus(i, "offline");
+      }
+      function fallbackMainYt(id) {
+        mainFrame.innerHTML = '<iframe class="fallback-frame" title="YouTube live stream" src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+        showStageMsg(null);
+        setBadge("live");
+        var i = state.mainIdx;
+        if (i >= 0 && state.status[i] !== "online") setStatus(i, "online");
+      }
+      function playMainYt(i) {
+        var cam = CAMS[i], id = ytId(cam[4]);
+        mainYt.wantedId = id;
+        hideStageYtErr();
+        showStageMsg("loading", "Connecting…", "Loading the live stream for " + cam[0] + ".");
+        withYtApi(function (ok) {
+          if (state.mainIdx !== i || !isYt(CAMS[state.mainIdx])) return;
+          if (!ok || !window.YT || !window.YT.Player) { fallbackMainYt(id); return; }
+          if (mainYt.player) {
+            if (mainYt.ready && mainYt.loadedId !== id) {
+              mainYt.loadedId = id;
+              try { mainYt.player.loadVideoById(id); } catch (err) {}
+            } else if (mainYt.ready) {
+              try { mainYt.player.playVideo(); } catch (err) {}
+            }
+            return;
+          }
+          if (mainYt.creating) return;
+          mainYt.creating = true; mainYt.loadedId = id;
+          try {
+            mainYt.player = new YT.Player("mainYtMount", {
+              videoId: id,
+              playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0 },
+              events: {
+                onReady: function (e) {
+                  mainYt.ready = true; mainYt.creating = false;
+                  try { e.target.mute(); } catch (err) {}
+                  if (state.mainIdx < 0 || !isYt(CAMS[state.mainIdx])) return;
+                  if (mainYt.wantedId && mainYt.wantedId !== mainYt.loadedId) {
+                    mainYt.loadedId = mainYt.wantedId;
+                    try { e.target.loadVideoById(mainYt.wantedId); } catch (err) {}
+                  } else {
+                    try { e.target.playVideo(); } catch (err) {}
+                  }
+                },
+                onStateChange: function (e) {
+                  if (state.mainIdx < 0 || !isYt(CAMS[state.mainIdx])) return;
+                  if (e.data === 1) {
+                    hideStageYtErr(); showStageMsg(null); setBadge("live");
+                    if (state.status[state.mainIdx] !== "online") setStatus(state.mainIdx, "online");
+                  }
+                },
+                onError: function (e) {
+                  if (state.mainIdx < 0 || !isYt(CAMS[state.mainIdx])) return;
+                  showStageYtErr(e && typeof e.data === "number" ? e.data : null);
+                }
+              }
+            });
+          } catch (err) { mainYt.creating = false; mainYt.player = null; fallbackMainYt(id); }
+        });
+      }
+      function stopMainYt() {
+        hideStageYtErr();
+        if (mainYt.player && mainYt.ready) { try { mainYt.player.stopVideo(); } catch (err) {} }
+        if (!mainYt.player && mainFrame.querySelector(".fallback-frame")) {
+          mainFrame.innerHTML = '<div id="mainYtMount"></div>';
+        }
+      }
+      $("#stageYtRecheck").addEventListener("click", function () {
+        var i = state.mainIdx;
+        if (i < 0 || !isYt(CAMS[i])) return;
+        setStatus(i, "checking");
+        if (mainYt.player && mainYt.ready) {
+          hideStageYtErr();
+          showStageMsg("loading", "Connecting…", "Re-checking the live stream for " + CAMS[i][0] + ".");
+          try { mainYt.player.loadVideoById(mainYt.wantedId || ytId(CAMS[i][4])); } catch (err) { playMainYt(i); }
+        } else {
+          playMainYt(i);
+        }
+      });
       function loadMain(i, opts) {
         opts = opts || {};
         if (i < 0 || i >= CAMS.length) return;
@@ -737,6 +927,8 @@
         $("#metaDot").style.background = g.color;
         $("#metaCoords").textContent = hasCoords(cam) ? cam[2].toFixed(5) + ", " + cam[3].toFixed(5) : "no map pin";
         $("#metaStatus").textContent = statusText(state.status[i]);
+        $("#metaYtBadge").hidden = !isYt(cam);
+        $("#stageYtBadge").hidden = !isYt(cam);
         $("#streamLink").href = cam[4];
         $("#streamLinkLabel").textContent = isYt(cam) ? "Watch on YouTube" : "Stream (.m3u8)";
         var mapsBtn = $("#mapsLink");
@@ -749,21 +941,13 @@
         }
         $("#muteBtn").style.display = isYt(cam) ? "none" : "";
         if (isYt(cam)) {
-          /* YouTube lives play through the official embed, not hls.js. */
+          /* YouTube lives play through the IFrame API player (onError handled), not hls.js. */
           try { mainVideo.pause(); } catch (err) {}
           $("#stage").classList.add("yt");
-          showStageMsg("loading", "Connecting…", "Loading the live stream for " + cam[0] + ".");
-          mainFrame.onload = function () {
-            if (state.mainIdx !== i) return;
-            showStageMsg(null);
-            setBadge("live");
-            if (state.status[i] !== "online") setStatus(i, "online");
-          };
-          mainFrame.src = "https://www.youtube.com/embed/" + ytId(cam[4]) + "?autoplay=1&mute=1&playsinline=1&rel=0";
+          playMainYt(i);
         } else {
           $("#stage").classList.remove("yt");
-          mainFrame.onload = null;
-          mainFrame.src = "about:blank";
+          stopMainYt();
           showStageMsg("loading", "Connecting…", "Loading the live stream for " + cam[0] + ".");
           mainHandle = attachHls(mainVideo, cam[4], function () {
             if (state.mainIdx !== i) return;
@@ -1240,7 +1424,7 @@
           var g = GROUPS[c[1]];
           html += '<button type="button" class="row" data-i="' + i + '">'
             + '<span class="cdot" style="background:' + g.color + '"></span>'
-            + '<span class="txt"><span class="nm">' + esc(c[0]) + '</span><span class="gp">' + esc(g.short) + '</span></span>'
+            + '<span class="txt"><span class="nm-row"><span class="nm">' + esc(c[0]) + '</span>' + (isYt(c) ? YT_BADGE : '') + '</span><span class="gp">' + esc(g.short) + '</span></span>'
             + '<span class="sdot s-' + state.status[i] + '" title="status"></span>'
             + '<span class="add" data-add="' + i + '" role="button" aria-label="Add to wall" title="Add to wall">'
             + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>'
@@ -1272,7 +1456,7 @@
         var c = CAMS[i];
         if (state.group !== -1 && c[1] !== state.group) return false;
         if (!state.q) return true;
-        var hay = (c[0] + " " + GROUPS[c[1]].name + " " + GROUPS[c[1]].short).toLowerCase();
+        var hay = (c[0] + " " + GROUPS[c[1]].name + " " + GROUPS[c[1]].short + (isYt(c) ? " youtube" : "")).toLowerCase();
         return state.q.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
       }
       function applyFilter() {
@@ -1303,7 +1487,83 @@
         state.tileHls = {};
         for (var p = 0; p < state.cap; p++) renderTile(p, true);
       }
+      /* ---------------- wall-tile YouTube players ---------------- */
+      var tileYtPlayers = {}; // tile position -> { player, camIdx, ready, creating, loadedId, wantedId }
+      function destroyTileYt(p) {
+        var recd = tileYtPlayers[p];
+        if (recd && recd.player) { try { recd.player.destroy(); } catch (err) {} }
+        delete tileYtPlayers[p];
+      }
+      function showTileYtErr(p, ci, code) {
+        var t = document.querySelector('.tile[data-pos="' + p + '"]');
+        if (!t || state.wall[p] !== ci) return;
+        var tx = t.querySelector("[data-yt-err-text]");
+        if (tx) tx.textContent = ytErrorText(code, CAMS[ci][0]);
+        var err = t.querySelector("[data-yt-err]");
+        if (err) err.classList.add("show");
+        if (state.status[ci] !== "offline") setStatus(ci, "offline");
+      }
+      function hideTileYtErr(p) {
+        var t = document.querySelector('.tile[data-pos="' + p + '"]');
+        var err = t ? t.querySelector("[data-yt-err]") : null;
+        if (err) err.classList.remove("show");
+      }
+      function fallbackTileYt(p, ci) {
+        var t = document.querySelector('.tile[data-pos="' + p + '"]');
+        if (!t || state.wall[p] !== ci) return;
+        var mount = t.querySelector("[data-yt-mount]");
+        if (mount) mount.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId(CAMS[ci][4]) + '?autoplay=1&mute=1&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" title="' + esc(CAMS[ci][0]) + '"></iframe>';
+      }
+      function mountTileYt(p, ci) {
+        destroyTileYt(p);
+        var recd = { player: null, ready: false, creating: false, loadedId: "", wantedId: ytId(CAMS[ci][4]), camIdx: ci };
+        tileYtPlayers[p] = recd;
+        withYtApi(function (ok) {
+          if (tileYtPlayers[p] !== recd || state.wall[p] !== ci) return;
+          if (!ok || !window.YT || !window.YT.Player) { fallbackTileYt(p, ci); return; }
+          var t = document.querySelector('.tile[data-pos="' + p + '"]');
+          var mount = t ? t.querySelector("[data-yt-mount]") : null;
+          if (!mount) return;
+          var mountId = "tileYtMount-" + p + "-" + ci;
+          mount.id = mountId;
+          recd.creating = true; recd.loadedId = recd.wantedId;
+          try {
+            recd.player = new YT.Player(mountId, {
+              videoId: recd.wantedId,
+              playerVars: { autoplay: 1, mute: 1, controls: 0, playsinline: 1, rel: 0, disablekb: 1, fs: 0, modestbranding: 1 },
+              events: {
+                onReady: function (e) {
+                  recd.ready = true; recd.creating = false;
+                  try { e.target.mute(); e.target.playVideo(); } catch (err) {}
+                },
+                onStateChange: function (e) {
+                  if (state.wall[p] !== ci) return;
+                  if (e.data === 1) { hideTileYtErr(p); if (state.status[ci] !== "online") setStatus(ci, "online"); }
+                },
+                onError: function (e) {
+                  showTileYtErr(p, ci, e && typeof e.data === "number" ? e.data : null);
+                }
+              }
+            });
+          } catch (err) { recd.creating = false; fallbackTileYt(p, ci); }
+        });
+      }
+      function recheckTileYt(p) {
+        var ci = state.wall[p];
+        if (ci === null || ci === undefined || !isYt(CAMS[ci])) return;
+        hideTileYtErr(p);
+        setStatus(ci, "checking");
+        var recd = tileYtPlayers[p];
+        if (recd && recd.player && recd.ready) {
+          try { recd.player.loadVideoById(recd.wantedId); } catch (err) { mountTileYt(p, ci); }
+        } else if (recd && recd.player && recd.creating) {
+          /* player still loading; its onError/onStateChange will resolve the tile */
+        } else {
+          mountTileYt(p, ci);
+        }
+      }
       function renderTile(p, stagger) {
+        destroyTileYt(p);
         var wall = $("#wall");
         var old = wall.children[p];
         var tile = document.createElement("div");
@@ -1316,12 +1576,17 @@
           var c = CAMS[ci], g = GROUPS[c[1]];
           tile.innerHTML =
             (isYt(c)
-              ? '<iframe src="https://www.youtube.com/embed/' + ytId(c[4]) + '?autoplay=1&mute=1&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" title="' + esc(c[0]) + '"></iframe>'
+              ? '<div class="tile-yt" data-yt-mount="' + p + '"></div>'
+                + '<div class="yt-err" data-yt-err="' + p + '"><div class="yt-err-box"><span class="yt-badge">YouTube</span>'
+                + '<p class="yt-err-title">Stream unavailable</p>'
+                + '<p data-yt-err-text="' + p + '">This YouTube live stream is currently unavailable.</p>'
+                + '<div class="yt-err-acts"><button type="button" class="yt-act primary" data-yt-recheck="' + p + '">Recheck</button>'
+                + '<a class="yt-act" href="' + esc(c[4]) + '" target="_blank" rel="noopener">Watch on YouTube</a></div></div></div>'
               : '<video muted playsinline autoplay></video>'
                 + '<div class="err"><span>Stream offline<br><small>' + esc(c[0]) + '</small></span></div>'
                 + '<div class="rec"><span>Reconnecting…</span></div>')
             + '<div class="bar"><span class="cdot" style="background:' + g.color + '"></span>'
-            + '<span class="nm">' + esc(c[0]) + '</span>'
+            + '<span class="nm">' + esc(c[0]) + '</span>' + (isYt(c) ? YT_BADGE : '')
             + '<button type="button" class="tbtn" data-expand="' + p + '" title="Watch in main player" aria-label="Watch in main player">'
             + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="M9 21H3v-6"/><path d="m3 21 7-7"/></svg></button>'
             + '<button type="button" class="tbtn" data-remove="' + p + '" title="Remove from wall" aria-label="Remove from wall">'
@@ -1344,6 +1609,8 @@
             }, { delayMs: stagger ? Math.min(pos, 5) * 500 : 0 });
           })(p, ci);
           tile.addEventListener("click", function (e) {
+            if (e.target.closest("[data-yt-recheck]")) { recheckTileYt(p); return; }
+            if (e.target.closest("a")) return;
             if (e.target.closest("[data-expand]")) { loadMain(camIdxOf(p), { scroll: true }); }
             else if (e.target.closest("[data-remove]")) { removeFromWall(p); }
           });
@@ -1355,6 +1622,7 @@
           wall.appendChild(tile);
         }
         if (tileObserver) tileObserver.observe(tile);
+        if (ci !== null && ci !== undefined && isYt(CAMS[ci])) mountTileYt(p, ci);
       }
       function camIdxOf(p) { return state.wall[p]; }
       function addToWall(i, announce) {
@@ -1529,7 +1797,9 @@
           center: { lat: -7.795, lng: 110.365 },
           zoom: 11,
           marker: function (place, index, selected) {
-            return '<div class="cam-dot' + (selected ? " on" : "") + '" style="--c:' + place.color + ';background:' + place.color + '" title="' + esc(place.label) + '"></div>';
+            var dot = '<div class="cam-dot' + (selected ? " on" : "") + '" style="--c:' + place.color + ';background:' + place.color + '" title="' + esc(place.label) + '"></div>';
+            if (place.yt) return '<div class="cam-wrap">' + dot + '<span class="cam-yt-badge">YouTube</span></div>';
+            return dot;
           },
           onSelectPlace: function (index) {
             if (index === null || index === undefined) return;
@@ -1555,7 +1825,7 @@
         mapPlaces = [];
         CAMS.forEach(function (c, i) {
           if (!hasCoords(c)) return; // the JITV channel stream has no location pin
-          mapPlaces.push({ label: c[0], lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i });
+          mapPlaces.push({ label: c[0] + (isYt(c) ? " \u00b7 YouTube" : ""), lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i, yt: isYt(c) });
         });
         buildProviderOptions();
         var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
