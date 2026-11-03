@@ -85,7 +85,9 @@ Re-sweep occasionally — new venues open, policies change.
 
 ## 6. Watchlist (revisit each round)
 
-- [ ] cctv.jogjakota.go.id — retry fetch (timed out 2026-11-03)
+- [x] cctv.jogjakota.go.id — CRACKED 2026-11-03: `GET /home/getdata` needs
+  `X-Requested-With: XMLHttpRequest` header; returns 151 cameras with HLS URLs on
+  cctvjss.jogjakota.go.id; 147 verified live, integrated (round 4)
 - [ ] Klaten portal — check for newly public cameras
 - [ ] Gunungkidul & Bantul YouTube channels — skipped in round 1
 - [ ] NTMC Polri portal — retry
@@ -99,4 +101,5 @@ Re-sweep occasionally — new venues open, policies change.
 - 2026-11-02: Round 1 — DIY portal (433) + Bantul (31) + JITV YouTube (4) = 468
 - 2026-11-03: Round 2 — 20 km ring: Magelang Dishub (17) + Merapi north (1) = 486
 - 2026-11-03: Round 3 — Gunungkidul/webcamtaxi (3) + webcamera24 (2) + afarTV (1) = 492
+- 2026-11-03: Round 4 — Kota Yogyakarta ATCS portal cracked (147 live of 151) = 638
 - 2026-11-03: Venue/institution sweep — no 24/7 streams exist in these categories
