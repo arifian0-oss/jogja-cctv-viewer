@@ -80,8 +80,9 @@ Re-sweep occasionally — new venues open, policies change.
    (schema: name / group / lat / lng / url / type / source).
 2. Append to `jogja-cctv.m3u` (same `#EXTINF` format, group-title per source).
 3. Write validated table to a dated note in the research dir.
-4. `artifact.edit` on `jogja-cctv-viewer` with the research dir.
-5. `artifact.export` → push `index.html` to GitHub → pull on desktop.
+4. Update `assets/js/data.js` (GROUPS / CAMS) in the viewer repo.
+5. `npm run build` → commit `index.html`, `assets/` and `standalone.html` → push
+   to GitHub → pull on desktop.
 
 ## 6. Watchlist (revisit each round)
 
