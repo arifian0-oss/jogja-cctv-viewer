@@ -1245,7 +1245,10 @@ var MAP_PROVIDERS = [
   { id: "ofm-bright", label: "Bright", group: "OpenFreeMap", customStyleUrl: "https://tiles.openfreemap.org/styles/bright" },
   { id: "carto-voyager", label: "Voyager", group: "CARTO", customStyleUrl: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json" },
   { id: "carto-dark", label: "Dark Matter", group: "CARTO", customStyleUrl: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json" },
-  { id: "carto-positron", label: "Positron", group: "CARTO", customStyleUrl: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" }
+  { id: "carto-positron", label: "Positron", group: "CARTO", customStyleUrl: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" },
+  { id: "google-roadmap", label: "Roadmap", group: "Google", customStyleUrl: "assets/styles/google-roadmap.json" },
+  { id: "google-satellite", label: "Satellite", group: "Google", customStyleUrl: "assets/styles/google-satellite.json" },
+  { id: "google-hybrid", label: "Hybrid", group: "Google", customStyleUrl: "assets/styles/google-hybrid.json" }
 ];
 var mapProviderId = null;
 var mapPlaces = null;
