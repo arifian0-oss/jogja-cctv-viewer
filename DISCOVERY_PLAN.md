@@ -102,4 +102,5 @@ Re-sweep occasionally — new venues open, policies change.
 - 2026-11-03: Round 2 — 20 km ring: Magelang Dishub (17) + Merapi north (1) = 486
 - 2026-11-03: Round 3 — Gunungkidul/webcamtaxi (3) + webcamera24 (2) + afarTV (1) = 492
 - 2026-11-03: Round 4 — Kota Yogyakarta ATCS portal cracked (147 live of 151) = 638
+- 2026-11-03: Round 5 — Sleman portal cracked via live browser (Ant Media stream IDs, 9 live) = 647
 - 2026-11-03: Venue/institution sweep — no 24/7 streams exist in these categories
