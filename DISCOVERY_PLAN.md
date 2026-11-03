@@ -92,6 +92,7 @@ Re-sweep occasionally — new venues open, policies change.
 - [ ] Gunungkidul & Bantul YouTube channels — skipped in round 1
 - [ ] NTMC Polri portal — retry
 - [ ] Travoy / "Jogja Istimewa" app contents — needs login (user decision)
+- [ ] Gunungkidul smart city CCTV (app-smartcity.gunungkidulkab.go.id/cctv) — DOWN 2026-11-03 (server-side outage, not a block); retry later. Its feeds link out to Kominfo Gunungkidul YouTube lives.
 - [ ] New Frekom / community Merapi cameras
 - [ ] Magelang YouTube IDs — re-pull monthly (they rotate)
 - [ ] webcamtaxi / webcamera24 DIY pages — new listings
