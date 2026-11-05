@@ -83,6 +83,122 @@ function ytErrorText(code, name) {
   return base;
 }
 
+/* ---------------- YouTube auto-refresh ----------------
+   A dead/rotated embed can't fix itself from the browser alone: YouTube
+   never tells the page what the replacement live ID is — that ID lives
+   only on the source channel or portal, which is why the daily refresh job
+   (yt-dlp + source listings, pushed to GitHub) still does the finding.
+   What the page CAN do, the moment an embed fails, is:
+   (1) retry once after 8s — the failure is often transient; and
+   (2) re-fetch data.js from the site first, so if the refresh job already
+   pushed a new ID for this camera, the player swaps to it by itself
+   instead of showing the error. A 15-minute timer does the same pickup
+   for any embed already sitting on its error screen. */
+var freshYtMapCache = null, freshYtMapAt = 0;
+function fetchFreshYtMap(cb) {
+  var now = Date.now();
+  if (freshYtMapCache && now - freshYtMapAt < 60000) { cb(freshYtMapCache); return; }
+  fetch("assets/js/data.js", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("http " + r.status)); })
+    .then(function (txt) {
+      var map = {}, m;
+      var re = /\["((?:[^"\\]|\\.)+)",\d+,-?[\d.]+,-?[\d.]+,"https:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})"(,"yt")?\]/g;
+      while ((m = re.exec(txt)) !== null) {
+        try { map[JSON.parse('"' + m[1] + '"')] = m[2]; } catch (err) {}
+      }
+      freshYtMapCache = map; freshYtMapAt = Date.now();
+      cb(map);
+    })
+    .catch(function () { cb(null); });
+}
+function freshYtIdFor(camIdx, map) {
+  if (!map) return null;
+  var id = map[CAMS[camIdx][0]];
+  return (id && id !== ytId(CAMS[camIdx][4])) ? id : null;
+}
+function applyFreshYtId(camIdx, freshId) {
+  CAMS[camIdx][4] = "https://www.youtube.com/watch?v=" + freshId;
+  if (state.mainIdx === camIdx) {
+    $("#streamLink").href = CAMS[camIdx][4];
+    $("#stageYtWatch").href = CAMS[camIdx][4];
+    /* wantedId only — loadedId stays as the ID the player actually has,
+       so playMainYt/onReady still notice the swap and load the new one. */
+    mainYt.wantedId = freshId;
+  }
+  var p = state.wall.indexOf(camIdx);
+  if (p !== -1) {
+    var t = document.querySelector('.tile[data-pos="' + p + '"] a.yt-act');
+    if (t) t.href = CAMS[camIdx][4];
+    var rec = tileYtPlayers[p];
+    if (rec) rec.wantedId = freshId;
+  }
+}
+function onMainYtError(code) {
+  var i = state.mainIdx;
+  if (i < 0 || !isYt(CAMS[i])) return;
+  if (!mainYt.retried) {
+    mainYt.retried = true;
+    showStageMsg("loading", "Reconnecting…", "This YouTube stream failed to load — retrying automatically.");
+    setTimeout(function () {
+      if (state.mainIdx !== i || !isYt(CAMS[i])) return;
+      fetchFreshYtMap(function (map) {
+        if (state.mainIdx !== i || !isYt(CAMS[i])) return;
+        var fresh = freshYtIdFor(i, map);
+        if (fresh) applyFreshYtId(i, fresh);
+        hideStageYtErr();
+        if (mainYt.player && mainYt.ready) {
+          try { mainYt.loadedId = mainYt.wantedId || ytId(CAMS[i][4]); mainYt.player.loadVideoById(mainYt.loadedId); } catch (err) { playMainYt(i); }
+        } else { playMainYt(i); }
+      });
+    }, 8000);
+    return;
+  }
+  showStageYtErr(code);
+}
+function onTileYtError(p, ci, code) {
+  var recd = tileYtPlayers[p];
+  if (!recd || state.wall[p] !== ci) return;
+  if (!recd.retried) {
+    recd.retried = true;
+    setTimeout(function () {
+      if (state.wall[p] !== ci || tileYtPlayers[p] !== recd || !isYt(CAMS[ci])) return;
+      fetchFreshYtMap(function (map) {
+        if (state.wall[p] !== ci || tileYtPlayers[p] !== recd || !isYt(CAMS[ci])) return;
+        var fresh = freshYtIdFor(ci, map);
+        if (fresh) applyFreshYtId(ci, fresh);
+        hideTileYtErr(p);
+        recheckTileYt(p);
+      });
+    }, 8000);
+    return;
+  }
+  showTileYtErr(p, ci, code);
+}
+function refreshFailedYtFromServer() {
+  var targets = [];
+  if (state.mainIdx >= 0 && isYt(CAMS[state.mainIdx]) && state.status[state.mainIdx] === "offline") targets.push({ kind: "main", idx: state.mainIdx });
+  state.wall.forEach(function (ci, p) {
+    if (ci !== null && ci !== undefined && isYt(CAMS[ci]) && state.status[ci] === "offline") targets.push({ kind: "tile", idx: ci, pos: p });
+  });
+  if (!targets.length) return;
+  fetchFreshYtMap(function (map) {
+    if (!map) return;
+    targets.forEach(function (t) {
+      var fresh = freshYtIdFor(t.idx, map);
+      if (!fresh) return;
+      applyFreshYtId(t.idx, fresh);
+      if (t.kind === "main" && state.mainIdx === t.idx) {
+        mainYt.retried = false;
+        hideStageYtErr();
+        playMainYt(t.idx);
+      } else if (t.kind === "tile" && state.wall[t.pos] === t.idx) {
+        hideTileYtErr(t.pos);
+        recheckTileYt(t.pos);
+      }
+    });
+  });
+}
+
 /* ---------------- HLS plumbing ----------------
    The player library (hls.js) is self-hosted in assets/ — an earlier build
    loaded it from a public CDN, and when that CDN stalled every camera was
@@ -224,7 +340,7 @@ function showStageMsg(mode, title, text) {
 }
 
 var mainFrame = $("#mainFrame");
-var mainYt = { player: null, ready: false, creating: false, wantedId: "", loadedId: "" };
+var mainYt = { player: null, ready: false, creating: false, wantedId: "", loadedId: "", retried: false };
 function hideStageYtErr() { $("#stageYtErr").classList.remove("show"); }
 function showStageYtErr(code) {
   var i = state.mainIdx;
@@ -287,7 +403,7 @@ function playMainYt(i) {
           },
           onError: function (e) {
             if (state.mainIdx < 0 || !isYt(CAMS[state.mainIdx])) return;
-            showStageYtErr(e && typeof e.data === "number" ? e.data : null);
+            onMainYtError(e && typeof e.data === "number" ? e.data : null);
           }
         }
       });
@@ -304,6 +420,7 @@ function stopMainYt() {
 $("#stageYtRecheck").addEventListener("click", function () {
   var i = state.mainIdx;
   if (i < 0 || !isYt(CAMS[i])) return;
+  mainYt.retried = false; // manual recheck earns a fresh automatic retry
   setStatus(i, "checking");
   if (mainYt.player && mainYt.ready) {
     hideStageYtErr();
@@ -342,6 +459,7 @@ function loadMain(i, opts) {
   $("#muteBtn").style.display = isYt(cam) ? "none" : "";
   if (isYt(cam)) {
     /* YouTube lives play through the IFrame API player (onError handled), not hls.js. */
+    mainYt.retried = false; // a newly opened camera gets one automatic retry
     try { mainVideo.pause(); } catch (err) {}
     $("#stage").classList.add("yt");
     playMainYt(i);
@@ -734,13 +852,17 @@ $("#recheckBtn").addEventListener("click", function () {
 });
 /* Statuses baked into this page are a snapshot, and these cameras flap daily.
    The Recheck button re-tests every stream from the viewer's own connection;
-   on open (auto mode) only the cameras on stage and on the wall are tested,
-   so opening the page no longer fires ~936 requests at the portal within
-   seconds. A camera is only marked offline after TWO failed probes ~1.5s
+   on open (auto mode) only the cameras on stage and on the wall are tested
+   first, so opening the page no longer fires ~936 requests at the portal within
+   seconds — then the check keeps going in the background (background mode:
+   4 workers, paused while the tab is hidden) over the rest of the list, so a
+   fresh open now verifies everything without hammering the portal up front.
+   A camera is only marked offline after TWO failed probes ~1.5s
    apart (the portal throws brief 500s), and a camera already playing is
-   never downgraded by a probe. */
-function runRecheck(auto, only) {
-  if (state.checking) return;
+   never downgraded by a probe. Returns a promise resolving to true when the
+   check was stopped early. */
+function runRecheck(auto, only, background) {
+  if (state.checking) return null;
   state.checking = true; recheckAbort = false;
   var btn = $("#recheckBtn"), label = $("#recheckLabel");
   btn.classList.remove("primary");
@@ -754,7 +876,8 @@ function runRecheck(auto, only) {
   }
   var total = order.length, done = 0, online = 0, idx = 0, skipped = 0;
   label.textContent = "Stop · 0/" + total;
-  if (auto) $("#verifiedText").textContent = "Checking the cameras on stage and on the wall from your connection…";
+  if (auto && background) $("#verifiedText").textContent = "Checking the rest of the streams in the background from your connection…";
+  else if (auto) $("#verifiedText").textContent = "Checking the cameras on stage and on the wall from your connection…";
   var workers = [];
   function probeOnce(i) {
     var ctl = ("AbortController" in window) ? new AbortController() : null;
@@ -839,6 +962,10 @@ function runRecheck(auto, only) {
   }
   function next() {
     if (recheckAbort || idx >= total) return Promise.resolve();
+    if (background && document.hidden) {
+      /* Don't burn the portal (or the battery) while nobody is looking. */
+      return new Promise(function (res) { setTimeout(res, 2000); }).then(next);
+    }
     var i = order[idx++];
     if (isYt(CAMS[i])) {
       /* YouTube embeds can't be probed from the page — keep their
@@ -863,15 +990,17 @@ function runRecheck(auto, only) {
       return next();
     });
   }
-  var nWorkers = auto ? 6 : 10;
+  var nWorkers = background ? 4 : (auto ? 6 : 10);
   for (var w = 0; w < nWorkers; w++) workers.push(next());
-  Promise.all(workers).then(function () {
+  return Promise.all(workers).then(function () {
     state.checking = false;
     btn.classList.add("primary");
     label.textContent = "Recheck streams";
     var summary;
     if (recheckAbort) {
       summary = "Recheck stopped · " + done + " of " + total + " cameras tested";
+    } else if (auto && background) {
+      summary = "Startup check complete · " + online + " of " + (total - skipped) + " streams live now";
     } else if (auto) {
       summary = "Quick check on open · " + online + " of " + (total - skipped) + " on-stage streams live now · Recheck streams tests all " + CAMS.length;
     } else {
@@ -879,6 +1008,7 @@ function runRecheck(auto, only) {
     }
     if (!recheckAbort && skipped) summary += " · " + skipped + " YouTube lives not probed";
     $("#verifiedText").textContent = summary;
+    return recheckAbort;
   });
 }
 
@@ -1002,7 +1132,7 @@ function fallbackTileYt(p, ci) {
 }
 function mountTileYt(p, ci) {
   destroyTileYt(p);
-  var recd = { player: null, ready: false, creating: false, loadedId: "", wantedId: ytId(CAMS[ci][4]), camIdx: ci };
+  var recd = { player: null, ready: false, creating: false, loadedId: "", wantedId: ytId(CAMS[ci][4]), camIdx: ci, retried: false };
   tileYtPlayers[p] = recd;
   withYtApi(function (ok) {
     if (tileYtPlayers[p] !== recd || state.wall[p] !== ci) return;
@@ -1027,7 +1157,7 @@ function mountTileYt(p, ci) {
             if (e.data === 1) { hideTileYtErr(p); if (state.status[ci] !== "online") setStatus(ci, "online"); }
           },
           onError: function (e) {
-            showTileYtErr(p, ci, e && typeof e.data === "number" ? e.data : null);
+            onTileYtError(p, ci, e && typeof e.data === "number" ? e.data : null);
           }
         }
       });
@@ -1095,7 +1225,7 @@ function renderTile(p, stagger) {
       }, { delayMs: stagger ? Math.min(pos, 5) * 500 : 0 });
     })(p, ci);
     tile.addEventListener("click", function (e) {
-      if (e.target.closest("[data-yt-recheck]")) { recheckTileYt(p); return; }
+      if (e.target.closest("[data-yt-recheck]")) { var rr = tileYtPlayers[p]; if (rr) rr.retried = false; recheckTileYt(p); return; }
       if (e.target.closest("a")) return;
       if (e.target.closest("[data-expand]")) { loadMain(camIdxOf(p), { scroll: true }); }
       else if (e.target.closest("[data-remove]")) { removeFromWall(p); }
@@ -1357,13 +1487,27 @@ initMap();
    open used to re-test all 464 HLS streams — about 930 requests at the portal
    in a few seconds, which from the portal's side looks like an attack —
    so now only the cameras actually on stage and on the wall are re-tested
-   on open. The Recheck button still runs the full test on demand. Delayed
-   so the players get first claim on the connection; the button stops it. */
+   first, on open. The Recheck button still runs the full test on demand.
+   Delayed so the players get first claim on the connection; the button stops
+   it. Once the quick check finishes, the check keeps going in the background
+   over every other stream (4 workers, paused while the tab is hidden), so a
+   fresh open now verifies the whole list — it just doesn't burst the portal
+   to do it. */
 setTimeout(function () {
   var onStage = [];
   if (state.mainIdx >= 0) onStage.push(state.mainIdx);
   state.wall.forEach(function (ci) {
     if (ci !== null && ci !== undefined && onStage.indexOf(ci) === -1) onStage.push(ci);
   });
-  runRecheck(true, onStage);
+  var quick = runRecheck(true, onStage);
+  if (quick && quick.then) quick.then(function (aborted) {
+    if (aborted) return;
+    var rest = [];
+    for (var i = 0; i < CAMS.length; i++) if (onStage.indexOf(i) === -1) rest.push(i);
+    runRecheck(true, rest, true);
+  });
 }, 2500);
+/* Every 15 minutes, ask the site for a fresh data.js and pick up any YouTube
+   ID the daily refresh job has already fixed — a dead embed on stage or on
+   the wall comes back by itself, no page reload needed. */
+setInterval(refreshFailedYtFromServer, 15 * 60 * 1000);
