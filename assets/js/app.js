@@ -21,7 +21,14 @@ var state = {
 };
 
 function groupOf(i) { return GROUPS[CAMS[i][1]]; }
-function isYt(c) { return c[5] === "yt"; }
+function isYt(c) { return c[5] === "yt"; } /* YouTube live by video ID (IFrame API player) */
+/* "ytx": live, but the channel disabled embedding (oEmbed 401 / error 150).
+   No player is ever attempted for these — the viewer shows a Watch on
+   YouTube card instead, so the error can never appear. The refresh jobs
+   flip the type back to "yt" if embedding comes back. */
+function isYtNoEmbed(c) { return c[5] === "ytx"; }
+function isYtAny(c) { return isYt(c) || isYtNoEmbed(c); }
+function ytWatchUrl(c) { return c[4]; }
 function hasCoords(c) { return typeof c[2] === "number" && typeof c[3] === "number"; }
 function ytId(url) { var m = /[?&]v=([\w-]{6,})/.exec(url); return m ? m[1] : ""; }
 function esc(s) {
@@ -119,8 +126,8 @@ function freshYtIdFor(camIdx, map) {
 function applyFreshYtId(camIdx, freshId) {
   CAMS[camIdx][4] = "https://www.youtube.com/watch?v=" + freshId;
   if (state.mainIdx === camIdx) {
-    $("#streamLink").href = CAMS[camIdx][4];
-    $("#stageYtWatch").href = CAMS[camIdx][4];
+    $("#streamLink").href = ytWatchUrl(CAMS[camIdx]);
+    $("#stageYtWatch").href = ytWatchUrl(CAMS[camIdx]);
     /* wantedId only — loadedId stays as the ID the player actually has,
        so playMainYt/onReady still notice the swap and load the new one. */
     mainYt.wantedId = freshId;
@@ -136,6 +143,12 @@ function applyFreshYtId(camIdx, freshId) {
 function onMainYtError(code) {
   var i = state.mainIdx;
   if (i < 0 || !isYt(CAMS[i])) return;
+  if (code === 101 || code === 150) {
+    /* Embedding disabled by the channel — no retry can fix this, and the
+       refresh job can't either. Go straight to the error overlay. */
+    showStageYtErr(code);
+    return;
+  }
   if (!mainYt.retried) {
     mainYt.retried = true;
     showStageMsg("loading", "Reconnecting…", "This YouTube stream failed to load — retrying automatically.");
@@ -158,6 +171,11 @@ function onMainYtError(code) {
 function onTileYtError(p, ci, code) {
   var recd = tileYtPlayers[p];
   if (!recd || state.wall[p] !== ci) return;
+  if (code === 101 || code === 150) {
+    /* Embedding disabled by the channel — no retry can fix this. */
+    showTileYtErr(p, ci, code);
+    return;
+  }
   if (!recd.retried) {
     recd.retried = true;
     setTimeout(function () {
@@ -341,16 +359,28 @@ function showStageMsg(mode, title, text) {
 
 var mainFrame = $("#mainFrame");
 var mainYt = { player: null, ready: false, creating: false, wantedId: "", loadedId: "", retried: false };
-function hideStageYtErr() { $("#stageYtErr").classList.remove("show"); }
+function hideStageYtErr() { $("#stageYtErr").classList.remove("show"); $("#stageYtRecheck").style.display = ""; }
 function showStageYtErr(code) {
   var i = state.mainIdx;
   if (i < 0 || !isYt(CAMS[i])) return;
   showStageMsg(null);
   $("#stageYtErrText").textContent = ytErrorText(code, CAMS[i][0]);
-  $("#stageYtWatch").href = CAMS[i][4];
+  $("#stageYtWatch").href = ytWatchUrl(CAMS[i]);
+  $("#stageYtRecheck").style.display = "";
   $("#stageYtErr").classList.add("show");
   setBadge("offline");
   if (state.status[i] !== "offline") setStatus(i, "offline");
+}
+/* Embedding disabled: there is nothing to retry and no player to mount.
+   Show the same overlay as a Watch-on-YouTube card, without the Recheck
+   button — and leave the status alone (the stream is live, just not
+   embeddable here). */
+function showStageYtNoEmbed(i) {
+  showStageMsg(null);
+  $("#stageYtErrText").textContent = "This channel has disabled embedding, so " + CAMS[i][0] + " can't play inside this page — but it is live on YouTube. Open it there to watch.";
+  $("#stageYtWatch").href = ytWatchUrl(CAMS[i]);
+  $("#stageYtRecheck").style.display = "none";
+  $("#stageYtErr").classList.add("show");
 }
 function fallbackMainYt(id) {
   mainFrame.innerHTML = '<iframe class="fallback-frame" title="YouTube live stream" src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
@@ -444,10 +474,10 @@ function loadMain(i, opts) {
   $("#metaDot").style.background = g.color;
   $("#metaCoords").textContent = hasCoords(cam) ? cam[2].toFixed(5) + ", " + cam[3].toFixed(5) : "no map pin";
   $("#metaStatus").textContent = statusText(state.status[i]);
-  $("#metaYtBadge").hidden = !isYt(cam);
-  $("#stageYtBadge").hidden = !isYt(cam);
-  $("#streamLink").href = cam[4];
-  $("#streamLinkLabel").textContent = isYt(cam) ? "Watch on YouTube" : "Stream (.m3u8)";
+  $("#metaYtBadge").hidden = !isYtAny(cam);
+  $("#stageYtBadge").hidden = !isYtAny(cam);
+  $("#streamLink").href = ytWatchUrl(cam);
+  $("#streamLinkLabel").textContent = isYtAny(cam) ? "Watch on YouTube" : "Stream (.m3u8)";
   var mapsBtn = $("#mapsLink");
   if (hasCoords(cam)) {
     mapsBtn.style.display = "";
@@ -456,8 +486,15 @@ function loadMain(i, opts) {
   } else {
     mapsBtn.style.display = "none";
   }
-  $("#muteBtn").style.display = isYt(cam) ? "none" : "";
-  if (isYt(cam)) {
+  $("#muteBtn").style.display = isYtAny(cam) ? "none" : "";
+  if (isYtNoEmbed(cam)) {
+    /* Live, but the channel disabled embedding — no player, no retry, just
+       the Watch on YouTube card. The stream itself is fine. */
+    try { mainVideo.pause(); } catch (err) {}
+    $("#stage").classList.add("yt");
+    stopMainYt();
+    showStageYtNoEmbed(i);
+  } else if (isYt(cam)) {
     /* YouTube lives play through the IFrame API player (onError handled), not hls.js. */
     mainYt.retried = false; // a newly opened camera gets one automatic retry
     try { mainVideo.pause(); } catch (err) {}
@@ -546,10 +583,10 @@ function updateRecBtn() {
   }
   btn.classList.remove("recording");
   var cam = state.mainIdx >= 0 ? CAMS[state.mainIdx] : null;
-  btn.disabled = !recSupported() || !cam || isYt(cam);
+  btn.disabled = !recSupported() || !cam || isYtAny(cam);
   btn.title = !recSupported()
     ? "Recording isn't supported in this browser"
-    : (cam && isYt(cam))
+    : (cam && isYtAny(cam))
       ? "YouTube live streams can't be recorded here — use the YouTube link instead"
       : "Record the main player (video only, no sound) and save the clip to this device";
   $("#recLabel").textContent = "Record";
@@ -557,7 +594,7 @@ function updateRecBtn() {
 function startRecording() {
   if (rec || state.mainIdx < 0) return;
   var cam = CAMS[state.mainIdx];
-  if (isYt(cam) || !recSupported()) return;
+  if (isYtAny(cam) || !recSupported()) return;
   var stream;
   try {
     stream = mainVideo.captureStream ? mainVideo.captureStream() : mainVideo.mozCaptureStream();
@@ -635,8 +672,8 @@ $("#recBtn").addEventListener("click", function () {
 function updateSnapBtn() {
   var btn = $("#snapBtn");
   var cam = state.mainIdx >= 0 ? CAMS[state.mainIdx] : null;
-  btn.disabled = !cam || isYt(cam);
-  btn.title = (cam && isYt(cam))
+  btn.disabled = !cam || isYtAny(cam);
+  btn.title = (cam && isYtAny(cam))
     ? "YouTube live streams can't be snapshotted here — use the YouTube link instead"
     : "Save the current frame of the main player as a PNG image";
 }
@@ -646,7 +683,7 @@ function snapFeedback(text) {
   setTimeout(function () { lbl.textContent = "Snapshot"; }, 2200);
 }
 function takeSnapshot() {
-  if (state.mainIdx < 0 || isYt(CAMS[state.mainIdx])) return;
+  if (state.mainIdx < 0 || isYtAny(CAMS[state.mainIdx])) return;
   if (!mainVideo.videoWidth || !mainVideo.videoHeight) { snapFeedback("No frame yet"); return; }
   var cv = document.createElement("canvas");
   cv.width = mainVideo.videoWidth;
@@ -967,7 +1004,7 @@ function runRecheck(auto, only, background) {
       return new Promise(function (res) { setTimeout(res, 2000); }).then(next);
     }
     var i = order[idx++];
-    if (isYt(CAMS[i])) {
+    if (isYtAny(CAMS[i])) {
       /* YouTube embeds can't be probed from the page — keep their
          build-time verified status and leave them out of the tally. */
       skipped++; done++;
@@ -1040,7 +1077,7 @@ function buildList() {
     var g = GROUPS[c[1]];
     html += '<button type="button" class="row" data-i="' + i + '">'
       + '<span class="cdot" style="background:' + g.color + '"></span>'
-      + '<span class="txt"><span class="nm-row"><span class="nm">' + esc(c[0]) + '</span>' + (isYt(c) ? YT_BADGE : '') + '</span><span class="gp">' + esc(g.short) + '</span></span>'
+      + '<span class="txt"><span class="nm-row"><span class="nm">' + esc(c[0]) + '</span>' + (isYtAny(c) ? YT_BADGE : '') + '</span><span class="gp">' + esc(g.short) + '</span></span>'
       + '<span class="sdot s-' + state.status[i] + '" title="status"></span>'
       + '<span class="add" data-add="' + i + '" role="button" aria-label="Add to wall" title="Add to wall">'
       + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>'
@@ -1072,7 +1109,7 @@ function matches(i) {
   var c = CAMS[i];
   if (state.group !== -1 && c[1] !== state.group) return false;
   if (!state.q) return true;
-  var hay = (c[0] + " " + GROUPS[c[1]].name + " " + GROUPS[c[1]].short + (isYt(c) ? " youtube" : "")).toLowerCase();
+  var hay = (c[0] + " " + GROUPS[c[1]].name + " " + GROUPS[c[1]].short + (isYtAny(c) ? " youtube" : "")).toLowerCase();
   return state.q.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
 }
 function applyFilter() {
@@ -1191,18 +1228,25 @@ function renderTile(p, stagger) {
   } else {
     var c = CAMS[ci], g = GROUPS[c[1]];
     tile.innerHTML =
-      (isYt(c)
+      (isYtNoEmbed(c)
+        ? '<div class="tile-yt" data-yt-mount="' + p + '"></div>'
+          + '<div class="yt-err show" data-yt-err="' + p + '"><div class="yt-err-box"><span class="yt-badge">YouTube</span>'
+          + '<p class="yt-err-title">Embedding disabled</p>'
+          + '<p data-yt-err-text="' + p + '">This channel disabled embedding, so the stream can\'t play here — but it is live on YouTube.</p>'
+          + '<div class="yt-err-acts">'
+          + '<a class="yt-act primary" href="' + esc(ytWatchUrl(c)) + '" target="_blank" rel="noopener">Watch on YouTube</a></div></div></div>'
+        : isYtAny(c)
         ? '<div class="tile-yt" data-yt-mount="' + p + '"></div>'
           + '<div class="yt-err" data-yt-err="' + p + '"><div class="yt-err-box"><span class="yt-badge">YouTube</span>'
           + '<p class="yt-err-title">Stream unavailable</p>'
           + '<p data-yt-err-text="' + p + '">This YouTube live stream is currently unavailable.</p>'
           + '<div class="yt-err-acts"><button type="button" class="yt-act primary" data-yt-recheck="' + p + '">Recheck</button>'
-          + '<a class="yt-act" href="' + esc(c[4]) + '" target="_blank" rel="noopener">Watch on YouTube</a></div></div></div>'
+          + '<a class="yt-act" href="' + esc(ytWatchUrl(c)) + '" target="_blank" rel="noopener">Watch on YouTube</a></div></div></div>'
         : '<video muted playsinline autoplay></video>'
           + '<div class="err"><span>Stream offline<br><small>' + esc(c[0]) + '</small></span></div>'
           + '<div class="rec"><span>Reconnecting…</span></div>')
       + '<div class="bar"><span class="cdot" style="background:' + g.color + '"></span>'
-      + '<span class="nm">' + esc(c[0]) + '</span>' + (isYt(c) ? YT_BADGE : '')
+      + '<span class="nm">' + esc(c[0]) + '</span>' + (isYtAny(c) ? YT_BADGE : '')
       + '<button type="button" class="tbtn" data-expand="' + p + '" title="Watch in main player" aria-label="Watch in main player">'
       + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="M9 21H3v-6"/><path d="m3 21 7-7"/></svg></button>'
       + '<button type="button" class="tbtn" data-remove="' + p + '" title="Remove from wall" aria-label="Remove from wall">'
@@ -1454,7 +1498,7 @@ function initMap() {
   mapPlaces = [];
   CAMS.forEach(function (c, i) {
     if (!hasCoords(c)) return; // the JITV channel stream has no location pin
-    mapPlaces.push({ label: c[0] + (isYt(c) ? " \u00b7 YouTube" : ""), lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i, yt: isYt(c) });
+    mapPlaces.push({ label: c[0] + (isYtAny(c) ? " \u00b7 YouTube" : ""), lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i, yt: isYtAny(c) });
   });
   buildProviderOptions();
   var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
