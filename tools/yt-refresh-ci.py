@@ -145,29 +145,53 @@ def main():
         live_sets[key] = live
         return live
 
+    # Words that appear in nearly every Bantul/Gunungkidul/Magelang title and
+    # therefore say nothing about WHICH camera it is. They must never be the
+    # reason a replacement is picked (2026-11-06: "bantul" alone matched
+    # Lapangan Paseban onto Pasar Bantul / Srandakan / Cinomati).
+    GENERIC = {"live", "cctv", "24", "jam", "simpang", "view", "bantul",
+               "gunungkidul", "magelang", "yogyakarta", "kota", "jogja",
+               "pemantauan", "stream", "streams", "ptz"}
+    DIRECTIONS = {"selatan", "utara", "barat", "timur",
+                  "tenggara", "baratdaya", "timurlaut", "baratlaut"}
+
+    def _words(text):
+        return set(re.sub(r'[^a-z0-9]+', ' ', text.lower()).split())
+
+    def _same_camera(ename, title):
+        """True only if the candidate title is the same camera, not just the
+        same regency or junction type. All distinctive (place) tokens of the
+        entry name must appear in the title; direction words and numbers
+        must agree (Paseban Utara != Paseban Barat, Patuk 1 != Patuk 2)."""
+        ewords = _words(ename) - GENERIC
+        twords = _words(title) - GENERIC
+        enum = {w for w in ewords if w.isdigit()}
+        if enum and not enum <= twords:
+            return False
+        edir = ewords & DIRECTIONS
+        if edir and not edir <= twords:
+            return False
+        eplace = ewords - DIRECTIONS - enum
+        if eplace:
+            return eplace <= twords
+        # Degenerate name (no place token at all): fall back to at least two
+        # shared tokens, directions still enforced above.
+        return len(ewords & twords) >= 2
+
     def match_in_live_set(entry, live):
         """Best name-match of an entry against a source live set.
-        Scores word overlap and takes the best title; numbered cameras
-        (Patuk 1 vs Patuk 2) must agree on the number token. Returns
-        (vid, title) or (None, None)."""
-        ename = re.sub(r'^(live|cctv|pemantauan)\s+', '', entry["name"].lower())
-        ename = re.sub(r'[^a-z0-9 ]', '', ename)
-        ewords = set(ename.split()) - {"live", "cctv", "24", "jam"}
-        enum = {w for w in ewords if w.isdigit()}
-        best, best_score, best_matched = None, 0, set()
+        Only titles that pass _same_camera are candidates; among them the
+        one sharing the most words wins. Returns (vid, title) or (None, None)."""
+        best, best_score = None, 0
         for vid, title in live.items():
             if vid == entry["vid"]:
                 continue
-            twords = set(re.sub(r'[^a-z0-9 ]', '', title.lower()).split())
-            if enum and not enum <= twords:
+            if not _same_camera(entry["name"], title):
                 continue
-            matched = ewords & twords
-            if len(matched) > best_score:
-                best, best_score, best_matched = (vid, title), len(matched), matched
-        if best and (best_score >= 2 or (best_score == 1 and
-                                          len(max(best_matched, key=len)) >= 5)):
-            return best
-        return None, None
+            score = len(_words(entry["name"]) & _words(title))
+            if score > best_score:
+                best, best_score = (vid, title), score
+        return best if best else (None, None)
 
     def flip_type(raw, new_typ):
         """Swap an entry's trailing type: ,"yt"] <-> ,"ytx"] (or add one)."""
@@ -201,7 +225,16 @@ def main():
                 else:
                     log(f"  OK   {e['name'][:40]}")
                 continue
-            # rotated or gone: look for the replacement in the same source
+            # rotated or gone: first check the old ID itself — the channel's
+            # /streams listing does not always show every live stream, and
+            # an ID that is still live must never be swapped out (2026-11-06:
+            # 10 Bantul entries were "dead" by listing but all still is_live).
+            st, _ = live_status(e["vid"])
+            if st == "is_live":
+                log(f"  OK   {e['name'][:40]} (live, not in channel listing)")
+                time.sleep(1)
+                continue
+            # genuinely dead: look for the replacement in the same source
             new_vid, title = match_in_live_set(e, live)
             if new_vid:
                 st, _ = live_status(new_vid)
