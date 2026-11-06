@@ -1,7 +1,7 @@
 # Camera Discovery Plan — Jogja CCTV Viewer
 
 Living playbook for finding, validating, and integrating publicly-accessible live
-camera streams in/around Yogyakarta. Updated 2026-11-03. Dataset: 492 cameras.
+camera streams in/around Yogyakarta. Updated 2026-11-06. Dataset: 801 cameras.
 
 ## 1. Objective
 
@@ -89,14 +89,17 @@ Re-sweep occasionally — new venues open, policies change.
 - [x] cctv.jogjakota.go.id — CRACKED 2026-11-03: `GET /home/getdata` needs
   `X-Requested-With: XMLHttpRequest` header; returns 151 cameras with HLS URLs on
   cctvjss.jogjakota.go.id; 147 verified live, integrated (round 4)
-- [ ] Klaten portal — check for newly public cameras
-- [ ] Gunungkidul & Bantul YouTube channels — skipped in round 1
-- [ ] NTMC Polri portal — retry
-- [ ] Travoy / "Jogja Istimewa" app contents — needs login (user decision)
-- [ ] Gunungkidul smart city CCTV (app-smartcity.gunungkidulkab.go.id/cctv) — DOWN 2026-11-03 (server-side outage, not a block); retry later. Its feeds link out to Kominfo Gunungkidul YouTube lives.
+- [x] Klaten portal — check for newly public cameras (re-checked 2026-11-06: portal unreachable from VM, cached crawl shows zero public cameras; Klaten PTZ cams exist but no public stream URL is exposed)
+- [x] Gunungkidul & Bantul YouTube channels — added 2026-11-06 rescan (23 Bantul YT, 19 Gunungkidul YT, 19 webcamera24)
+- [ ] NTMC Polri portal — retry (2026-11-06: /cctv_streaming 404s, site login-gated; NTMC YouTube only ended broadcasts)
+- [ ] Travoy / "Jogja Istimewa" app contents — needs login (user decision) (2026-11-06: app-only, no public web streams; an account would only give in-app viewing)
+- [ ] Gunungkidul smart city CCTV (app-smartcity.gunungkidulkab.go.id/cctv) — DOWN 2026-11-03 (server-side outage, not a block); retry later. Its feeds link out to Kominfo Gunungkidul YouTube lives. (2026-11-06: still down, possible geo-block of non-ID traffic)
 - [ ] New Frekom / community Merapi cameras
-- [ ] Magelang YouTube IDs — re-pull monthly (they rotate)
-- [ ] webcamtaxi / webcamera24 DIY pages — new listings
+- [x] Magelang YouTube IDs — re-pull monthly (they rotate) (re-pulled 2026-11-06: no existing IDs rotated, 3 new junctions added)
+- [x] webcamtaxi / webcamera24 DIY pages — new listings (swept 2026-11-06: 19 webcamera24 added; webcamtaxi Baron dead; skylinewebcams stale/mislabelled — skip)
+- [ ] Sleman 24jam portal — re-check via live browser (Cloudflare-walled for curl)
+- [ ] Toll/highway portals via live browser — BPJT + Bina Marga unreachable from VM (documented login-free); leads: mudik.pu.go.id/cctv-tol/?id_ruas=jogja-solo, jasamargalive.com, rttmc.dephub.go.id/rttmc/livecctv
+- [ ] Purworejo LEKJO — 23 HLS added 2026-11-06, 40–70 km out (beyond the ~30 km border; user chose to include)
 
 ## 7. History
 
@@ -106,3 +109,6 @@ Re-sweep occasionally — new venues open, policies change.
 - 2026-11-03: Round 4 — Kota Yogyakarta ATCS portal cracked (147 live of 151) = 638
 - 2026-11-03: Round 5 — Sleman portal cracked via live browser (Ant Media stream IDs, 9 live) = 647
 - 2026-11-03: Venue/institution sweep — no 24/7 streams exist in these categories
+- 2026-11-03: Round 6 — from-zero sweep: 5 Bantul official YouTube + 28 Kominfo Gunungkidul YouTube + 1 Frekom Merapi + Lapangan Pemda Gunungkidul = 682, then dedup to 668
+- 2026-11-05: 2 JITV lives discontinued by the channel (Merapi, Tugu) removed; 5 Bantul YouTube cams found embedding-disabled (oEmbed 401, error 150) and switched to no-embed cards = 666
+- 2026-11-06: Rescan round — 136 new validated (30 Kota Yogyakarta YouTube simulcasts, 23 Bantul YouTube, 23 Purworejo LEKJO HLS, 19 Gunungkidul YouTube + 19 webcamera24, 8 Kota ATCS, 5 Bantul HLS, 3 Magelang, 3 JITV, 2 DIY, 1 afarTV VR180); drifted Pantai Baron entry renamed to Pasar Playen; 1 dead Bantul YouTube entry removed = 801
