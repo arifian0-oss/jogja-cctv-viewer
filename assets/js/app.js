@@ -526,7 +526,10 @@ function loadMain(i, opts) {
   updateAddWallBtn();
   updateRecBtn();
   updateSnapBtn();
-  if (window.__mapHandle && !opts.fromMap) { try { window.__mapHandle.selectPlace(i); } catch (err) {} }
+  if (window.__mapHandle && !opts.fromMap) {
+    var pp = placePosByCam[i]; // the map wants a places position, not a CAMS index
+    if (pp !== undefined) { try { window.__mapHandle.selectPlace(pp); } catch (err) {} }
+  }
   if (opts.scroll && window.innerWidth < 1021) {
     $("#stage").scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -1107,6 +1110,7 @@ function highlightRow() {
 }
 function matches(i) {
   var c = CAMS[i];
+  if (routeState.active && routeState.filter && !routeState.matched[i]) return false;
   if (state.group !== -1 && c[1] !== state.group) return false;
   if (!state.q) return true;
   var hay = (c[0] + " " + GROUPS[c[1]].name + " " + GROUPS[c[1]].short + (isYtAny(c) ? " youtube" : "")).toLowerCase();
@@ -1401,6 +1405,305 @@ function applyAllTilePower() {
 }
 document.addEventListener("visibilitychange", applyAllTilePower);
 
+/* ---------------- GPX route import + on-route filter ----------------
+   Import a .gpx track, draw it on the map, and keep only the cameras
+   within a corridor of the track — in the map pins, the camera list,
+   and Fill from list / Add row (all via matches()). Corridor: selectable
+   25 / 50 / 75 / 100 m, default 100 m. The route lives for the session
+   only; nothing is persisted. */
+var routeState = {
+  active: false,   // a route is loaded
+  filter: true,    // the on-route filter applies (pins, list, wall fill)
+  name: "",
+  segments: [],    // [[{lat, lng}, ...], ...]
+  geojson: null,   // LineString FeatureCollection for the map overlay
+  endpoints: null, // FeatureCollection of the start/end points
+  bbox: null,      // {minLat, maxLat, minLng, maxLng}
+  lengthKm: 0,
+  matched: {},     // CAMS index -> true when within the corridor
+  matchCount: 0,
+  radiusM: 100
+};
+var placePosByCam = {}; // CAMS index -> position in mapPlaces
+var camByPlacePos = []; // position in mapPlaces -> CAMS index
+
+function elsByLocal(node, name) {
+  try { return node.getElementsByTagNameNS("*", name); }
+  catch (err) { return node.getElementsByTagName(name); }
+}
+function parseGpxText(text) {
+  var doc;
+  try { doc = new DOMParser().parseFromString(text, "text/xml"); }
+  catch (err) { return { error: "That file isn't valid XML." }; }
+  if (!doc || doc.getElementsByTagName("parsererror").length) {
+    return { error: "That file isn't a valid GPX track." };
+  }
+  function trackPoints(container, tag) {
+    var out = [], nodes = elsByLocal(container, tag);
+    for (var k = 0; k < nodes.length; k++) {
+      var la = parseFloat(nodes[k].getAttribute("lat"));
+      var ln = parseFloat(nodes[k].getAttribute("lon"));
+      if (isFinite(la) && isFinite(ln) && la >= -90 && la <= 90 && ln >= -180 && ln <= 180) {
+        out.push({ lat: la, lng: ln });
+      }
+    }
+    return out;
+  }
+  var name = "";
+  var meta = elsByLocal(doc, "metadata");
+  if (meta.length) {
+    var mn = elsByLocal(meta[0], "name");
+    if (mn.length) name = (mn[0].textContent || "").trim();
+  }
+  var segments = [];
+  var segs = elsByLocal(doc, "trkseg");
+  for (var s = 0; s < segs.length; s++) {
+    var pts = trackPoints(segs[s], "trkpt");
+    if (pts.length) segments.push(pts);
+  }
+  if (!segments.length) { // route fallback: rte/rtept
+    var rtes = elsByLocal(doc, "rte");
+    for (var r = 0; r < rtes.length; r++) {
+      var rpts = trackPoints(rtes[r], "rtept");
+      if (rpts.length) segments.push(rpts);
+    }
+  }
+  if (!name) {
+    var tn = elsByLocal(doc, "trk");
+    if (tn.length) {
+      var tnm = elsByLocal(tn[0], "name");
+      if (tnm.length) name = (tnm[0].textContent || "").trim();
+    }
+    if (!name) {
+      var rn = elsByLocal(doc, "rte");
+      if (rn.length) {
+        var rnm = elsByLocal(rn[0], "name");
+        if (rnm.length) name = (rnm[0].textContent || "").trim();
+      }
+    }
+  }
+  var total = 0, seen = {};
+  segments.forEach(function (seg) {
+    seg.forEach(function (p) { total++; seen[p.lat.toFixed(5) + "," + p.lng.toFixed(5)] = 1; });
+  });
+  if (!total) return { error: "No track points found in that GPX file." };
+  if (Object.keys(seen).length < 2) return { error: "That track has only one distinct point — it needs at least two." };
+  return { name: name || "GPX route", segments: segments };
+}
+var EARTH_R = 6371000;
+function haversineM(a, b) {
+  var dLa = (b.lat - a.lat) * Math.PI / 180, dLn = (b.lng - a.lng) * Math.PI / 180;
+  var la1 = a.lat * Math.PI / 180, la2 = b.lat * Math.PI / 180;
+  var h = Math.sin(dLa / 2) * Math.sin(dLa / 2) + Math.cos(la1) * Math.cos(la2) * Math.sin(dLn / 2) * Math.sin(dLn / 2);
+  return 2 * EARTH_R * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+function pointToSegmentM(p, a, b) {
+  // Local equirectangular projection around p, in metres.
+  var kx = Math.cos(p.lat * Math.PI / 180) * (Math.PI / 180) * EARTH_R;
+  var ky = (Math.PI / 180) * EARTH_R;
+  var ax = (a.lng - p.lng) * kx, ay = (a.lat - p.lat) * ky;
+  var bx = (b.lng - p.lng) * kx, by = (b.lat - p.lat) * ky;
+  var dx = bx - ax, dy = by - ay;
+  var len2 = dx * dx + dy * dy;
+  var t = len2 ? Math.max(0, Math.min(1, (-(ax * dx + ay * dy)) / len2)) : 0;
+  var px = ax + t * dx, py = ay + t * dy;
+  return Math.sqrt(px * px + py * py);
+}
+function routeLengthKm(segments) {
+  var km = 0;
+  segments.forEach(function (seg) {
+    for (var i = 1; i < seg.length; i++) km += haversineM(seg[i - 1], seg[i]) / 1000;
+  });
+  return km;
+}
+function routeBbox(segments) {
+  var b = { minLat: 90, maxLat: -90, minLng: 180, maxLng: -180 };
+  segments.forEach(function (seg) {
+    seg.forEach(function (p) {
+      if (p.lat < b.minLat) b.minLat = p.lat;
+      if (p.lat > b.maxLat) b.maxLat = p.lat;
+      if (p.lng < b.minLng) b.minLng = p.lng;
+      if (p.lng > b.maxLng) b.maxLng = p.lng;
+    });
+  });
+  return b;
+}
+function computeRouteMatch(segments, radiusM) {
+  var matched = {}, count = 0, distM = [];
+  var total = 0;
+  segments.forEach(function (seg) { total += seg.length; });
+  var step = total > 20000 ? Math.ceil(total / 20000) : 1;
+  var use = segments;
+  if (step > 1) {
+    use = segments.map(function (seg) {
+      var d = [];
+      for (var k = 0; k < seg.length; k += step) d.push(seg[k]);
+      if (d[d.length - 1] !== seg[seg.length - 1]) d.push(seg[seg.length - 1]);
+      return d;
+    });
+  }
+  var b = routeBbox(segments);
+  var midLat = (b.minLat + b.maxLat) / 2;
+  var padLa = radiusM / 111320, padLn = radiusM / (111320 * Math.cos(midLat * Math.PI / 180));
+  for (var i = 0; i < CAMS.length; i++) {
+    var c = CAMS[i];
+    if (!hasCoords(c)) { distM[i] = Infinity; continue; }
+    if (c[2] < b.minLat - padLa || c[2] > b.maxLat + padLa ||
+        c[3] < b.minLng - padLn || c[3] > b.maxLng + padLn) { distM[i] = Infinity; continue; }
+    var p = { lat: c[2], lng: c[3] }, best = Infinity;
+    use.forEach(function (seg) {
+      for (var k = 1; k < seg.length; k++) {
+        var d = pointToSegmentM(p, seg[k - 1], seg[k]);
+        if (d < best) best = d;
+      }
+      if (seg.length === 1) {
+        var d0 = haversineM(p, seg[0]);
+        if (d0 < best) best = d0;
+      }
+    });
+    distM[i] = best;
+    if (best <= radiusM) { matched[i] = true; count++; }
+  }
+  return { distM: distM, matched: matched, count: count, lengthKm: routeLengthKm(segments) };
+}
+function buildRouteGeojson(segments, name) {
+  return {
+    type: "FeatureCollection",
+    features: segments.map(function (seg) {
+      return {
+        type: "Feature",
+        properties: { label: name },
+        geometry: { type: "LineString", coordinates: seg.map(function (p) { return [p.lng, p.lat]; }) }
+      };
+    })
+  };
+}
+function buildRouteEndpoints(segments, name) {
+  var first = segments[0][0];
+  var lastSeg = segments[segments.length - 1];
+  var last = lastSeg[lastSeg.length - 1];
+  return {
+    type: "FeatureCollection",
+    features: [
+      { type: "Feature", properties: { label: name + " — start" }, geometry: { type: "Point", coordinates: [first.lng, first.lat] } },
+      { type: "Feature", properties: { label: name + " — end" }, geometry: { type: "Point", coordinates: [last.lng, last.lat] } }
+    ]
+  };
+}
+function fitRouteView() {
+  var b = routeState.bbox;
+  if (!b) return null;
+  var span = Math.max(0.001, b.maxLat - b.minLat, b.maxLng - b.minLng);
+  var zoom = Math.max(9, Math.min(15, Math.round(11 - Math.log2(span / 0.25))));
+  return { center: { lat: (b.minLat + b.maxLat) / 2, lng: (b.minLng + b.maxLng) / 2 }, zoom: zoom };
+}
+function buildMapPlaces() {
+  mapPlaces = [];
+  placePosByCam = {};
+  camByPlacePos = [];
+  CAMS.forEach(function (c, i) {
+    if (!hasCoords(c)) return; // the JITV channel stream has no location pin
+    if (routeState.active && routeState.filter && !routeState.matched[i]) return;
+    placePosByCam[i] = mapPlaces.length;
+    camByPlacePos.push(i);
+    mapPlaces.push({ label: c[0] + (isYtAny(c) ? " \u00b7 YouTube" : ""), lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i, yt: isYtAny(c) });
+  });
+}
+function updateRouteStatus() {
+  var el = $("#routeStatus");
+  if (!el) return;
+  el.classList.remove("err");
+  if (!routeState.active) {
+    el.textContent = "No route loaded — import a GPX track to filter cameras to its corridor.";
+    return;
+  }
+  var n = routeState.matchCount;
+  var txt = routeState.name + " — " + routeState.lengthKm.toFixed(1) + " km · " +
+    n + (n === 1 ? " camera" : " cameras") + " within " + routeState.radiusM + " m";
+  if (!routeState.filter) txt += " (filter off — showing all cameras)";
+  var fb = $("#mapFallback");
+  if (fb && !fb.hidden) txt += " · map unavailable — list filtered, no pins shown";
+  el.textContent = txt;
+}
+function routeStatusError(msg) {
+  var el = $("#routeStatus");
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add("err");
+}
+function applyRouteFilter() {
+  if (!routeState.active) { updateRouteStatus(); return; }
+  var res = computeRouteMatch(routeState.segments, routeState.radiusM);
+  routeState.matched = res.matched;
+  routeState.matchCount = res.count;
+  buildMapPlaces();
+  mountMapNow(providerById(mapProviderId), false);
+  applyFilter();
+  updateRouteStatus();
+}
+function loadRouteFile(file) {
+  if (!file) return;
+  file.text().then(function (text) {
+    var parsed = parseGpxText(text);
+    if (parsed.error) { routeStatusError(parsed.error); return; }
+    routeState.active = true;
+    routeState.filter = true;
+    routeState.name = parsed.name;
+    routeState.segments = parsed.segments;
+    routeState.geojson = buildRouteGeojson(parsed.segments, parsed.name);
+    routeState.endpoints = buildRouteEndpoints(parsed.segments, parsed.name);
+    routeState.bbox = routeBbox(parsed.segments);
+    routeState.lengthKm = routeLengthKm(parsed.segments);
+    var sel = $("#routeRadius");
+    routeState.radiusM = sel ? (parseInt(sel.value, 10) || 100) : 100;
+    var tog = $("#routeToggle");
+    if (tog) { tog.setAttribute("aria-pressed", "true"); tog.classList.add("on"); }
+    applyRouteFilter();
+  }).catch(function () { routeStatusError("Couldn't read that file — try another GPX export."); });
+}
+function clearRoute() {
+  routeState.active = false;
+  routeState.filter = true;
+  routeState.name = "";
+  routeState.segments = [];
+  routeState.geojson = null;
+  routeState.endpoints = null;
+  routeState.bbox = null;
+  routeState.lengthKm = 0;
+  routeState.matched = {};
+  routeState.matchCount = 0;
+  var inp = $("#gpxFile");
+  if (inp) inp.value = "";
+  var tog = $("#routeToggle");
+  if (tog) { tog.setAttribute("aria-pressed", "false"); tog.classList.remove("on"); }
+  buildMapPlaces();
+  mountMapNow(providerById(mapProviderId), false);
+  applyFilter();
+  updateRouteStatus();
+}
+(function wireRouteControls() {
+  var file = $("#gpxFile");
+  if (!file) return; // controls live in index.html; standalone build inlines them
+  $("#gpxImportBtn").addEventListener("click", function () { file.click(); });
+  file.addEventListener("change", function () {
+    if (file.files && file.files[0]) loadRouteFile(file.files[0]);
+    file.value = ""; // reset so the same file can be re-imported
+  });
+  $("#routeRadius").addEventListener("change", function (e) {
+    routeState.radiusM = parseInt(e.target.value, 10) || 100;
+    if (routeState.active) applyRouteFilter();
+  });
+  $("#routeToggle").addEventListener("click", function () {
+    routeState.filter = !routeState.filter;
+    var tog = $("#routeToggle");
+    tog.setAttribute("aria-pressed", routeState.filter ? "true" : "false");
+    tog.classList.toggle("on", routeState.filter);
+    if (routeState.active) applyRouteFilter();
+    updateRouteStatus();
+  });
+  $("#routeClearBtn").addEventListener("click", clearRoute);
+})();
+
 /* ---------------- map ----------------
    Basemap providers: the built-in Meta styles the map already used,
    plus public MapLibre style JSONs from OpenFreeMap and CARTO (all
@@ -1463,10 +1766,11 @@ function mountMapNow(p, isRetry) {
   el.innerHTML = "";
   el.style.display = "";
   $("#mapFallback").hidden = true;
+  var view = routeState.active ? fitRouteView() : null;
   var opts = {
     places: mapPlaces,
-    center: { lat: -7.795, lng: 110.365 },
-    zoom: 11,
+    center: view ? view.center : { lat: -7.795, lng: 110.365 },
+    zoom: view ? view.zoom : 11,
     /* No marker callback on purpose: without one the map draws every
        pin on its WebGL canvas as a single circle layer — coloured per
        region from each place's color, YouTube pins badged — instead of
@@ -1474,11 +1778,30 @@ function mountMapNow(p, isRetry) {
        sluggish in Chrome. Taps still select via onSelectPlace, and the
        hover tooltip below replaces the old pins' title text. */
     tooltip: function (feature) { return feature.properties.label; },
-    onSelectPlace: function (index) {
-      if (index === null || index === undefined) return;
-      loadMain(index, { fromMap: true, scroll: true });
+    onSelectPlace: function (pos) {
+      if (pos === null || pos === undefined) return;
+      /* The map reports a position in the places array, not a CAMS index:
+         the no-coordinate JITV entry sits mid-list, so every camera after
+         it would otherwise open the wrong stream. */
+      var ci = camByPlacePos[pos];
+      if (ci === undefined) return;
+      loadMain(ci, { fromMap: true, scroll: true });
     }
   };
+  if (routeState.active) {
+    /* Overlays mount before the pins, so the route renders beneath them.
+       `before` must be "" on every overlay: omitting it defaults to the
+       literal "insert-here", which never exists, and MapLibre throws. */
+    opts.overlays = [
+      { id: "gpx-route", data: routeState.geojson, before: "", layers: [
+        { id: "gpx-route-casing", type: "line", source: "gpx-route", paint: { "line-color": "#ffffff", "line-width": 7, "line-opacity": 0.85 } },
+        { id: "gpx-route-line", type: "line", source: "gpx-route", paint: { "line-color": "#e8590c", "line-width": 4 } }
+      ] },
+      { id: "gpx-ends", data: routeState.endpoints, before: "", layers: [
+        { id: "gpx-ends-dot", type: "circle", source: "gpx-ends", paint: { "circle-radius": 6, "circle-color": "#e8590c", "circle-stroke-color": "#ffffff", "circle-stroke-width": 2 } }
+      ] }
+    ];
+  }
   if (p.customStyleUrl) opts.customStyleUrl = p.customStyleUrl;
   else opts.baseStyle = p.baseStyle;
   window.__mapHandle = MapHelpers.mountMap(el, opts, function () {
@@ -1491,15 +1814,14 @@ function mountMapNow(p, isRetry) {
     }
   });
   if (!window.__mapHandle) { showMapFallback(); return; }
-  if (state.mainIdx >= 0) { try { window.__mapHandle.selectPlace(state.mainIdx); } catch (err) {} }
+  if (state.mainIdx >= 0) {
+    var pp = placePosByCam[state.mainIdx]; // places position, not a CAMS index
+    if (pp !== undefined) { try { window.__mapHandle.selectPlace(pp); } catch (err) {} }
+  }
 }
 function initMap() {
   if (!window.MapHelpers || !window.HatchMaps) { showMapFallback(); return; }
-  mapPlaces = [];
-  CAMS.forEach(function (c, i) {
-    if (!hasCoords(c)) return; // the JITV channel stream has no location pin
-    mapPlaces.push({ label: c[0] + (isYtAny(c) ? " \u00b7 YouTube" : ""), lat: c[2], lng: c[3], color: GROUPS[c[1]].color, index: i, yt: isYtAny(c) });
-  });
+  buildMapPlaces();
   buildProviderOptions();
   var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   mapProviderId = dark ? "meta-dark" : "meta-light";
