@@ -46,7 +46,9 @@ if (!cssDataUri) throw new Error("No base64 stylesheet link found in index.html"
 write("assets/vendor/maplibre-gl.css", Buffer.from(cssDataUri[1], "base64").toString("utf8"));
 
 /* -------------------------------------------------------------- vendor js */
-const vendorNames = ["hatchmaps", "maphelpers", "maplibre"];
+/* The third bundle is hls.js 1.5.13, not MapLibre — MapLibre lives inside
+   hatchmaps.js. It was long misnamed maplibre.js; renamed 2026-11-07. */
+const vendorNames = ["hatchmaps", "maphelpers", "hls"];
 let vendorIndex = 0;
 const vendorRe = /<script src="data:application\/javascript;base64,([^"]+)"><\/script>/g;
 let vm;

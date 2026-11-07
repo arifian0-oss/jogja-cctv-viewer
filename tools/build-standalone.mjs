@@ -30,7 +30,7 @@ html = html.replace(
 const scripts = [
   "assets/vendor/hatchmaps.js",
   "assets/vendor/maphelpers.js",
-  "assets/vendor/maplibre.js",
+  "assets/vendor/hls.js",
   "assets/js/data.js",
   "assets/js/app.js"
 ];

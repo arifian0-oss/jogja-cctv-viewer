@@ -2019,8 +2019,9 @@ function attachHls(video, url, onDead, onState, opts) {
       if (p && p.catch) p.catch(function () {});
     } else {
       /* No playback engine at all — the player library itself is missing.
-         Flag it instead of blaming the camera; ensureFallbackPlayer() retries
-         with a CDN copy and reboots the players if it arrives. */
+         Flag it instead of blaming the camera; ensureFallbackPlayer()
+         fails closed with an error message (the player is vendored
+         locally as assets/vendor/hls.js — no CDN copy is ever loaded). */
       handle.noEngine = true;
       playerPending = true;
     }
@@ -2056,22 +2057,16 @@ function attachHls(video, url, onDead, onState, opts) {
 }
 var fallbackTried = false;
 function ensureFallbackPlayer() {
+  /* Fail closed. The player is vendored locally as assets/vendor/hls.js
+     (hls.js 1.5.13, byte-identical to the official release, loaded in
+     index.html). If it failed to load, fetching the same code from a CDN
+     would execute third-party script in page origin with no integrity
+     check (audit run-1, cdn-fallback-hls-no-sri) — so there is no CDN
+     retry any more, just the error message. */
   if (fallbackTried || window.Hls) return;
   fallbackTried = true;
-  var s = document.createElement("script");
-  s.src = "https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js";
-  s.onload = function () {
-    if (!window.Hls) { s.onerror(); return; }
-    playerPending = false;
-    if (state.mainIdx >= 0) loadMain(state.mainIdx);
-    buildWall();
-    highlightRow();
-    updateAddWallBtn();
-  };
-  s.onerror = function () {
-    showStageMsg("error", "Video player unavailable", "The video player couldn't be loaded, so no camera can play right now. Check your connection and reload the page.");
-  };
-  document.head.appendChild(s);
+  playerPending = false;
+  showStageMsg("error", "Video player unavailable", "The video player couldn't be loaded, so no camera can play right now. Check your connection and reload the page.");
 }
 function detachHls(handle, video) {
   if (!handle) return;

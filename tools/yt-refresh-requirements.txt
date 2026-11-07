@@ -1,0 +1,5 @@
+# Pinned (with hash) for the YouTube refresh job — audit run-1, ci-unpinned-floating-actions.
+# yt-dlp has no dependencies, so one hash line is the whole install.
+# To upgrade: bump the version, fetch the new wheel hash from
+# https://pypi.org/pypi/yt-dlp/json, and update the hash below.
+yt-dlp==2026.10.26 --hash=sha256:a05c5b5d8562f7e8a62f5334348b406af4930d56d3a65f8021d14af0e22339ae

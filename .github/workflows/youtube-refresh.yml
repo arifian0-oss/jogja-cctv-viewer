@@ -24,11 +24,13 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # Pinned to commit SHAs (audit run-1, ci-unpinned-floating-actions):
+      # floating tags let a retagged action run with this job's push token.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
       - name: Install yt-dlp
-        run: pip install -q yt-dlp
+        run: pip install -q --require-hashes -r tools/yt-refresh-requirements.txt
       - name: Refresh YouTube IDs
         run: python3 tools/yt-refresh-ci.py

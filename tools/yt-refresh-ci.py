@@ -34,8 +34,18 @@ def log(msg):
     print(msg, flush=True)
     LOG.append(msg)
 
+def is_valid_vid(vid):
+    """YouTube video IDs are exactly 11 [A-Za-z0-9_-] chars. Anything else
+    must never reach data.js: it loads as <script>, so a quote in an ID
+    would break out of the string literal and run in every viewer
+    (audit run-1, refresh-no-check-cert-unvalidated-vid)."""
+    return isinstance(vid, str) and re.fullmatch(r"[A-Za-z0-9_-]{11}", vid) is not None
+
 def yt_dlp(*args, timeout=90):
-    cmd = ["yt-dlp", "--no-check-certificate",
+    # No --no-check-certificate here: this script runs on GitHub Actions
+    # with normal TLS. (The VM's local refresh.py needs that flag for the
+    # egress proxy's MITM cert — this CI script must never inherit it.)
+    cmd = ["yt-dlp",
            "--extractor-args", "youtube:player_client=android"] + list(args)
     try:
         out = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
@@ -44,11 +54,15 @@ def yt_dlp(*args, timeout=90):
         return "", f"EXC: {e}"
 
 def live_status(vid):
+    if not is_valid_vid(vid):
+        return "", "invalid vid"
     out, err = yt_dlp("--print", "%(live_status)s",
                       f"https://www.youtube.com/watch?v={vid}", timeout=40)
     return (out.split("\n")[0] if out else ""), err
 
 def oembed_status(vid):
+    if not is_valid_vid(vid):
+        return None
     url = (f"https://www.youtube.com/oembed?url="
            f"https://www.youtube.com/watch?v={vid}&format=json")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -68,7 +82,11 @@ def channel_streams(channel_url):
     for line in out.split("\n"):
         if " | " in line:
             vid, title = line.split(" | ", 1)
-            res.append((vid.strip(), title.strip()))
+            vid = vid.strip()
+            if not is_valid_vid(vid):
+                log(f"  WARNING: skipping invalid video ID from yt-dlp: {vid!r}")
+                continue
+            res.append((vid, title.strip()))
     return res
 
 def main():
@@ -126,7 +144,9 @@ def main():
                     r"panel-heading'><center><a href='[^']*' *>([^<]+)</a>.*?"
                     r"<iframe src='https://www\.youtube\.com/embed/([A-Za-z0-9_-]+)'",
                     html, re.S)
-                live = {v: n.strip() for n, v in pairs}
+                live = {v: n.strip() for n, v in pairs if is_valid_vid(v)}
+                if len(live) != len(pairs):
+                    log(f"  WARNING: skipped {len(pairs) - len(live)} invalid portal video ID(s)")
                 log(f"  magelang portal: {len(live)} lives")
             except Exception as ex:
                 log(f"  magelang portal fetch failed: {ex}")
@@ -236,7 +256,10 @@ def main():
                 continue
             # genuinely dead: look for the replacement in the same source
             new_vid, title = match_in_live_set(e, live)
-            if new_vid:
+            if new_vid and not is_valid_vid(new_vid):
+                log(f"  DEAD {e['name'][:40]} ({e['vid']}): replacement ID invalid, refusing to swap ({new_vid!r})")
+                dead.append(e)
+            elif new_vid:
                 st, _ = live_status(new_vid)
                 oe = oembed_status(new_vid)
                 if st == "is_live" and oe != 401:
