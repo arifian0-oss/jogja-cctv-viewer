@@ -336,6 +336,13 @@ a { color: var(--accent-ink); }
   max-width: 62vw;
 }
 
+/* ---------- GPX route bar ---------- */
+.route-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.route-bar label { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.route-bar .btn.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.route-status { font-size: 13px; color: var(--ink-2); }
+.route-status.err { color: var(--bad); }
+
 /* ---------- fullscreen wall ---------- */
 #fsOverlay {
   display: none; position: fixed; inset: 0; z-index: 60;

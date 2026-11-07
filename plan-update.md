@@ -27,6 +27,14 @@ rescan or infrastructure change; history lives in DISCOVERY_PLAN.md.
   8 rotated Magelang IDs synced from data.js into cameras.json + the .m3u.
 - **Hourly Actions refresh flipped Pasar Playen to a no-embed card**
   (`4651db7`) — embedding disabled on YouTube's side (error 150).
+- **GPX route import + on-route filter** — import a `.gpx` track, draw it
+  on the map (orange line, start/end dots), keep only cameras within a
+  25/50/75/100 m corridor (default 100 m) in the pins, the list and wall
+  fill; session-only, nothing persisted. Also fixed the pre-existing
+  pin-index bug: map taps after the no-coordinate JITV entry (CAMS 452)
+  opened the wrong stream; pins now translate through a CAMS↔places
+  index map. GPX parsing, proximity and matching unit-tested in node
+  (haversine, point-to-segment, 100 m vs 25 m corridors, rte fallback).
 
 ## Refresh setup (running)
 - Hourly GitHub Actions (primary): set-based checks vs each source's live set.

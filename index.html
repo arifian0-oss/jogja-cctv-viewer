@@ -150,11 +150,25 @@
       <section class="map-sec" aria-label="Camera map">
         <div class="map-head">
           <h2>Camera map</h2>
-          <p>Nearly every camera is a pin, coloured by region — only the JITV channel stream has no single location. Tap a pin to watch it in the main player.</p>
+          <p>Nearly every camera is a pin, coloured by region — only the JITV channel stream has no single location. Tap a pin to watch it in the main player. Import a GPX track to draw your route on the map and keep only the cameras within its corridor.</p>
           <div class="map-tools">
             <label for="mapProvider">Basemap</label>
             <select class="map-select" id="mapProvider" aria-label="Map basemap provider"></select>
           </div>
+        </div>
+        <div class="route-bar">
+          <button class="btn" id="gpxImportBtn" type="button">Import GPX</button>
+          <input id="gpxFile" type="file" accept=".gpx,application/gpx+xml,application/xml" hidden />
+          <label for="routeRadius">Corridor</label>
+          <select class="map-select" id="routeRadius" aria-label="On-route corridor width">
+            <option value="25">25 m</option>
+            <option value="50">50 m</option>
+            <option value="75">75 m</option>
+            <option value="100" selected>100 m</option>
+          </select>
+          <button class="btn" id="routeToggle" type="button" aria-pressed="true">On-route only</button>
+          <button class="btn" id="routeClearBtn" type="button">Clear route</button>
+          <span class="route-status" id="routeStatus" role="status" aria-live="polite">No route loaded — import a GPX track to filter cameras to its corridor.</span>
         </div>
         <div id="map"></div>
         <div class="map-fallback" id="mapFallback" hidden>Map unavailable on this device — the camera list above has every camera, and each one&rsquo;s &ldquo;Open in maps&rdquo; link shows its exact location.</div>
