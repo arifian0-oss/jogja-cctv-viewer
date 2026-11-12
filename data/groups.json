@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "sleman",
+    "name": "Dinas Kominfo Sleman",
+    "short": "Sleman",
+    "color": "#e03131"
+  },
+  {
+    "slug": "kota-yogyakarta",
+    "name": "Dinas Kominfosan Yogyakarta",
+    "short": "Kota Yogyakarta",
+    "color": "#1971c2"
+  },
+  {
+    "slug": "gunung-kidul",
+    "name": "Dinas Kominfo Gunungkidul",
+    "short": "Gunung Kidul",
+    "color": "#2f9e44"
+  },
+  {
+    "slug": "dishub-atcs",
+    "name": "Dinas Perhubungan DIY",
+    "short": "Dishub ATCS",
+    "color": "#f08c00"
+  },
+  {
+    "slug": "bantul",
+    "name": "Dinas Kominfo Bantul",
+    "short": "Bantul",
+    "color": "#0ca678"
+  },
+  {
+    "slug": "kulon-progo",
+    "name": "Dinas Kominfo Kulon Progo",
+    "short": "Kulon Progo",
+    "color": "#862e9c"
+  },
+  {
+    "slug": "kominfo-diy",
+    "name": "Dinas Kominfo DIY",
+    "short": "Kominfo DIY",
+    "color": "#d6336c"
+  },
+  {
+    "slug": "malioboro",
+    "name": "UPT Malioboro",
+    "short": "Malioboro",
+    "color": "#1098ad"
+  },
+  {
+    "slug": "bantul-regency-site",
+    "name": "Bantul (bantulkab.go.id)",
+    "short": "Bantul · regency site",
+    "color": "#5c940d"
+  },
+  {
+    "slug": "jitv-youtube",
+    "name": "YouTube (JITV Pemda DIY)",
+    "short": "JITV YouTube",
+    "color": "#343a40"
+  },
+  {
+    "slug": "magelang",
+    "name": "Magelang (dishub.magelangkab.go.id)",
+    "short": "Magelang",
+    "color": "#e8590c"
+  },
+  {
+    "slug": "youtube-24-7",
+    "name": "YouTube 24/7",
+    "short": "YouTube 24/7",
+    "color": "#c92a2a"
+  },
+  {
+    "slug": "gunungkidul-webcamtaxi",
+    "name": "Gunungkidul (webcamtaxi.com)",
+    "short": "Gunungkidul · webcamtaxi",
+    "color": "#6741d9"
+  },
+  {
+    "slug": "gunungkidul-webcamera24",
+    "name": "Gunungkidul (webcamera24.com)",
+    "short": "Gunungkidul · webcamera24",
+    "color": "#0b7285"
+  },
+  {
+    "slug": "kota-yogyakarta-atcs",
+    "name": "Kota Yogyakarta (cctv.jogjakota.go.id)",
+    "short": "Kota Yogyakarta · ATCS",
+    "color": "#fab005"
+  },
+  {
+    "slug": "sleman-24jam",
+    "name": "Sleman (24jam.slemankab.go.id)",
+    "short": "Sleman · 24jam",
+    "color": "#087f5b"
+  },
+  {
+    "slug": "bantul-youtube",
+    "name": "Bantul (YouTube)",
+    "short": "Bantul · YouTube",
+    "color": "#a4133c"
+  },
+  {
+    "slug": "gunungkidul-youtube",
+    "name": "Gunungkidul (YouTube)",
+    "short": "Gunungkidul · YouTube",
+    "color": "#2a9d8f"
+  },
+  {
+    "slug": "kota-yogyakarta-youtube",
+    "name": "Kota Yogyakarta (YouTube)",
+    "short": "Kota Yogyakarta · YouTube",
+    "color": "#9775fa"
+  },
+  {
+    "slug": "purworejo",
+    "name": "Purworejo (LEKJO)",
+    "short": "Purworejo",
+    "color": "#f76707"
+  }
+]

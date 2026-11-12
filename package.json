@@ -4,7 +4,9 @@
   "private": true,
   "description": "Live public CCTV viewer for Yogyakarta — modular source plus a single-file build",
   "scripts": {
-    "build": "node tools/build-standalone.mjs",
+    "data": "node tools/build-data.mjs",
+    "split-data": "node tools/split-data.mjs",
+    "build": "node tools/build-data.mjs && node tools/build-standalone.mjs",
     "split-legacy": "node tools/extract-monolith.mjs"
   }
 }

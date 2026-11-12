@@ -1,0 +1,19 @@
+{
+  "group": "gunungkidul-webcamtaxi",
+  "cameras": [
+    {
+      "name": "Patung Bola Dunia PLN Roundabout, Wonosari",
+      "lat": -7.966,
+      "lng": 110.602,
+      "url": "https://www.youtube.com/watch?v=mJCuC-uqOGc",
+      "type": "yt"
+    },
+    {
+      "name": "Pantai Kukup Beach",
+      "lat": -8.129,
+      "lng": 110.547,
+      "url": "https://www.youtube.com/watch?v=4Ky_icZ-Ekk",
+      "type": "yt"
+    }
+  ]
+}

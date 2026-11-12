@@ -1,0 +1,59 @@
+{
+  "group": "sleman-24jam",
+  "cameras": [
+    {
+      "name": "Perempatan Godean Arah Selatan",
+      "lat": -7.7697,
+      "lng": 110.2937,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/524559704910938140590513.m3u8"
+    },
+    {
+      "name": "Pertigaan UIN",
+      "lat": -7.7837,
+      "lng": 110.3828,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/032278190806133512572736.m3u8"
+    },
+    {
+      "name": "Amplaz Arah Timur",
+      "lat": -7.7826,
+      "lng": 110.4019,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/624286194033618649155563.m3u8"
+    },
+    {
+      "name": "Pospol Jombor",
+      "lat": -7.7478,
+      "lng": 110.36,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/245993371803374753849150.m3u8"
+    },
+    {
+      "name": "Pelemgurih 1",
+      "lat": -7.762,
+      "lng": 110.31,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/710715987663948483731029.m3u8"
+    },
+    {
+      "name": "Pertigaan Maguwo 1",
+      "lat": -7.776,
+      "lng": 110.427,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/206298812007526786499421.m3u8"
+    },
+    {
+      "name": "Jembatan Krasak Arah Magelang",
+      "lat": -7.695,
+      "lng": 110.285,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/964709525328892941170893.m3u8"
+    },
+    {
+      "name": "Prambanan Arah Klaten 1",
+      "lat": -7.752,
+      "lng": 110.491,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/294652610113860954611144.m3u8"
+    },
+    {
+      "name": "Jembatan Krasak Arah Jogja",
+      "lat": -7.695,
+      "lng": 110.285,
+      "url": "https://ant.slemankab.go.id/CCTVLUARPEMDA/streams/162174530279439010500716.m3u8"
+    }
+  ]
+}

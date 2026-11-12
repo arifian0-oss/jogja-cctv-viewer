@@ -1,0 +1,194 @@
+{
+  "group": "bantul-youtube",
+  "cameras": [
+    {
+      "name": "CCTV Simpang Korpri View Selatan Bantul",
+      "lat": -7.875,
+      "lng": 110.325,
+      "url": "https://www.youtube.com/watch?v=gBrkPr1NrOI",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Jejeran View Selatan",
+      "lat": -7.881,
+      "lng": 110.33,
+      "url": "https://www.youtube.com/watch?v=5J-QDBSBnOY",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Lima Bejen",
+      "lat": -7.89,
+      "lng": 110.34,
+      "url": "https://www.youtube.com/watch?v=d1b-8HjAU18",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Ruang Bermain Masjid Agung-01 Bantul",
+      "lat": -7.878,
+      "lng": 110.328,
+      "url": "https://www.youtube.com/watch?v=L-wp_8qpqIc",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Depan Pasar Bantul",
+      "lat": -7.885,
+      "lng": 110.3304,
+      "url": "https://www.youtube.com/watch?v=fc16WyZ-ro0",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Paseban View Selatan Bantul",
+      "lat": -7.888506,
+      "lng": 110.327762,
+      "url": "https://www.youtube.com/watch?v=AGbGuDTRgDU",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Bundaran Srandakan Bantul",
+      "lat": -7.938741,
+      "lng": 110.246479,
+      "url": "https://www.youtube.com/watch?v=7US-aFQ-_PM",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Paseban View Utara Bantul",
+      "lat": -7.888442,
+      "lng": 110.327806,
+      "url": "https://www.youtube.com/watch?v=F1H38Zp81sQ",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Klodran View Selatan Bantul",
+      "lat": -7.879733,
+      "lng": 110.333273,
+      "url": "https://www.youtube.com/watch?v=6bsLcVc52O8",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Tanjakan Cinomati Bantul",
+      "lat": -7.8852,
+      "lng": 110.4456,
+      "url": "https://www.youtube.com/watch?v=tUtI1ksGWj8",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Klodran View Utara Bantul",
+      "lat": -7.879495,
+      "lng": 110.33327,
+      "url": "https://www.youtube.com/watch?v=kJ70RLmOsC0",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Gose View Timur Utara Bantul",
+      "lat": -7.8909,
+      "lng": 110.3257,
+      "url": "https://www.youtube.com/watch?v=VeqVuup0XAY",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Gose View Barat Daya Bantul",
+      "lat": -7.8909,
+      "lng": 110.3256,
+      "url": "https://www.youtube.com/watch?v=T5rrx_753XI",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Simpang Gose Timur Selatan Bantul",
+      "lat": -7.8909,
+      "lng": 110.3257,
+      "url": "https://www.youtube.com/watch?v=3zVvLEaSUSs",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV Lapangan Paseban Bantul",
+      "lat": -7.88818,
+      "lng": 110.327235,
+      "url": "https://www.youtube.com/watch?v=DwPmNVA4xuk",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Korpri View Barat Bantul",
+      "lat": -7.875,
+      "lng": 110.325,
+      "url": "https://www.youtube.com/watch?v=KTa-BKgecX0",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Palbapang (Bantul)",
+      "lat": -7.9037,
+      "lng": 110.3209,
+      "url": "https://www.youtube.com/watch?v=BQy4bP230Bs",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Depan Gerbang Pemda II Manding",
+      "lat": -7.896,
+      "lng": 110.357,
+      "url": "https://www.youtube.com/watch?v=TRFBFXnO8TY",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Klodran View Barat",
+      "lat": -7.890905,
+      "lng": 110.325621,
+      "url": "https://www.youtube.com/watch?v=6l4RD4X-kpY",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Simpang Paseban View Barat Bantul",
+      "lat": -7.888375,
+      "lng": 110.327672,
+      "url": "https://www.youtube.com/watch?v=YWBY0AT6PW4",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Bendung Klegen",
+      "lat": -7.953,
+      "lng": 110.326,
+      "url": "https://www.youtube.com/watch?v=2myLqSY86Mw",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Bendung Merdika Niten",
+      "lat": -7.847,
+      "lng": 110.3445,
+      "url": "https://www.youtube.com/watch?v=EG1rReSQuaE",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Timur Stadion Sultan Agung View Timur",
+      "lat": -7.873,
+      "lng": 110.383,
+      "url": "https://www.youtube.com/watch?v=Mlxc-rzo4WE",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Pintu Masuk Stadion Sultan Agung",
+      "lat": -7.8763,
+      "lng": 110.3804,
+      "url": "https://www.youtube.com/watch?v=UAiAXOZhCWQ",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Ruang Bermain Masjid Agung-03 Bantul",
+      "lat": -7.880114,
+      "lng": 110.33289,
+      "url": "https://www.youtube.com/watch?v=9sDBrWab06s",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Ruang Bermain Masjid Agung-04 Bantul",
+      "lat": -7.880061,
+      "lng": 110.332967,
+      "url": "https://www.youtube.com/watch?v=Nd_UYYY91UE",
+      "type": "ytx"
+    },
+    {
+      "name": "CCTV Ruang Bermain Masjid Agung-02 Bantul",
+      "lat": -7.880055,
+      "lng": 110.332767,
+      "url": "https://www.youtube.com/watch?v=3nhIFVJuPs8",
+      "type": "ytx"
+    }
+  ]
+}

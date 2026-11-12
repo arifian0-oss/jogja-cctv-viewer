@@ -15,19 +15,26 @@ Both share the same source — edit the modular files, then rebuild the single f
 
 ```
 index.html                  Page markup (no inline CSS/JS)
-assets/css/styles.css       All styles, including the fullscreen wall
-assets/js/data.js           GROUPS + CAMS dataset (681 cameras)
+data/groups.json            Group order: slug, name, short, colour
+data/cameras/*.json         One file per source — edit these, not data.js
+data/sources.json           CI source mapping by group slug
+data/README.md              Editing manual (recipes + validation rules)
+assets/js/data.js           GROUPS + CAMS dataset — GENERATED, run `npm run data`
 assets/js/app.js            Viewer logic (players, wall, map, recording…)
 assets/vendor/              HatchMaps, MapHelpers, hls.js (decoded from the old base64 blobs)
 assets/vendor/maplibre-gl.css
+tools/build-data.mjs        Regenerates data.js from data/ (validate + serialise)
+tools/split-data.mjs        One-time extractor that built data/ from the old data.js
 tools/build-standalone.mjs  Inlines everything into standalone.html
-tools/extract-monolith.mjs  One-time splitter for the old single file
+tools/extract-monolith.mjs  One-time splitter for the old single file (deprecated, keep for history)
 ```
 
 ## Commands
 
 ```powershell
-npm run build        # regenerate standalone.html from the modular files
+npm run data         # validate data/ and regenerate assets/js/data.js
+npm run build        # regenerate data.js, then standalone.html from the modular files
+npm run split-data   # one-time extractor that built data/ (already run; keep for history)
 npm run split-legacy # re-split a monolithic index.html (only needed once)
 ```
 

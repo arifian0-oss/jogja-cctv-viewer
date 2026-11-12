@@ -1,0 +1,959 @@
+{
+  "group": "sleman",
+  "cameras": [
+    {
+      "name": "BKPP Sleman (arah selatan)",
+      "lat": -7.716804,
+      "lng": 110.355066,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/BKPPSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Babarsari2",
+      "lat": -7.774231,
+      "lng": 110.415817,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Babarsari2.stream.m3u8"
+    },
+    {
+      "name": "Bundaran Seturan UPN (arah barat)",
+      "lat": -7.764212,
+      "lng": 110.411037,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/UPN3.stream.m3u8"
+    },
+    {
+      "name": "Bundaran Seturan UPN (arah selatan)",
+      "lat": -7.764306,
+      "lng": 110.411029,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/UPN1.stream.m3u8"
+    },
+    {
+      "name": "Bundaran Seturan UPN (arah timur)",
+      "lat": -7.764232,
+      "lng": 110.411215,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/UPN2.stream.m3u8"
+    },
+    {
+      "name": "DPU Sleman (arah timur)",
+      "lat": -7.718205,
+      "lng": 110.359943,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DPUSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Depan Ambarukmo Plaza view Barat",
+      "lat": -7.783256,
+      "lng": 110.400621,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/AmbarukmoPlazaBarat.stream.m3u8"
+    },
+    {
+      "name": "Depan Dinkes Sleman",
+      "lat": -7.718535,
+      "lng": 110.356199,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanDinkesSleman.stream.m3u8"
+    },
+    {
+      "name": "Depan SMP 2 Berbah",
+      "lat": -7.804589,
+      "lng": 110.444481,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanSMP2Berbah.stream.m3u8"
+    },
+    {
+      "name": "Depan SMP 2 Berbah (arah timur)",
+      "lat": -7.804601,
+      "lng": 110.444591,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanSMP2BerbahTimur.stream.m3u8"
+    },
+    {
+      "name": "DepanPuskesmasCangkringanBarat",
+      "lat": -7.664929,
+      "lng": 110.456515,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanPuskesmasCangkringanBarat.stream.m3u8"
+    },
+    {
+      "name": "Dinas PMK Sleman (arah barat)",
+      "lat": -7.718192,
+      "lng": 110.355079,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanPMKSleman.stream.m3u8"
+    },
+    {
+      "name": "Dinas Pertanian Sleman (arah selatan)",
+      "lat": -7.70776,
+      "lng": 110.347443,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DistanSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Dinas Pertanian Sleman (arah utara)",
+      "lat": -7.707989,
+      "lng": 110.347375,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DistanSlemanUtara.stream.m3u8"
+    },
+    {
+      "name": "DisbudSleman",
+      "lat": -7.719877,
+      "lng": 110.35571,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DisbudSleman.stream.m3u8"
+    },
+    {
+      "name": "Dishub Sleman (arah Barat)",
+      "lat": -7.718672,
+      "lng": 110.35206,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DishubSlemanBarat.stream.m3u8"
+    },
+    {
+      "name": "Dishub Sleman (arah Timur)",
+      "lat": -7.718641,
+      "lng": 110.352053,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DishubSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "DisparSlemanBarat",
+      "lat": -7.720927,
+      "lng": 110.35806,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DisparSlemanBarat.stream.m3u8"
+    },
+    {
+      "name": "Disperindag Sleman (arah selatan)",
+      "lat": -7.718081,
+      "lng": 110.354556,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DisperindagSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Disperindag Sleman (arah utara)",
+      "lat": -7.718028,
+      "lng": 110.354583,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DisperindagSlemanUtara.stream.m3u8"
+    },
+    {
+      "name": "Fly Over Jombor (view Timur)",
+      "lat": -7.750385,
+      "lng": 110.365608,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/FlyOver_JomborTimur.stream.m3u8"
+    },
+    {
+      "name": "GOR Klebengan",
+      "lat": -7.767159,
+      "lng": 110.386103,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/GORKlebengan.stream.m3u8"
+    },
+    {
+      "name": "GOR Pangukan (arah utara)",
+      "lat": -7.71024,
+      "lng": 110.346013,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/GORPangukanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Gudang Obat Sleman (arah barat)",
+      "lat": -7.718228,
+      "lng": 110.358802,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/GudangObatBarat.stream.m3u8"
+    },
+    {
+      "name": "Gudang Obat Sleman (arah timur)",
+      "lat": -7.718215,
+      "lng": 110.35891,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/GudangObatTimur.stream.m3u8"
+    },
+    {
+      "name": "Jalan Candi Gebang (arah barat)",
+      "lat": -7.717953,
+      "lng": 110.356278,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/JalanCandiGebangTimur.stream.m3u8"
+    },
+    {
+      "name": "Jalan Merbabu",
+      "lat": -7.718999,
+      "lng": 110.35987,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/JalanMerbabu.stream.m3u8"
+    },
+    {
+      "name": "Jembatan Krasak (arah Jogja)",
+      "lat": -7.645823,
+      "lng": 110.323897,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/JembatanKrasakJogja.stream.m3u8"
+    },
+    {
+      "name": "Jembatan Krasak (arah Magelang)",
+      "lat": -7.645906,
+      "lng": 110.324141,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/JembatanKrasakMagelang.stream.m3u8"
+    },
+    {
+      "name": "KP2KS Sleman (arah Timur)",
+      "lat": -7.720395,
+      "lng": 110.356826,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KP2KSSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Margokaton (arah selatan)",
+      "lat": -7.715624,
+      "lng": 110.289827,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanMargokatonSelatan.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Margomulyo",
+      "lat": -7.720637,
+      "lng": 110.30885,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanMargomulyo.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Pandowoharjo (arah selatan)",
+      "lat": -7.700514,
+      "lng": 110.364522,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PendowoSelatan.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Pandowoharjo (arah utara)",
+      "lat": -7.700422,
+      "lng": 110.364671,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PendowoUtara.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Sumberrahayu (arah selatan)",
+      "lat": -7.800311,
+      "lng": 110.245787,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanSumberrahayu.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Tirtoadi (arah selatan)",
+      "lat": -7.740124,
+      "lng": 110.3236,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanTirtoadiSelatan.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Tirtoadi (arah utara)",
+      "lat": -7.739978,
+      "lng": 110.323661,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanTirtoadiUtara.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Tridadi (arah Utara)",
+      "lat": -7.712903,
+      "lng": 110.356466,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanTridadiUtara.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Trihanggo",
+      "lat": -7.761316,
+      "lng": 110.345185,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanTrihanggo.stream.m3u8"
+    },
+    {
+      "name": "KalurahanBanyurejoSelatan",
+      "lat": -7.700852,
+      "lng": 110.288421,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanBanyurejoSelatan.stream.m3u8"
+    },
+    {
+      "name": "KalurahanSelomartaniSelatan",
+      "lat": -7.732138,
+      "lng": 110.460745,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanSelomartaniSelatan.stream.m3u8"
+    },
+    {
+      "name": "KalurahanSelomartaniUtara",
+      "lat": -7.732063,
+      "lng": 110.46067,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanSelomartaniUtara.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Depok (gerbang keluar)",
+      "lat": -7.758659,
+      "lng": 110.39394,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KapanewonDepok2.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Depok (gerbang masuk)",
+      "lat": -7.758724,
+      "lng": 110.393679,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KapanewonDepok1.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Seyegan (gerbang keluar)",
+      "lat": -7.721103,
+      "lng": 110.30855,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KapanewonSeyegan2.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Seyegan (gerbang masuk)",
+      "lat": -7.721405,
+      "lng": 110.308444,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KapanewonSeyegan1.stream.m3u8"
+    },
+    {
+      "name": "Kominfo Sleman (belakang arah barat)",
+      "lat": -7.717725,
+      "lng": 110.35552,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KominfoSlemanBelakangBarat.stream.m3u8"
+    },
+    {
+      "name": "Lapangan Denggung (arah selatan)",
+      "lat": -7.720655,
+      "lng": 110.359906,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/LapDenggungSelatan.stream.m3u8"
+    },
+    {
+      "name": "Lapangan Denggung (arah utara)",
+      "lat": -7.720542,
+      "lng": 110.359957,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/LapDenggungUtara.stream.m3u8"
+    },
+    {
+      "name": "Lapangan Pemda Sleman (sisi selatan) 4",
+      "lat": -7.718907,
+      "lng": 110.354983,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/LapanganPemdaSlemanSelatan4.stream.m3u8"
+    },
+    {
+      "name": "Mandala Seyegan (arah barat)",
+      "lat": -7.717729,
+      "lng": 110.296597,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/MandalaSeyeganBarat.stream.m3u8"
+    },
+    {
+      "name": "Mandala Seyegan (arah timur)",
+      "lat": -7.717768,
+      "lng": 110.296771,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/MandalaSeyeganTimur.stream.m3u8"
+    },
+    {
+      "name": "Masjid Agung Sleman arah Selatan",
+      "lat": -7.714283,
+      "lng": 110.356113,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/MasjidAgungSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Pantauan Merapi - Cangkringan",
+      "lat": -7.674942,
+      "lng": 110.462694,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PantauanMerapi_Cangkringan.stream.m3u8"
+    },
+    {
+      "name": "Pantauan Merapi - Ngandong",
+      "lat": -7.595317,
+      "lng": 110.410184,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PantauanMerapi_Ngandong.stream.m3u8"
+    },
+    {
+      "name": "Pasar Cebongan (arah selatan)",
+      "lat": -7.73029,
+      "lng": 110.33131,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PasarCebonganSelatan.stream.m3u8"
+    },
+    {
+      "name": "Patung Elang Stadion Maguwoharjo (arah barat)",
+      "lat": -7.750408,
+      "lng": 110.422768,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PatungElangStadionMaguwoharjo2.stream.m3u8"
+    },
+    {
+      "name": "Perempatan_Seyegan",
+      "lat": -7.722529,
+      "lng": 110.308239,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Seyegan.stream.m3u8"
+    },
+    {
+      "name": "Perempatan_Tempel2",
+      "lat": -7.653992,
+      "lng": 110.325492,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Tempel2.stream.m3u8"
+    },
+    {
+      "name": "Perpustakaan Sleman (arah timur)",
+      "lat": -7.720338,
+      "lng": 110.360071,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PerpusSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Bappeda Sleman (arah barat)",
+      "lat": -7.719123,
+      "lng": 110.354028,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanBapedaSlemanBarat1.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Bappeda Sleman (arah utara)",
+      "lat": -7.719111,
+      "lng": 110.354155,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanBapedaSlemanUtara.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Lapangan Denggung (arah barat)",
+      "lat": -7.721456,
+      "lng": 110.359424,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanLapDenggungBarat.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Lapangan Denggung (arah timur)",
+      "lat": -7.721515,
+      "lng": 110.359563,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanLapDenggungTimur.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Stadion Maguwoharjo (arah timur)",
+      "lat": -7.749925,
+      "lng": 110.419757,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanStadionMaguwoharjo1.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Stadion Maguwoharjo (arah timur2)",
+      "lat": -7.749762,
+      "lng": 110.419595,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanStadionMaguwoharjo2.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Stadion Maguwoharjo (arah utara)",
+      "lat": -7.749582,
+      "lng": 110.41949,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanStadionMaguwoharjo3.stream.m3u8"
+    },
+    {
+      "name": "Pos Polisi Janti (arah timur)",
+      "lat": -7.78319,
+      "lng": 110.410893,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PosPolisiJantiTimur.stream.m3u8"
+    },
+    {
+      "name": "Pos Polisi Jombor",
+      "lat": -7.748653,
+      "lng": 110.361881,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PosPolisi_Jombor.stream.m3u8"
+    },
+    {
+      "name": "Proliman Prambanan (arah barat)",
+      "lat": -7.757006,
+      "lng": 110.480695,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Proliman_Prambanan2.stream.m3u8"
+    },
+    {
+      "name": "Proliman Prambanan (arah timur)",
+      "lat": -7.757373,
+      "lng": 110.480143,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Proliman_Prambanan1.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Moyudan (arah utara)",
+      "lat": -7.775755,
+      "lng": 110.252698,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PuskesmasMoyudanUtara.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Ngemplak 2 (arah barat)",
+      "lat": -7.702945,
+      "lng": 110.444746,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PuskesmasNgemplak2Barat.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Ngemplak 2 (arah timur)",
+      "lat": -7.703062,
+      "lng": 110.444433,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PuskesmasNgemplak2Timur.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Seyegan (arah Barat)",
+      "lat": -7.719095,
+      "lng": 110.300948,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanPusSeyegan1.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Seyegan (arah Timur)",
+      "lat": -7.719217,
+      "lng": 110.301283,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanPusSeyegan2.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Tempel 1 (arah selatan)",
+      "lat": -7.658407,
+      "lng": 110.326942,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PusTempel1A.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Tempel 1 (arah utara)",
+      "lat": -7.658245,
+      "lng": 110.326847,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PusTempel1B.stream.m3u8"
+    },
+    {
+      "name": "RSUD Morangan (arah selatan)",
+      "lat": -7.687297,
+      "lng": 110.341807,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/RSUDMorangan2.stream.m3u8"
+    },
+    {
+      "name": "Sekretariat Daerah Sleman (arah selatan)",
+      "lat": -7.716323,
+      "lng": 110.355287,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SekdaSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Sekretariat Daerah Sleman (arah utara)",
+      "lat": -7.716208,
+      "lng": 110.355339,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SekdaSlemanUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Banyumili-Kabupaten (arah selatan)",
+      "lat": -7.770295,
+      "lng": 110.343195,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/BanyumiliKabupaten2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Banyumili-Kabupaten (arah utara)",
+      "lat": -7.770469,
+      "lng": 110.343126,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/BanyumiliKabupaten1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Barek (arah selatan)",
+      "lat": -7.765616,
+      "lng": 110.378571,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangBarekSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Barek (arah utara)",
+      "lat": -7.765998,
+      "lng": 110.378399,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangBarekUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Beran view Selatan",
+      "lat": -7.711408,
+      "lng": 110.357507,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Beran3.stream.m3u8"
+    },
+    {
+      "name": "Simpang Beran view Utara",
+      "lat": -7.711434,
+      "lng": 110.357251,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Beran2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Demak Ijo (view Barat-Utara)",
+      "lat": -7.777348,
+      "lng": 110.33171,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_DemakIjo1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Demak Ijo (view Timur)",
+      "lat": -7.777305,
+      "lng": 110.331842,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_DemakIjo2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Denggung (arah Barat)",
+      "lat": -7.721826,
+      "lng": 110.361291,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DenggungBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Denggung (arah selatan)",
+      "lat": -7.721825,
+      "lng": 110.361213,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DenggungSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Denggung (arah timur)",
+      "lat": -7.721607,
+      "lng": 110.361493,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DenggungTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Denggung (arah utara)",
+      "lat": -7.721482,
+      "lng": 110.361278,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DenggungUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kapanewon Minggir",
+      "lat": -7.72579,
+      "lng": 110.234972,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Pertigaan_Minggir.stream.m3u8"
+    },
+    {
+      "name": "Simpang Karangasem",
+      "lat": -7.76815,
+      "lng": 110.387457,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangKarangasem.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kronggahan-Kebon Agung (arah Timur)",
+      "lat": -7.737752,
+      "lng": 110.351965,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangKronggahan1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Maguwo view Utara",
+      "lat": -7.783304,
+      "lng": 110.429736,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Pertigaan_Maguwo1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Monjali view Selatan",
+      "lat": -7.751005,
+      "lng": 110.371007,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Monjali.stream.m3u8"
+    },
+    {
+      "name": "Simpang Munggur view Utara",
+      "lat": -7.773921,
+      "lng": 110.318147,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Munggur1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Godean view Selatan",
+      "lat": -7.766278,
+      "lng": 110.28993,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Godean1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Hewan Sleman (arah barat)",
+      "lat": -7.803106,
+      "lng": 110.310147,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPasarHewan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Hewan Sleman (arah timur)",
+      "lat": -7.803028,
+      "lng": 110.310018,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPasarHewan1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Sleman-Jl. Magelang (arah barat)",
+      "lat": -7.701089,
+      "lng": 110.348568,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPasarSleman2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Sleman-Jl. Magelang (arah selatan)",
+      "lat": -7.701239,
+      "lng": 110.348755,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPasarSleman1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Stan",
+      "lat": -7.761559,
+      "lng": 110.432678,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PerempatanStan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pelemgurih view Selatan-Barat",
+      "lat": -7.799888,
+      "lng": 110.330043,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Pelemgurih1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pelemgurih view Timur",
+      "lat": -7.799769,
+      "lng": 110.329936,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Pelemgurih2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pelemgurih view Utara",
+      "lat": -7.799692,
+      "lng": 110.329831,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Pelemgurih3.stream.m3u8"
+    },
+    {
+      "name": "Simpang Perumnas-Selokan Mataram (arah timur)",
+      "lat": -7.771143,
+      "lng": 110.404996,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPerumnas2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Prambanan (arah Selatan/Piyungan)",
+      "lat": -7.755394,
+      "lng": 110.489085,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPrambanan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Selokan Mataram-Jl. Kabupaten (arah utara)",
+      "lat": -7.754213,
+      "lng": 110.347036,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SelokanKabupaten1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Seturan-Selokan Mataram (arah timur)",
+      "lat": -7.772373,
+      "lng": 110.409251,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangSeturan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Tajem",
+      "lat": -7.751114,
+      "lng": 110.434212,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PerempatanTajem.stream.m3u8"
+    },
+    {
+      "name": "Simpang Tantular-Selokan Mataram (arah timur)",
+      "lat": -7.76797,
+      "lng": 110.395782,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangTantular1.stream.m3u8"
+    },
+    {
+      "name": "Simpang UIN view Selatan",
+      "lat": -7.783121,
+      "lng": 110.395116,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Pertigaan_UIN.stream.m3u8"
+    },
+    {
+      "name": "Simpang UPN view Timur",
+      "lat": -7.761819,
+      "lng": 110.411777,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_UPN1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Wahid Hasyim 2",
+      "lat": -7.769006,
+      "lng": 110.401998,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangWahidHasyim2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Wahid Hasyim1",
+      "lat": -7.769155,
+      "lng": 110.402163,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangWahidHasyim1.stream.m3u8"
+    },
+    {
+      "name": "SimpangDamaiPalagan1",
+      "lat": -7.730308,
+      "lng": 110.379217,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangDamaiPalagan1.stream.m3u8"
+    },
+    {
+      "name": "Sleman City Hall",
+      "lat": -7.719704,
+      "lng": 110.360804,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SlemanCityHall.stream.m3u8"
+    },
+    {
+      "name": "Taman Denggung 3",
+      "lat": -7.720744,
+      "lng": 110.360075,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TamanDenggung3.stream.m3u8"
+    },
+    {
+      "name": "Tempel Bawah (arah utara)",
+      "lat": -7.647053,
+      "lng": 110.324591,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TempelBawah2.stream.m3u8"
+    },
+    {
+      "name": "Tempel Bawah (belokan)",
+      "lat": -7.647168,
+      "lng": 110.324491,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TempelBawah1.stream.m3u8"
+    },
+    {
+      "name": "Tempel Bawah (turunan)",
+      "lat": -7.646904,
+      "lng": 110.324768,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TempelBawah3.stream.m3u8"
+    },
+    {
+      "name": "Tugu Ijo Klampis (arah selatan)",
+      "lat": -7.789829,
+      "lng": 110.248729,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TuguKlampisMoyudan2.stream.m3u8"
+    },
+    {
+      "name": "Tugu Ijo Klampis (arah utara)",
+      "lat": -7.789642,
+      "lng": 110.248777,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TuguKlampisMoyudan1.stream.m3u8"
+    },
+    {
+      "name": "Tugu Kaliurang arah Jogja",
+      "lat": -7.603428,
+      "lng": 110.427029,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TuguKaliurangJogja.stream.m3u8"
+    },
+    {
+      "name": "UPTD BP4 Wilayah IV Sleman (arah barat)",
+      "lat": -7.697105,
+      "lng": 110.361342,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/BP4SlemanBarat.stream.m3u8"
+    },
+    {
+      "name": "Babarsari1",
+      "lat": -7.77423903,
+      "lng": 110.41590941,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Babarsari1.stream.m3u8"
+    },
+    {
+      "name": "DLH Sleman (arah timur)",
+      "lat": -7.71970504,
+      "lng": 110.35521241,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DLHSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Depan Ambarukmo Plaza view Timur",
+      "lat": -7.78313434,
+      "lng": 110.40089443,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/AmbarukmoPlazaTimur.stream.m3u8"
+    },
+    {
+      "name": "DepanPuskesmasCangkringanTimur",
+      "lat": -7.66492934,
+      "lng": 110.45651456,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/DepanPuskesmasCangkringanTimur.stream.m3u8"
+    },
+    {
+      "name": "Fly Over Jombor (view Barat)",
+      "lat": -7.74803114,
+      "lng": 110.35932021,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/FlyOver_JomborBarat.stream.m3u8"
+    },
+    {
+      "name": "Halaman Stadion Maguwoharjo",
+      "lat": -7.74978488,
+      "lng": 110.41930151,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/StadionMaguwoharjoHalaman.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Margokaton (arah utara)",
+      "lat": -7.71549498,
+      "lng": 110.29003094,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanMargokatonUtara.stream.m3u8"
+    },
+    {
+      "name": "KalurahanBanyurejoUtara",
+      "lat": -7.70089158,
+      "lng": 110.28841472,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KalurahanBanyurejoUtara.stream.m3u8"
+    },
+    {
+      "name": "Kominfo Sleman (belakang arah timur)",
+      "lat": -7.71789947,
+      "lng": 110.35591228,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/KominfoSlemanBelakangTimur.stream.m3u8"
+    },
+    {
+      "name": "Pengadilan Negeri Sleman (arah selatan)",
+      "lat": -7.721105,
+      "lng": 110.3589817,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PengadilanSlemanSelatan.stream.m3u8"
+    },
+    {
+      "name": "PerempatanPatran",
+      "lat": -7.77918131,
+      "lng": 110.34101216,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PerempatanPatran.stream.m3u8"
+    },
+    {
+      "name": "Perempatan_Tempel1",
+      "lat": -7.6542747,
+      "lng": 110.32557586,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Tempel1.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Bappeda Sleman (arah timur)",
+      "lat": -7.71900429,
+      "lng": 110.35395124,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PertigaanBapedaSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Pos Polisi Janti (arah barat)",
+      "lat": -7.78319544,
+      "lng": 110.41069727,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PosPolisiJantiBarat.stream.m3u8"
+    },
+    {
+      "name": "Puskesmas Moyudan (arah selatan)",
+      "lat": -7.77605126,
+      "lng": 110.25260597,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/PuskesmasMoyudanSelatan.stream.m3u8"
+    },
+    {
+      "name": "RSUD Morangan (arah utara)",
+      "lat": -7.68710309,
+      "lng": 110.34165488,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/RSUDMorangan1.stream.m3u8"
+    },
+    {
+      "name": "Rumah Dinas Bupati Sleman (arah Timur)",
+      "lat": -7.71791747,
+      "lng": 110.35617717,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/RumahDinasBupatiSlemanTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Citroli",
+      "lat": -7.77341694,
+      "lng": 110.40899575,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangCitroli.stream.m3u8"
+    },
+    {
+      "name": "Simpang Demak Ijo (view Selatan-Barat)",
+      "lat": -7.77726052,
+      "lng": 110.33175562,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_DemakIjo3.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gedongan Sleman",
+      "lat": -7.75959052,
+      "lng": 110.25733966,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangGedonganSleman.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kolombo (view Selatan)",
+      "lat": -7.777896,
+      "lng": 110.388766,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Simpang_Kolombo1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kronggahan-Kebon Agung (arah Utara)",
+      "lat": -7.73763331,
+      "lng": 110.35155774,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangKronggahan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Maguwo view Barat",
+      "lat": -7.78339325,
+      "lng": 110.42980773,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Pertigaan_Maguwo2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Munggur",
+      "lat": -7.77394212,
+      "lng": 110.31805021,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Munggur2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Gamping (view Timur)",
+      "lat": -7.80069346,
+      "lng": 110.32403864,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Pertigaan_PasarGamping.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Godean",
+      "lat": -7.76625171,
+      "lng": 110.29005633,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_Godean2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Perumnas-Selokan Mataram (arah barat)",
+      "lat": -7.77107648,
+      "lng": 110.40517711,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangPerumnas1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ringroad Kronggahan",
+      "lat": -7.74512346,
+      "lng": 110.34935724,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangKronggahan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Tantular-Selokan Mataram (arah selatan)",
+      "lat": -7.7678965,
+      "lng": 110.39589627,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/SimpangTantular2.stream.m3u8"
+    },
+    {
+      "name": "Simpang UPN view Barat-Utara",
+      "lat": -7.76171302,
+      "lng": 110.41192308,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/Perempatan_UPN2.stream.m3u8"
+    },
+    {
+      "name": "Tugu Kaliurang (Tugu Udang)",
+      "lat": -7.60335513,
+      "lng": 110.42696162,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfosleman/streams/TuguKaliurang.stream.m3u8"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 
 var $ = function (s) { return document.querySelector(s); };
 /* Portal cameras whose streams returned 404 on a manifest check against
-   cctv.jogjaprov.go.id on 3 Nov 2026 (~15:50 WIB). The 2 Nov list had 8 entries;
-   four of them (19, 101, 126, 242) were live again by 3 Nov and #28
-   (Depan Plaza/Mall Malioboro) had died — these cameras flap, so this list is
-   only a starting hint: the live checks replace it with fresh results. */
-var DEAD_NOW = { 4: 1, 28: 1, 105: 1, 207: 1, 261: 1 };
+   cctv.jogjaprov.go.id on 3 Nov 2026 (~15:50 WIB). Keyed by camera name, not
+   index: the dataset is grouped by source now, so indices move whenever a
+   camera is added or removed. These cameras flap, so this list is only a
+   starting hint: the live checks replace it with fresh results. */
+var DEAD_NOW = { "Makam Imogiri Tangga Tengah": 1, "Tugu (view dari atas)": 1, "Simpang Kodim Kulon Progo": 1, "Simpang Pasar Hewan Sleman (arah timur)": 1, "Simpang Gramedia": 1 };
 var state = {
   q: "",
   group: -1,
@@ -15,7 +15,7 @@ var state = {
   cap: 9,
   wall: [],          // camera indices or null, length === cap
   tileHls: {},       // tile position -> Hls instance
-  status: CAMS.map(function (_c, i) { return DEAD_NOW[i] ? "offline" : "verified"; }),
+  status: CAMS.map(function (c) { return DEAD_NOW[c[0]] ? "offline" : "verified"; }),
   checking: false,
   fsOpen: false
 };
@@ -28,6 +28,24 @@ function isYt(c) { return c[5] === "yt"; } /* YouTube live by video ID (IFrame A
    flip the type back to "yt" if embedding comes back. */
 function isYtNoEmbed(c) { return c[5] === "ytx"; }
 function isYtAny(c) { return isYt(c) || isYtNoEmbed(c); }
+/* Counts in the header and footer are filled from the data at boot, so they
+   stay right when cameras are added or removed — no hardcoded totals in the
+   markup. #camCount is the header total; the footer repeats it via
+   [data-count="cams"], and #ytCount / #recheckCount are the YouTube total
+   and the Recheck-all total. */
+function fillCounts() {
+  var total = CAMS.length, yt = 0, i, el;
+  for (i = 0; i < CAMS.length; i++) if (isYtAny(CAMS[i])) yt++;
+  el = $("#camCount");
+  if (el) el.textContent = total;
+  var els = document.querySelectorAll('[data-count="cams"]');
+  for (i = 0; i < els.length; i++) els[i].textContent = total;
+  el = $("#ytCount");
+  if (el) el.textContent = yt;
+  el = $("#recheckCount");
+  if (el) el.textContent = total;
+}
+fillCounts();
 function ytWatchUrl(c) { return c[4]; }
 function hasCoords(c) { return typeof c[2] === "number" && typeof c[3] === "number"; }
 function ytId(url) { var m = /[?&]v=([\w-]{6,})/.exec(url); return m ? m[1] : ""; }

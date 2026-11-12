@@ -1,0 +1,929 @@
+{
+  "group": "kota-yogyakarta-atcs",
+  "cameras": [
+    {
+      "name": "Simpang Tunjung (PTZ)",
+      "lat": -7.7937256793331935,
+      "lng": 110.37776112556459,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_tunjung.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang UKDW (PTZ)",
+      "lat": -7.787246808444076,
+      "lng": 110.37864159708089,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_ukdw.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Wirobrajan (PTZ)",
+      "lat": -7.801025054502792,
+      "lng": 110.35178123104426,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_wirobrajan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Sungai Gajah Wong 2",
+      "lat": -7.790914106163658,
+      "lng": 110.39598405361177,
+      "url": "https://cctvjss.jogjakota.go.id/bpbd/BPBD_gajahwong2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Sungai Winongo",
+      "lat": -7.789489704931309,
+      "lng": 110.35666287355627,
+      "url": "https://cctvjss.jogjakota.go.id/bpbd/BPBD_kaliwinongo.stream/playlist.m3u8"
+    },
+    {
+      "name": "Sungai Ngentak",
+      "lat": -7.722645179146617,
+      "lng": 110.38926337561489,
+      "url": "https://cctvjss.jogjakota.go.id/bpbd/BPBD_ngentak.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Selatan_Teteg",
+      "lat": -7.789968068779914,
+      "lng": 110.36602878685423,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_1_Selatan_Teteg.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Depan_Toko_Subur",
+      "lat": -7.790940582024625,
+      "lng": 110.36598244705164,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_2_Depan_Toko_Subur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Depan_Dispar",
+      "lat": -7.794862859073506,
+      "lng": 110.36556255986987,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_3_Depan_Dispar.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Depan_DPRD",
+      "lat": -7.79206216435044,
+      "lng": 110.36588966846467,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_4_Depan_DPRD.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Perwakilan",
+      "lat": -7.792632688541971,
+      "lng": 110.36579812427252,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_5_Perwakilan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Mall_Utara",
+      "lat": -7.7928274661386405,
+      "lng": 110.36575199779577,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_6_Mall_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Mall_Selatan",
+      "lat": -7.795525296050228,
+      "lng": 110.365546752152,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_7_Mall_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Pasar_Beringharjo",
+      "lat": -7.798719615928482,
+      "lng": 110.36497885251785,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_30_Pasar_Beringharjo.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang UST (PTZ)",
+      "lat": -7.80196464259207,
+      "lng": 110.39198555588979,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_UST.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Glagahsari",
+      "lat": -7.802046545043447,
+      "lng": 110.38908192757836,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Glagahsari.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Ibu Ruswo (PTZ)",
+      "lat": -7.803446455001373,
+      "lng": 110.36923706531525,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Ibu_Ruswo.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Mutiara_Lama",
+      "lat": -7.794451656004724,
+      "lng": 110.36561806201635,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_8_Mutiara_Lama.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Mutiara_Baru",
+      "lat": -7.795030980613941,
+      "lng": 110.36551831517565,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_9_Mutiara_Baru.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Kepatihan",
+      "lat": -7.795889821019304,
+      "lng": 110.3654040724604,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_10_Kepatihan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Terang_Bulan",
+      "lat": -7.795889821019304,
+      "lng": 110.3654040724604,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_11_Terang_Bulan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Ramayana",
+      "lat": -7.797582095787332,
+      "lng": 110.36514909953651,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_12_Ramayana.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Gunungmas",
+      "lat": -7.798180495804701,
+      "lng": 110.36505603570875,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_13_Gunungmas.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jogokariyan V. Selatan",
+      "lat": -7.8246771495840735,
+      "lng": 110.36772693747565,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_jogokaryan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang APPI - JL.Mentri Supeno",
+      "lat": -7.81616527748688,
+      "lng": 110.38318996932517,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_JlMentriSupeno.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Kiai Mojo 1 (Barat)",
+      "lat": -7.7827290840714,
+      "lng": 110.35790740623065,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_KyaiMojo.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Kiai Mojo 2 (Timur)",
+      "lat": -7.782686735299533,
+      "lng": 110.35799326837432,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_KyaiMojo2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pingit 1 - Jl.Tentara Pelajar",
+      "lat": -7.78273439372399,
+      "lng": 110.3606539964676,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Pingit1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pingit 2 - Jl. Tentara Pelajar",
+      "lat": -7.782906599809257,
+      "lng": 110.36073178052905,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Pingit2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pingit 3 - Jl. Tentara Pelajar",
+      "lat": -7.782989513873122,
+      "lng": 110.36065936088563,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Pingit3.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gambiran 1 - Jl.Veteran",
+      "lat": -7.81438617624503,
+      "lng": 110.39168715476991,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Gambiran1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gambiran 2 - Jl.Veteran",
+      "lat": -7.81440743465494,
+      "lng": 110.39164423942567,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Gambiran2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang APPI 2 - Jl.Mentri Supeno",
+      "lat": -7.816740538562657,
+      "lng": 110.384139418602,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_JlMentriSupeno2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Karang Tunggal (S3 Jl. Kol.Sugiyono - Jl. Sisingamangaraja) 1",
+      "lat": -7.815185853586888,
+      "lng": 110.37321213463336,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_SopMerah1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Karang Tunggal (S3 Jl. Kol.Sugiyono - Jl. Sisingamangaraja) 2",
+      "lat": -7.815170621589384,
+      "lng": 110.37314236437618,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_SopMerah2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jokteng Wetan - Jl. Parangtritis (PTZ)",
+      "lat": -7.814580608924652,
+      "lng": 110.36834641369498,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_JoktengWetan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Gading 1 (Timur)",
+      "lat": -7.8139588927123365,
+      "lng": 110.36288023131759,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_PasarGading1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Gading 2 (Barat)",
+      "lat": -7.813985428289541,
+      "lng": 110.36279439652623,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_PasarGading2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Sugeng Jeroni (Bugisan) 1",
+      "lat": -7.811545973048925,
+      "lng": 110.34952285367291,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_SugengJeroni1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Sugeng Jeroni (Bugisan) 2",
+      "lat": -7.811513464553306,
+      "lng": 110.3493618527512,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_SugengJeroni2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Parkiran Ngabean",
+      "lat": -7.801304669900324,
+      "lng": 110.3562392409939,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Parkiran_Ngabean.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pingit 4 - Jl. Tentara Pelajar",
+      "lat": -7.782895969804031,
+      "lng": 110.36082565784456,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Pingit4.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Mirota (PTZ)",
+      "lat": -7.776092711190059,
+      "lng": 110.37438154220582,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_mirota.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Taman Sari (PTZ)",
+      "lat": -7.808656995329348,
+      "lng": 110.35600572824481,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_tamansari.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Semaki  1",
+      "lat": -7.801009107286565,
+      "lng": 110.38486361503602,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_semaki_1.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Semaki 2",
+      "lat": -7.800863445056773,
+      "lng": 110.38476164953087,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_semaki_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Klitren 2",
+      "lat": -7.780754051505308,
+      "lng": 110.38661509752275,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_klitren_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Gunungketur 1",
+      "lat": -7.798514511635184,
+      "lng": 110.37587821483612,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_gunungketur_1.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Gunungketur 2",
+      "lat": -7.799409389904506,
+      "lng": 110.37850946122491,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_gunungketur_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Brontokusuman (blkg Kel) 2",
+      "lat": -7.823094663198694,
+      "lng": 110.36960304501743,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_brontokusuman_blkgKel_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Segoro Amarto Tegalrejo 2",
+      "lat": -7.790451792570068,
+      "lng": 110.34968912601472,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_segoro_amarto_tegalrejo_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Pakudaya Pakuncen 1",
+      "lat": -7.797903142588836,
+      "lng": 110.35138428211214,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_pakudaya_pakuncen_1.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Pakudaya Pakuncen 2",
+      "lat": -7.797937190603234,
+      "lng": 110.35135745969455,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_pakudaya_pakuncen_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Amongrogo View Timur",
+      "lat": -7.797400394268464,
+      "lng": 110.38367271423341,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Amongrogo_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Demangan View Utara",
+      "lat": -7.783007619231968,
+      "lng": 110.38771748542787,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Demangan_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Demangan View Selatan",
+      "lat": -7.783214902770064,
+      "lng": 110.38801789316496,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Demangan_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Demangan View Timur",
+      "lat": -7.783107508322567,
+      "lng": 110.38792029309523,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Demangan_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang DeBritto View Utara",
+      "lat": -7.783214903094468,
+      "lng": 110.39223968949956,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_DeBritto_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Terban View Utara",
+      "lat": -7.782782282285227,
+      "lng": 110.372273322723,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Terban_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Rejowinangun View Timur",
+      "lat": -7.8107084889395955,
+      "lng": 110.40206193956693,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Rejowinangun_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Balaikota View Timur",
+      "lat": -7.79952415717506,
+      "lng": 110.3923523426056,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Balaikota_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Balaikota View Utara-Barat",
+      "lat": -7.799623974573921,
+      "lng": 110.3922959120451,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Balaikota_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Simpang_Pajeksan_Suryatmajan",
+      "lat": -7.796362906882283,
+      "lng": 110.36535915123088,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_22_Simpang_Pajeksan_Suryatmajan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Simpang_Reksobayan",
+      "lat": -7.799709820932644,
+      "lng": 110.3648718633361,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_24_Simpang_Reksobayan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gedongkuning (PTZ)",
+      "lat": -7.801731782919982,
+      "lng": 110.40140518577397,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Gedongkuning.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Terban View Timur",
+      "lat": -7.782840865073605,
+      "lng": 110.3721661078962,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Terban_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Terban View Barat",
+      "lat": -7.782829544640158,
+      "lng": 110.3723589567884,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Terban_View_Barat.stream/playlist.m3u8"
+    },
+    {
+      "name": "Pasar Demangan View Selatan",
+      "lat": -7.780939793541291,
+      "lng": 110.38817846406626,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Pasar_Demangan_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Galeria (PTZ)",
+      "lat": -7.78299465637002,
+      "lng": 110.37923132903515,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Galeria_TimurSelatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Nol Km. - Utara",
+      "lat": -7.801235516577087,
+      "lng": 110.36492407321931,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/NolKm_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Nol Km. - Timur",
+      "lat": -7.801309214472623,
+      "lng": 110.36493122211407,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/NolKm_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Nol Km. - Gd. Agung",
+      "lat": -7.801025084854278,
+      "lng": 110.36494553089143,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/NolKm_GdAgung.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gramedia (PTZ)",
+      "lat": -7.782861937761538,
+      "lng": 110.37481070364103,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Gramedia_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jati Kencana (PTZ)",
+      "lat": -7.781720077527172,
+      "lng": 110.35258206065863,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_JatiKencana.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Borobudur Plaza",
+      "lat": -7.778378226441675,
+      "lng": 110.36105632814726,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Borobudur_Plaza.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Tugu (PTZ)",
+      "lat": -7.782902141139962,
+      "lng": 110.36697879463897,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Tugu.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Bausasran (PTZ)",
+      "lat": -7.796832738009271,
+      "lng": 110.37259619466906,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_S4_Bausasran.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pingit 5 (PTZ)",
+      "lat": -7.782213605984465,
+      "lng": 110.3593021631241,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Lampu_Merah_Pingit5.stream/playlist.m3u8"
+    },
+    {
+      "name": "Gerbang Masuk Utara V. Timur (Luar)",
+      "lat": -7.7992572546386425,
+      "lng": 110.39085832343332,
+      "url": "https://cctvjss.jogjakota.go.id/balaikota/Balaikota_Gerbang_Masuk_Utara_View_Timur-Luar.stream/playlist.m3u8"
+    },
+    {
+      "name": "Gerbang Timur PKK V. Utara (Luar)",
+      "lat": -7.800351051058131,
+      "lng": 110.39218530969853,
+      "url": "https://cctvjss.jogjakota.go.id/balaikota/Balaikota_Gerbang_Timur_PKK_View_Utara-Luar.stream/playlist.m3u8"
+    },
+    {
+      "name": "Gerbang Timur PKK V. Selatan (Luar)",
+      "lat": -7.800517942197907,
+      "lng": 110.39217695404965,
+      "url": "https://cctvjss.jogjakota.go.id/balaikota/Balaikota_Gerbang_Timur_PKK_View_Selatan-Luar.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Utara_Inna_Malioboro",
+      "lat": -7.790198659966794,
+      "lng": 110.36624739289181,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_21_Utara_Inna_Malioboro.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Depan_BPD_Kepatihan",
+      "lat": -7.795495525015239,
+      "lng": 110.3655543924231,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_23_Depan_BPD_Kepatihan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Balaikota (PTZ)",
+      "lat": -7.799677125324242,
+      "lng": 110.39226912295878,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Balaikota_PTZ.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Mandala Krida (PTZ)",
+      "lat": -7.797693605585319,
+      "lng": 110.38498739881717,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Mandala_Krida_PTZ.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Basen",
+      "lat": -7.820469226095182,
+      "lng": 110.40082275730018,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Basen.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Melia Purosani (PTZ)",
+      "lat": -7.796728568306433,
+      "lng": 110.36910532920628,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Melia_Purosani.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Patangpuluhan (PTZ)",
+      "lat": -7.807857732704685,
+      "lng": 110.35038569683671,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Patangpuluhan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Atmosukarto (PTZ)",
+      "lat": -7.7882638773187205,
+      "lng": 110.37832799636712,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Atmosukarto.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gondomanan View Selatan",
+      "lat": -7.801558557399664,
+      "lng": 110.36928258570043,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Gondomanan_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Telo View Selatan",
+      "lat": -7.824088403798951,
+      "lng": 110.3732416032892,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Pasar_Telo_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Telo View Utara",
+      "lat": -7.824001180644657,
+      "lng": 110.37327834764065,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Pasar_Telo_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gambiran View Timur",
+      "lat": -7.8179756585404165,
+      "lng": 110.39079264444666,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Gambiran_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gambiran View Barat",
+      "lat": -7.8180180722047075,
+      "lng": 110.39069870536835,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Gambiran_View_Barat.stream/playlist.m3u8"
+    },
+    {
+      "name": "Utara Jl. Gowongan Lor",
+      "lat": -7.785469840304706,
+      "lng": 110.36664542890458,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Gowongan-Lor.stream/playlist.m3u8"
+    },
+    {
+      "name": "Optic Tugu",
+      "lat": -7.787608577,
+      "lng": 110.36636285723944,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Optic-Tugu.stream/playlist.m3u8"
+    },
+    {
+      "name": "Selatan Olive",
+      "lat": -7.786747557411913,
+      "lng": 110.36645328866635,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Selatan-Olive.stream/playlist.m3u8"
+    },
+    {
+      "name": "Selatan Tugu",
+      "lat": -7.783625896047373,
+      "lng": 110.36684213112976,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Toko-Cat-Wahyu.stream/playlist.m3u8"
+    },
+    {
+      "name": "Wijaya Baru Travel",
+      "lat": -7.786227400840768,
+      "lng": 110.36651088816471,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Wijaya-Baru-Travel.stream/playlist.m3u8"
+    },
+    {
+      "name": "Utara Teteg",
+      "lat": -7.7895208908900795,
+      "lng": 110.36612212388583,
+      "url": "https://cctvjss.jogjakota.go.id/margo-utomo/Wisma-Ratih.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Nyoman Oka (Gereja Kotabaru)",
+      "lat": -7.7878952261847605,
+      "lng": 110.37133456075773,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/Jl-Nyoman-Oka.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Sajiono (Roemi)",
+      "lat": -7.785588723515335,
+      "lng": 110.37427424016906,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/Jl-Sajiono.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Yos Sudarso (Mie Gacoan)",
+      "lat": -7.788155379820129,
+      "lng": 110.37492319976059,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-Yos-Sudarso.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Wardhani (Selatan-Timur SMPN 5)",
+      "lat": -7.787315924164162,
+      "lng": 110.3753846883774,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-Wardhani.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Ahmad Jazuli (Apotek K24)",
+      "lat": -7.789187005983453,
+      "lng": 110.36966623154613,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-Ahmad-Jazuli.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. F.M. Noto (Raminten)",
+      "lat": -7.784987949669264,
+      "lng": 110.37159740924837,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-FM-Noto-Raminten.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. F.M. Noto (Gardu ANIEM)",
+      "lat": -7.786832072162349,
+      "lng": 110.3721703274016,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-FM-Noto-Gardu-Aniem.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Juadi (Pojok Utara-Barat Telkom)",
+      "lat": -7.785822400093772,
+      "lng": 110.37456929683687,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/Jl-Juadi.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. F.M. Noto (McDonalds)",
+      "lat": -7.782968280627342,
+      "lng": 110.37137746947677,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Jl-FM-Noto-McDonalds.stream/playlist.m3u8"
+    },
+    {
+      "name": "KemMJ-Timur Kemantren",
+      "lat": -7.820748744333765,
+      "lng": 110.3617836916383,
+      "url": "https://cctvjss.jogjakota.go.id/kecamatan/KemMJ-TimurKemantren.stream/playlist.m3u8"
+    },
+    {
+      "name": "KemMJ-Pendopo Kemantren",
+      "lat": -7.820833794284509,
+      "lng": 110.36169744788464,
+      "url": "https://cctvjss.jogjakota.go.id/kecamatan/KemMJ-PendopoKemantren.stream/playlist.m3u8"
+    },
+    {
+      "name": "KemMJ-Jalan Selatan Kemantren",
+      "lat": -7.820772059437312,
+      "lng": 110.36169728101575,
+      "url": "https://cctvjss.jogjakota.go.id/kecamatan/KemMJ-JalanSelatanKemantren.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Wirosaban View Selatan",
+      "lat": -7.824673029268395,
+      "lng": 110.37842094761463,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Wirosaban_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Wirosaban View Utara",
+      "lat": -7.824545433853183,
+      "lng": 110.3783619390163,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Wirosaban_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Wirosaban View Barat",
+      "lat": -7.82460391053715,
+      "lng": 110.37829756463232,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Wirosaban_View_Barat.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Wirosaban View Timur",
+      "lat": -7.824588093870417,
+      "lng": 110.3784584971732,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Wirosaban_View_Timur.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jogokariyan V. Utara",
+      "lat": -7.824631710782664,
+      "lng": 110.36762394240893,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Jogokariyan_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Tegalgendu V. Selatan",
+      "lat": -7.825719943855978,
+      "lng": 110.39001342912228,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Tegalgendu.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Letjen Suprapto-KS. Tubun V. Selatan",
+      "lat": -7.797387530558577,
+      "lng": 110.35645371629705,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Letjen_Suprapto_KS_Tubun_View_Selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Letjen Suprapto-KS. Tubun V. Utara",
+      "lat": -7.797292136759732,
+      "lng": 110.356416259686,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Letjen_Suprapto_KS_Tubun_View_Utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Glagahsari (PTZ)",
+      "lat": -7.801783237222689,
+      "lng": 110.38907480148295,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Glagahsari_PTZ.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gramedia V. Utara-Timur",
+      "lat": -7.782626407365178,
+      "lng": 110.3746614766573,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_gramedia.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Jopraban 3",
+      "lat": -7.802782052880773,
+      "lng": 110.35166856344493,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_jopraban_3.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Jopraban 2",
+      "lat": -7.802782095695886,
+      "lng": 110.35160417812001,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_jopraban_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Jopraban 1",
+      "lat": -7.802723670902581,
+      "lng": 110.35152911182564,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_jopraban_1.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Bumen",
+      "lat": -7.826495827309985,
+      "lng": 110.40351567737893,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_bumen.stream/playlist.m3u8"
+    },
+    {
+      "name": "Depan DPRD V. Utara",
+      "lat": -7.7969677292407225,
+      "lng": 110.39246499264898,
+      "url": "https://cctvjss.jogjakota.go.id/dprd-kota/depan-dprd-v-utara.stream/playlist.m3u8"
+    },
+    {
+      "name": "Depan DPRD V. Selatan",
+      "lat": -7.797154524077225,
+      "lng": 110.3924489076006,
+      "url": "https://cctvjss.jogjakota.go.id/dprd-kota/depan-dprd-v-selatan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Depan DPRD Pos Security",
+      "lat": -7.7970634121194955,
+      "lng": 110.39233624524866,
+      "url": "https://cctvjss.jogjakota.go.id/dprd-kota/depan-dprd-pos-security.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Pasar Telo (PTZ)",
+      "lat": -7.823812428983515,
+      "lng": 110.37315298653814,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Pasar_Telo_PTZ.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gramedia V. Timur",
+      "lat": -7.782808782374973,
+      "lng": 110.37478924071134,
+      "url": "https://cctvjss.jogjakota.go.id/kotabaru/ANPR-Simpang-Gramedia-V-Timur_Ex-Jl-Prau.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Mantrigawen (PTZ)",
+      "lat": -7.8089628315616855,
+      "lng": 110.36901700929627,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Mantrigawen_PTZ.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Mirota V. Barat (FIX)",
+      "lat": -7.7759895810002995,
+      "lng": 110.37433326381118,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_Mirota_View_Barat.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jati Kencana V. Barat",
+      "lat": -7.7814478939660825,
+      "lng": 110.35251060338831,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Simpang_JatiKencana_Fix.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang APMD (PTZ)",
+      "lat": -7.791971853164589,
+      "lng": 110.39164423942567,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_apmd.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jlagran (PTZ)",
+      "lat": -7.789037936569344,
+      "lng": 110.35751581511731,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_jlagran.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Gondomanan (PTZ)",
+      "lat": -7.801683039634787,
+      "lng": 110.36917244417295,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_gondomanan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jokteng Kulon (PTZ)",
+      "lat": -7.81294,
+      "lng": 110.35594,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_joktengkulon.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Jokteng Wetan",
+      "lat": -7.814380894891082,
+      "lng": 110.36806762218477,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_joktengwetan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang KM Nol (PTZ)",
+      "lat": -7.8010758219105565,
+      "lng": 110.36475215767108,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_kmnol.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Permata (PTZ)",
+      "lat": -7.8015437731163875,
+      "lng": 110.37307262420656,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_permata.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang PKU Muh. (PTZ)",
+      "lat": -7.801283,
+      "lng": 110.362061,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_pkumuh.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Sentul (PTZ)",
+      "lat": -7.801442745827733,
+      "lng": 110.3779435343926,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_sentul.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Serangan (PTZ)",
+      "lat": -7.800627191909387,
+      "lng": 110.35540228552313,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_serangan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang SGM (PTZ)",
+      "lat": -7.80193047016076,
+      "lng": 110.39514215453288,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_simpangsgm.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang Tungkak (PTZ)",
+      "lat": -7.815638294774954,
+      "lng": 110.37609279155733,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_tungkak.stream/playlist.m3u8"
+    },
+    {
+      "name": "Simpang BPK (PTZ)",
+      "lat": -7.790787,
+      "lng": 110.353804,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_bpk.stream/playlist.m3u8"
+    },
+    {
+      "name": "Malioboro_Utara_Mall",
+      "lat": -7.792598,
+      "lng": 110.365927,
+      "url": "https://cctvjss.jogjakota.go.id/malioboro/Malioboro_25_Utara_Mall.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Gajah Wong Edu Park 3",
+      "lat": -7.817673,
+      "lng": 110.393505,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_gajahwong_edupark_3.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Gajah Wong Edu Park 2",
+      "lat": -7.817514,
+      "lng": 110.393581,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_gajahwong_edupark_2.stream/playlist.m3u8"
+    },
+    {
+      "name": "RTHP Gajah Wong Edu Park 1",
+      "lat": -7.817488,
+      "lng": 110.393484,
+      "url": "https://cctvjss.jogjakota.go.id/rthp/rthp_gajahwong_edupark_1.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Mas Suharto V. Selatan (Depan LASERCOM)",
+      "lat": -7.793199,
+      "lng": 110.371061,
+      "url": "https://cctvjss.jogjakota.go.id/tps-liar/S3_Jl_Mas%20Suharto-Jl_Tegalpanggung.stream/playlist.m3u8"
+    },
+    {
+      "name": "Jl. Mas Suharto V. Utara (Barat Sari Wangi Parfum)",
+      "lat": -7.793247,
+      "lng": 110.371592,
+      "url": "https://cctvjss.jogjakota.go.id/tps-liar/S3_Jl_Mas%20Suharto-Jl_Tukangan.stream/playlist.m3u8"
+    },
+    {
+      "name": "Utara-Timur Gardena (Jl. Urip Sumoharjo) V. Timur",
+      "lat": -7.782819,
+      "lng": 110.381248,
+      "url": "https://cctvjss.jogjakota.go.id/atcs/ATCS_Utara-Timur_Gardena_Jl_Urip%20Sumoharjo_V_Timur.stream/playlist.m3u8"
+    }
+  ]
+}

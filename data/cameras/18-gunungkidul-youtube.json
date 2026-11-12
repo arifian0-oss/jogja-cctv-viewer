@@ -1,0 +1,341 @@
+{
+  "group": "gunungkidul-youtube",
+  "cameras": [
+    {
+      "name": "Bunderan Siyono",
+      "lat": -7.966,
+      "lng": 110.602,
+      "url": "https://www.youtube.com/watch?v=XhmQkH-8_qw",
+      "type": "yt"
+    },
+    {
+      "name": "SD Trowono 1",
+      "lat": -7.975,
+      "lng": 110.59,
+      "url": "https://www.youtube.com/watch?v=WtwqvHWdlJU",
+      "type": "yt"
+    },
+    {
+      "name": "Alun-Alun Wonosari Selatan",
+      "lat": -7.968,
+      "lng": 110.6,
+      "url": "https://www.youtube.com/watch?v=KdOddYUVv_c",
+      "type": "yt"
+    },
+    {
+      "name": "Tugu Selamat Datang Patuk 1",
+      "lat": -7.94,
+      "lng": 110.62,
+      "url": "https://www.youtube.com/watch?v=iyCHMRtFuYc",
+      "type": "yt"
+    },
+    {
+      "name": "Pasar Playen",
+      "lat": -8.126,
+      "lng": 110.544,
+      "url": "https://www.youtube.com/watch?v=BEKANSCG8jE",
+      "type": "ytx"
+    },
+    {
+      "name": "Area Kota Wonosari",
+      "lat": -7.966,
+      "lng": 110.602,
+      "url": "https://www.youtube.com/watch?v=CpeiYBljpdo",
+      "type": "yt"
+    },
+    {
+      "name": "Pasar Besole",
+      "lat": -7.97,
+      "lng": 110.605,
+      "url": "https://www.youtube.com/watch?v=CEdIbRrbNSg",
+      "type": "yt"
+    },
+    {
+      "name": "Kelurahan Rejosari",
+      "lat": -7.96,
+      "lng": 110.595,
+      "url": "https://www.youtube.com/watch?v=ROls4SLDOKc",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang 4 Gading",
+      "lat": -7.955,
+      "lng": 110.61,
+      "url": "https://www.youtube.com/watch?v=uodIEHnwG50",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Sambirejo",
+      "lat": -7.95,
+      "lng": 110.615,
+      "url": "https://www.youtube.com/watch?v=sGw16JUacSk",
+      "type": "yt"
+    },
+    {
+      "name": "Ngingrong",
+      "lat": -7.945,
+      "lng": 110.62,
+      "url": "https://www.youtube.com/watch?v=qNQMsASjQWc",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Nglanggeran 1",
+      "lat": -7.935,
+      "lng": 110.63,
+      "url": "https://www.youtube.com/watch?v=wH-jDNXLDAI",
+      "type": "yt"
+    },
+    {
+      "name": "Pasar Argosari",
+      "lat": -7.975,
+      "lng": 110.608,
+      "url": "https://www.youtube.com/watch?v=RsPsUMd7Wu4",
+      "type": "yt"
+    },
+    {
+      "name": "Pasar Wotgalih",
+      "lat": -7.98,
+      "lng": 110.612,
+      "url": "https://www.youtube.com/watch?v=VwCSraYReJM",
+      "type": "yt"
+    },
+    {
+      "name": "Lapangan Pemda Barat",
+      "lat": -7.964,
+      "lng": 110.598,
+      "url": "https://www.youtube.com/watch?v=eFJkz07KwX4",
+      "type": "yt"
+    },
+    {
+      "name": "Lapangan Kesatrian",
+      "lat": -7.962,
+      "lng": 110.596,
+      "url": "https://www.youtube.com/watch?v=bNTWLtbNWHg",
+      "type": "yt"
+    },
+    {
+      "name": "Kodim Gunungkidul",
+      "lat": -7.968,
+      "lng": 110.602,
+      "url": "https://www.youtube.com/watch?v=QiIkBSYNZMU",
+      "type": "yt"
+    },
+    {
+      "name": "Pancuran Utara",
+      "lat": -7.97,
+      "lng": 110.606,
+      "url": "https://www.youtube.com/watch?v=KR6HtxBedzs",
+      "type": "yt"
+    },
+    {
+      "name": "Tugu Selamat Datang Patuk 2",
+      "lat": -7.94,
+      "lng": 110.62,
+      "url": "https://www.youtube.com/watch?v=4xtLdfYhTmE",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga Amigo",
+      "lat": -7.966,
+      "lng": 110.6,
+      "url": "https://www.youtube.com/watch?v=AeZCyuf3k5g",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Getas",
+      "lat": -7.955,
+      "lng": 110.625,
+      "url": "https://www.youtube.com/watch?v=yFFab-zqrRs",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Karangmojo Utara",
+      "lat": -7.93,
+      "lng": 110.64,
+      "url": "https://www.youtube.com/watch?v=uW351scprt4",
+      "type": "yt"
+    },
+    {
+      "name": "SMP N 1 Playen",
+      "lat": -7.92,
+      "lng": 110.65,
+      "url": "https://www.youtube.com/watch?v=sy_Xw6vEhsE",
+      "type": "yt"
+    },
+    {
+      "name": "SMP N 3 Wonosari",
+      "lat": -7.972,
+      "lng": 110.598,
+      "url": "https://www.youtube.com/watch?v=-CKOX3WYbh4",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga DPRD",
+      "lat": -7.966,
+      "lng": 110.602,
+      "url": "https://www.youtube.com/watch?v=0-DuMi_brhQ",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Munggi Timur",
+      "lat": -7.95,
+      "lng": 110.63,
+      "url": "https://www.youtube.com/watch?v=FgURE1Tu8FY",
+      "type": "yt"
+    },
+    {
+      "name": "JJLS Planjan",
+      "lat": -7.94,
+      "lng": 110.645,
+      "url": "https://www.youtube.com/watch?v=38iz5WrcT8o",
+      "type": "yt"
+    },
+    {
+      "name": "SD Trowono 3",
+      "lat": -7.975,
+      "lng": 110.592,
+      "url": "https://www.youtube.com/watch?v=Pcj80ggBd9Q",
+      "type": "yt"
+    },
+    {
+      "name": "LIVE PEMANTAUAN CCTV LAPANGAN PEMDA GUNUNGKIDUL",
+      "lat": -7.964,
+      "lng": 110.6,
+      "url": "https://www.youtube.com/watch?v=xaDIoFqXC5g",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Patuk",
+      "lat": -7.8703,
+      "lng": 110.5235,
+      "url": "https://www.youtube.com/watch?v=Zl3FfKTHmFM",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Ngalang Barat",
+      "lat": -7.883419,
+      "lng": 110.579605,
+      "url": "https://www.youtube.com/watch?v=X-p0v51S34w",
+      "type": "yt"
+    },
+    {
+      "name": "SD Baran 2",
+      "lat": -8.0827,
+      "lng": 110.777,
+      "url": "https://www.youtube.com/watch?v=sPYSG7WxVL8",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga Bunder",
+      "lat": -7.87795,
+      "lng": 110.541608,
+      "url": "https://www.youtube.com/watch?v=gEhipmUVeWc",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang 3 Siyono",
+      "lat": -7.950862,
+      "lng": 110.586681,
+      "url": "https://www.youtube.com/watch?v=V4O5VM_UL9A",
+      "type": "yt"
+    },
+    {
+      "name": "Kapanewon Semin Utara",
+      "lat": -7.8667,
+      "lng": 110.736,
+      "url": "https://www.youtube.com/watch?v=c5nSXO8RgWg",
+      "type": "yt"
+    },
+    {
+      "name": "BPP Semanu Barat",
+      "lat": -7.988,
+      "lng": 110.63,
+      "url": "https://www.youtube.com/watch?v=H1-tTvlIf-Q",
+      "type": "yt"
+    },
+    {
+      "name": "BPP Playen",
+      "lat": -7.922,
+      "lng": 110.561,
+      "url": "https://www.youtube.com/watch?v=BVpibyNb7NE",
+      "type": "yt"
+    },
+    {
+      "name": "Taman Kota",
+      "lat": -7.962775,
+      "lng": 110.601042,
+      "url": "https://www.youtube.com/watch?v=OB38pbnrNPI",
+      "type": "yt"
+    },
+    {
+      "name": "Alun-Alun Wonosari",
+      "lat": -7.966,
+      "lng": 110.6,
+      "url": "https://www.youtube.com/watch?v=nJImKIJyY0o",
+      "type": "yt"
+    },
+    {
+      "name": "Bunderan PLN PTZ",
+      "lat": -7.964334,
+      "lng": 110.602051,
+      "url": "https://www.youtube.com/watch?v=iEf3fMk2Z3g",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Tegalsari Barat",
+      "lat": -7.976082,
+      "lng": 110.599808,
+      "url": "https://www.youtube.com/watch?v=xXSKmVeK1k0",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Planjan PTZ",
+      "lat": -8.093798,
+      "lng": 110.553781,
+      "url": "https://www.youtube.com/watch?v=qefJt1WlHiI",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga Kemadang",
+      "lat": -8.0946,
+      "lng": 110.5716,
+      "url": "https://www.youtube.com/watch?v=4C0TAhCwlw8",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Selang Timur",
+      "lat": -7.963124,
+      "lng": 110.618499,
+      "url": "https://www.youtube.com/watch?v=_zmq4hOQOA4",
+      "type": "ytx"
+    },
+    {
+      "name": "Puskeswan Putat",
+      "lat": -7.8661,
+      "lng": 110.5202,
+      "url": "https://www.youtube.com/watch?v=PV3CiIZsvMo",
+      "type": "yt"
+    },
+    {
+      "name": "SMP 2 Patuk Barat",
+      "lat": -7.870264,
+      "lng": 110.523482,
+      "url": "https://www.youtube.com/watch?v=c-gWrOG6_ss",
+      "type": "yt"
+    },
+    {
+      "name": "S3 Petoyan 2",
+      "lat": -8.001201,
+      "lng": 110.381963,
+      "url": "https://www.youtube.com/watch?v=V_5I8AlPuWA",
+      "type": "yt"
+    },
+    {
+      "name": "SD Logantung 2",
+      "lat": -7.838408,
+      "lng": 110.747201,
+      "url": "https://www.youtube.com/watch?v=Nb62bZvw-hI",
+      "type": "yt"
+    }
+  ]
+}

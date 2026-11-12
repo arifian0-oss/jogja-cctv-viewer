@@ -1,0 +1,21 @@
+{
+  "magelang": {
+    "kind": "portal",
+    "url": "https://cctv.dishub.magelangkab.go.id/live"
+  },
+  "gunungkidul-youtube": {
+    "kind": "channel",
+    "url": "https://www.youtube.com/@KominfoGunungkidul/streams"
+  },
+  "jitv-youtube": {
+    "kind": "channel",
+    "url": "https://www.youtube.com/@JitvPemdaDIY/streams"
+  },
+  "bantul-youtube": {
+    "kind": "bantul",
+    "urls": [
+      "https://www.youtube.com/channel/UCdkc9vAwtyoI9N0oAdsNB3g/streams",
+      "https://www.youtube.com/channel/UCFCoIkiISgT8YJGP_JtbJTQ/streams"
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "group": "purworejo",
+  "cameras": [
+    {
+      "name": "Landmark Alun-Alun Kutoarjo",
+      "lat": -7.720506,
+      "lng": 109.914666,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/95aee4bc-10c0-4bee-b710-8a12047d2510.m3u8"
+    },
+    {
+      "name": "Depan PDAM Kutoarjo",
+      "lat": -7.719797,
+      "lng": 109.913591,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/128c50b6-6a70-440a-85b5-ded8ba89c7cf.m3u8"
+    },
+    {
+      "name": "Depan Masjid Alun-Alun Kutoarjo",
+      "lat": -7.719811,
+      "lng": 109.913605,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/ddd7ae59-4f55-4960-a9b9-409996fec51e.m3u8"
+    },
+    {
+      "name": "Tugu Clorot Alun-Alun Purworejo",
+      "lat": -7.7116,
+      "lng": 110.008886,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/6472eecf-a9ec-425a-93fd-2bcb947c51c2.m3u8"
+    },
+    {
+      "name": "Patung Dolalak Alun-Alun Purworejo",
+      "lat": -7.711924,
+      "lng": 110.009524,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/3e0b401d-c736-4388-84c4-d4a4a6f94741.m3u8"
+    },
+    {
+      "name": "Playground Alun-Alun Purworejo",
+      "lat": -7.713132,
+      "lng": 110.009006,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/58d4692d-8288-42cf-9747-83fe1fd05bb9.m3u8"
+    },
+    {
+      "name": "Simpang MT Haryono Kutoarjo",
+      "lat": -7.722057,
+      "lng": 109.91076,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/988eef4e-186f-493d-a63c-8857865e5640.m3u8"
+    },
+    {
+      "name": "Depan Pendopo Purworejo",
+      "lat": -7.711833,
+      "lng": 110.0094,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/0d966ac4-aee6-4dd2-aab9-c60dd9c1f724.m3u8"
+    },
+    {
+      "name": "Air Mancur Alun-Alun Purworejo",
+      "lat": -7.714737,
+      "lng": 110.009257,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/533e2e72-7c21-44b8-a6a3-e93d92ce7b46.m3u8"
+    },
+    {
+      "name": "Videotron Romansa Kuliner Alun-Alun Purworejo",
+      "lat": -7.714665,
+      "lng": 110.009169,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/32e95626-6789-4d7f-be4e-5acfd7903862.m3u8"
+    },
+    {
+      "name": "Pasar Baledono",
+      "lat": -7.709745,
+      "lng": 110.018826,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/815e5f07-59dd-4d1b-b772-dad96a3203dd.m3u8"
+    },
+    {
+      "name": "Bendung Boro",
+      "lat": -7.726068,
+      "lng": 110.006201,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/76e7f8af-01bd-4874-b51c-afb7fc0fec49.m3u8"
+    },
+    {
+      "name": "Videotron Alun-Alun Kutoarjo",
+      "lat": -7.720546,
+      "lng": 109.914665,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/b2435507-17af-49b2-9afe-563711b8f8af.m3u8"
+    },
+    {
+      "name": "Terminal Kongsi",
+      "lat": -7.708498,
+      "lng": 110.017515,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/1247a978-e527-4be3-ae40-16774f970c3c.m3u8"
+    },
+    {
+      "name": "Alun-Alun Kutoarjo",
+      "lat": -7.720515,
+      "lng": 109.914778,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/4346879f-bc6c-43f6-8aa7-a77b470c58e6.m3u8"
+    },
+    {
+      "name": "Kresna Duta",
+      "lat": -7.719061,
+      "lng": 110.005815,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/05e8cf73-b6d8-4ecf-a195-f3603dbf5af9.m3u8"
+    },
+    {
+      "name": "Taman Kota Purworejo",
+      "lat": -7.701594,
+      "lng": 110.025818,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/5142a33b-d7fe-4cf1-a03e-ccbfd9f20365.m3u8"
+    },
+    {
+      "name": "Simpang Brengkelan",
+      "lat": -7.705042,
+      "lng": 110.017942,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/5bf16628-417d-46a7-8e13-3856f746bf81.m3u8"
+    },
+    {
+      "name": "Simpang Arta Tirta",
+      "lat": -7.702063,
+      "lng": 110.023752,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/2d83522b-7910-46d5-a8ef-9597d7c275b5.m3u8"
+    },
+    {
+      "name": "Stasiun Wojo",
+      "lat": -7.862729,
+      "lng": 110.039633,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/a2c8ec2f-0827-4231-a639-b9cc571a408e.m3u8"
+    },
+    {
+      "name": "Jogo Boyo",
+      "lat": -7.884068,
+      "lng": 110.03425,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/ce661cdf-6ee6-4f10-a880-72263e06ed3b.m3u8"
+    },
+    {
+      "name": "Buh Liwung",
+      "lat": -7.716869,
+      "lng": 110.021046,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/c29192c1-123c-4635-964a-b0339890097b.m3u8"
+    },
+    {
+      "name": "Romansa Purworejo",
+      "lat": -7.714806,
+      "lng": 110.008779,
+      "url": "https://lemasjo.purworejokab.go.id:8181/memfs/05bb146c-e098-4d91-b879-56379cbf9ea2.m3u8"
+    }
+  ]
+}

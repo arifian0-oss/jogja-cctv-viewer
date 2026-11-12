@@ -1,0 +1,167 @@
+{
+  "group": "bantul",
+  "cameras": [
+    {
+      "name": "Bendung Klegen",
+      "lat": -7.953231,
+      "lng": 110.325589,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/BendungKlegen.stream.m3u8"
+    },
+    {
+      "name": "Bunderan Srandakan",
+      "lat": -7.938741,
+      "lng": 110.246479,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/BunderanSrandakan.stream.m3u8"
+    },
+    {
+      "name": "Lapangan Paseban",
+      "lat": -7.88818,
+      "lng": 110.327235,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/LapanganPaseban.stream.m3u8"
+    },
+    {
+      "name": "Makam Imogiri Masjid",
+      "lat": -7.922374,
+      "lng": 110.395332,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/MakamImogiriMasjid.stream.m3u8"
+    },
+    {
+      "name": "Makam Imogiri Tangga Tengah",
+      "lat": -7.92046,
+      "lng": 110.395666,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/MakamImogiriTanggaTengah.stream.m3u8"
+    },
+    {
+      "name": "Masjid Mataram Kotagede",
+      "lat": -7.829541,
+      "lng": 110.398306,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/MakamKotagedeMasjid.stream.m3u8"
+    },
+    {
+      "name": "Masjid Mataram Kotagede Parkiran",
+      "lat": -7.829733,
+      "lng": 110.39889,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/MakamKotagedeParkiran.stream.m3u8"
+    },
+    {
+      "name": "Ruang Bermain Ramah Anak Masjid Agung 1",
+      "lat": -7.879919,
+      "lng": 110.332807,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/RuangBermainRamahAnakMasjidAgung1.stream.m3u8"
+    },
+    {
+      "name": "Ruang Bermain Ramah Anak Masjid Agung 2",
+      "lat": -7.880055,
+      "lng": 110.332767,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/RuangBermainRamahAnakMasjidAgung2.stream.m3u8"
+    },
+    {
+      "name": "Ruang Bermain Ramah Anak Masjid Agung 3",
+      "lat": -7.880114,
+      "lng": 110.33289,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/RuangBermainRamahAnakMasjidAgung3.stream.m3u8"
+    },
+    {
+      "name": "Ruang Bermain Ramah Anak Masjid Agung 4",
+      "lat": -7.880061,
+      "lng": 110.332967,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/RuangBermainRamahAnakMasjidAgung4.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gose (view Barat)",
+      "lat": -7.890905,
+      "lng": 110.325621,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangGoseBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gose (view Timur)",
+      "lat": -7.890891,
+      "lng": 110.325689,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangGoseTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gose (view Utara)",
+      "lat": -7.890834,
+      "lng": 110.325752,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangGoseUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Jejeran (view Selatan)",
+      "lat": -7.86999,
+      "lng": 110.390821,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangJejeranSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Jejeran (view Utara)",
+      "lat": -7.87017,
+      "lng": 110.390869,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangJejeranUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Klodran (view Barat)",
+      "lat": -7.879419,
+      "lng": 110.333144,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangKlodranBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Klodran (view Selatan)",
+      "lat": -7.879733,
+      "lng": 110.333273,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangKlodranSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Klodran (view Utara)",
+      "lat": -7.879495,
+      "lng": 110.33327,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangKlodranUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Paseban (view Barat)",
+      "lat": -7.888375,
+      "lng": 110.327672,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangPasebanBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Paseban (view Selatan)",
+      "lat": -7.888506,
+      "lng": 110.327762,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangPasebanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Paseban (view Utara)",
+      "lat": -7.888442,
+      "lng": 110.327806,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/SimpangPasebanUtara.stream.m3u8"
+    },
+    {
+      "name": "Timur Stadion Sultan Agung view Barat",
+      "lat": -7.872833,
+      "lng": 110.382752,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/TimurStadionSultanAgungBarat.stream.m3u8"
+    },
+    {
+      "name": "Timur Stadion Sultan Agung view Timur",
+      "lat": -7.872773,
+      "lng": 110.383031,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/TimurStadionSultanAgungTimur.stream.m3u8"
+    },
+    {
+      "name": "Bendung Merdika Niten",
+      "lat": -7.83923308,
+      "lng": 110.34836008,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/BendungMerdikaNiten.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Jagalan",
+      "lat": -7.82761442,
+      "lng": 110.39543915,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/KalurahanJagalan.stream.m3u8"
+    },
+    {
+      "name": "Makam Kotagede Sendang",
+      "lat": -7.82983997,
+      "lng": 110.39791495,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-bantul/streams/MakamKotagedeSendang.stream.m3u8"
+    }
+  ]
+}

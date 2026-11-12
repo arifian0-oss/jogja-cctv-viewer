@@ -1,0 +1,485 @@
+{
+  "group": "gunung-kidul",
+  "cameras": [
+    {
+      "name": "Alun-Alun Wonosari",
+      "lat": -7.965741,
+      "lng": 110.600391,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/AlunAlunWonosariFix.stream.m3u8"
+    },
+    {
+      "name": "BPP Playen",
+      "lat": -7.922034,
+      "lng": 110.560928,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BPPPlayen.stream.m3u8"
+    },
+    {
+      "name": "BPP Semanu Barat",
+      "lat": -7.988033,
+      "lng": 110.630335,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BPPSemanuBarat.stream.m3u8"
+    },
+    {
+      "name": "Bunderan PLN",
+      "lat": -7.964429,
+      "lng": 110.602087,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BunderanPLN.stream.m3u8"
+    },
+    {
+      "name": "Bunderan PLN Wonosari (PTZ)",
+      "lat": -7.964334,
+      "lng": 110.602051,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BunderanPLNPTZ.stream.m3u8"
+    },
+    {
+      "name": "Bunderan Siyono",
+      "lat": -7.950376,
+      "lng": 110.585913,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BunderanSiyonoFix.stream.m3u8"
+    },
+    {
+      "name": "Bunderan Siyono (PTZ)",
+      "lat": -7.95027,
+      "lng": 110.585748,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BunderanSiyonoPTZ.stream.m3u8"
+    },
+    {
+      "name": "Bunderan Siyono Barat",
+      "lat": -7.950311,
+      "lng": 110.58587,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/BunderanSiyonoBarat.stream.m3u8"
+    },
+    {
+      "name": "GOR Siyono",
+      "lat": -7.95099,
+      "lng": 110.586462,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/GorSiyono.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Getas",
+      "lat": -7.930243,
+      "lng": 110.505066,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KalurahanGetas.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Jetis Gunungkidul",
+      "lat": -8.038127,
+      "lng": 110.489191,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KalurahanJetis.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Jetis Gunungkidul (PTZ)",
+      "lat": -8.037845,
+      "lng": 110.488893,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KalurahanJetisPTZ.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Planjan",
+      "lat": -8.093798,
+      "lng": 110.553781,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KalurahanPlanjanPTZ.stream.m3u8"
+    },
+    {
+      "name": "KalurahanNglangeran1",
+      "lat": -7.857615,
+      "lng": 110.514452,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KalurahanNglangeran1.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Nglipar Barat",
+      "lat": -7.880721,
+      "lng": 110.61982,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonNgliparBarat.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Nglipar Timur",
+      "lat": -7.880826,
+      "lng": 110.62021,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonNgliparTimur.stream.m3u8"
+    },
+    {
+      "name": "Lapangan Kasatrian",
+      "lat": -7.963426,
+      "lng": 110.604814,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/LapanganKasatrian.stream.m3u8"
+    },
+    {
+      "name": "Pantai Baron",
+      "lat": -8.128483,
+      "lng": 110.54878,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PantaiBaron.stream.m3u8"
+    },
+    {
+      "name": "Pantai Kukup (view laut)",
+      "lat": -8.133417,
+      "lng": 110.55464,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PantaiKukup.stream.m3u8"
+    },
+    {
+      "name": "Pantai Sepanjang (view laut)",
+      "lat": -8.136621,
+      "lng": 110.56639,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PantaiSepanjangFix.stream.m3u8"
+    },
+    {
+      "name": "Pemda Gunungkidul",
+      "lat": -7.964119,
+      "lng": 110.601078,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PemdaGunungkidul.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Amigo",
+      "lat": -7.969943,
+      "lng": 110.604802,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/Simpang3Amigo.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Bunder",
+      "lat": -7.87795,
+      "lng": 110.541608,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PertigaanBunder.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Pasar Playen",
+      "lat": -7.943894,
+      "lng": 110.550008,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PertigaanPasarPlayen.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Pasar Playen (PTZ)",
+      "lat": -7.943921,
+      "lng": 110.54988,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PertigaanPasarPlayenPTZ.stream.m3u8"
+    },
+    {
+      "name": "Pertigaan Siyono",
+      "lat": -7.950862,
+      "lng": 110.586681,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/Simpang3Siyono.stream.m3u8"
+    },
+    {
+      "name": "Pintu Masuk Baron (JJLS Timur)",
+      "lat": -8.123655,
+      "lng": 110.551265,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PintuMasukBaronBarat2.stream.m3u8"
+    },
+    {
+      "name": "S4 Baleharjo Barat",
+      "lat": -7.979137,
+      "lng": 110.61432,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4BaleharjoBarat.stream.m3u8"
+    },
+    {
+      "name": "S4 Baleharjo Timur",
+      "lat": -7.979204,
+      "lng": 110.614435,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4BaleharjoTimur.stream.m3u8"
+    },
+    {
+      "name": "S4 Budegan Barat",
+      "lat": -7.941288,
+      "lng": 110.604923,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4BudeganBarat.stream.m3u8"
+    },
+    {
+      "name": "S4 Gading Selatan",
+      "lat": -7.914665,
+      "lng": 110.555921,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4GadingSelatan.stream.m3u8"
+    },
+    {
+      "name": "S4 Gading Utara",
+      "lat": -7.914201,
+      "lng": 110.55582,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4GadingUtara.stream.m3u8"
+    },
+    {
+      "name": "S4 Karangmojo Barat",
+      "lat": -7.953031,
+      "lng": 110.679242,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4KarangmojoBarat.stream.m3u8"
+    },
+    {
+      "name": "S4 Karangmojo Utara",
+      "lat": -7.953077,
+      "lng": 110.67943,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4KarangmojoUtara.stream.m3u8"
+    },
+    {
+      "name": "S4 Munggi Barat",
+      "lat": -8.000559,
+      "lng": 110.65696,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4MunggiBarat.stream.m3u8"
+    },
+    {
+      "name": "S4 Selang Barat",
+      "lat": -7.963182,
+      "lng": 110.61822,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4SelangBarat.stream.m3u8"
+    },
+    {
+      "name": "S4 Selang Timur",
+      "lat": -7.963124,
+      "lng": 110.618499,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4SelangTimur.stream.m3u8"
+    },
+    {
+      "name": "S4 Tegalsari Barat",
+      "lat": -7.976082,
+      "lng": 110.599808,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4TegalsariBarat.stream.m3u8"
+    },
+    {
+      "name": "SD Logantung 2 Semin",
+      "lat": -7.838408,
+      "lng": 110.747201,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SDLogantung2Semin.stream.m3u8"
+    },
+    {
+      "name": "SD Pucung",
+      "lat": -8.066446,
+      "lng": 110.54225,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SDPucung.stream.m3u8"
+    },
+    {
+      "name": "SD Trowono 1",
+      "lat": -8.045833,
+      "lng": 110.5204,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SDTrowono1.stream.m3u8"
+    },
+    {
+      "name": "SD Trowono 3",
+      "lat": -8.052222,
+      "lng": 110.53479,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SDTrowono3.stream.m3u8"
+    },
+    {
+      "name": "SMP 1 Playen",
+      "lat": -7.944795,
+      "lng": 110.552653,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SMP1Playen.stream.m3u8"
+    },
+    {
+      "name": "SMP 1 Tanjungsari",
+      "lat": -8.112045,
+      "lng": 110.56174,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SMP1Tanjungsari.stream.m3u8"
+    },
+    {
+      "name": "SMP 3 Wonosari",
+      "lat": -8.013457,
+      "lng": 110.587541,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SMP3Wonosari.stream.m3u8"
+    },
+    {
+      "name": "SMPN 2 Patuk view Barat",
+      "lat": -7.870264,
+      "lng": 110.523482,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SMP2PatukBarat.stream.m3u8"
+    },
+    {
+      "name": "SMPN 2 Patuk view Timur",
+      "lat": -7.870477,
+      "lng": 110.523562,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SMP2PatukTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gading Gunungkidul (PTZ)",
+      "lat": -7.914437,
+      "lng": 110.555855,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4GadingPTZ.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kodim Gunungkidul",
+      "lat": -7.963724,
+      "lng": 110.606305,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KodimGunungkidul.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ngalang (arah barat)",
+      "lat": -7.883419,
+      "lng": 110.579605,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4NgalangBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pancuran / Siraman Gunungkidul",
+      "lat": -7.9707,
+      "lng": 110.590135,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PancuranFIX.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pancuran / Siraman Gunungkidul (PTZ)",
+      "lat": -7.970798,
+      "lng": 110.590114,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PancuranPTZ.stream.m3u8"
+    },
+    {
+      "name": "Simpang Petoyan 1",
+      "lat": -8.001146,
+      "lng": 110.382008,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S3Petoyan1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Petoyan 2",
+      "lat": -8.001201,
+      "lng": 110.381963,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S3Petoyan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang RSUD Wonosari",
+      "lat": -7.962481,
+      "lng": 110.602629,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/Simpang4RSUDFIX.stream.m3u8"
+    },
+    {
+      "name": "Simpang RSUD Wonosari (PTZ)",
+      "lat": -7.962459,
+      "lng": 110.60278,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/Simpang4RSUDPTZ.stream.m3u8"
+    },
+    {
+      "name": "TPR Pantai Baron (Utama 1)",
+      "lat": -8.123482,
+      "lng": 110.553674,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TPRPantaiBaron1.stream.m3u8"
+    },
+    {
+      "name": "TPR Pantai Baron (Utama 3)",
+      "lat": -8.123328,
+      "lng": 110.553765,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TPRPantaiBaron.stream.m3u8"
+    },
+    {
+      "name": "TPR Pantai Baron 2 (Utama 2)",
+      "lat": -8.123477,
+      "lng": 110.553781,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TPRPantaiBaron2.stream.m3u8"
+    },
+    {
+      "name": "TPR Pulegundes (arah utara)",
+      "lat": -8.141301,
+      "lng": 110.608368,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TPRPulegundes1.stream.m3u8"
+    },
+    {
+      "name": "Taman Kota Wonosari",
+      "lat": -7.962775,
+      "lng": 110.601042,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TamanKotaWonosari.stream.m3u8"
+    },
+    {
+      "name": "Terminal Semin",
+      "lat": -7.867392,
+      "lng": 110.733035,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TerminalSemin.stream.m3u8"
+    },
+    {
+      "name": "Titik Nol Kilometer Alun-alun Wonosari",
+      "lat": -7.965797,
+      "lng": 110.600383,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/Titik0KMAlunalunWonosariPTZ.stream.m3u8"
+    },
+    {
+      "name": "Tugu Selamat Datang Patuk (arah naik)",
+      "lat": -7.848339,
+      "lng": 110.479744,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TuguSelamatDatangPatuk.stream.m3u8"
+    },
+    {
+      "name": "Tugu Selamat Datang Patuk (arah turun)",
+      "lat": -7.848279,
+      "lng": 110.479777,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/TuguSelamatDatangPatuk2.stream.m3u8"
+    },
+    {
+      "name": "Kalurahan Rejosari",
+      "lat": -7.859739,
+      "lng": 110.77636,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KelurahanRejosari.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Rongkop Barat",
+      "lat": -8.08276923,
+      "lng": 110.76341987,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonRongkopBarat.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Rongkop Timur",
+      "lat": -8.083147,
+      "lng": 110.764,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonRongkopTimur.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Semin Selatan",
+      "lat": -7.8686373,
+      "lng": 110.73267102,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonSeminSelatan.stream.m3u8"
+    },
+    {
+      "name": "Kapanewon Semin Utara",
+      "lat": -7.868806,
+      "lng": 110.73248,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/KapanewonSeminUtara.stream.m3u8"
+    },
+    {
+      "name": "Pantai Wediombo",
+      "lat": -8.1890214,
+      "lng": 110.71050318,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PantaiWediombo.stream.m3u8"
+    },
+    {
+      "name": "Pasar Wotgalih",
+      "lat": -7.85851833,
+      "lng": 110.6472508,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PasarWotgalih.stream.m3u8"
+    },
+    {
+      "name": "Pintu Masuk Baron (JJLS Barat)",
+      "lat": -8.12381154,
+      "lng": 110.55130005,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/PintuMasukBaronBarat1.stream.m3u8"
+    },
+    {
+      "name": "S3 Gading Selatan",
+      "lat": -7.91806693,
+      "lng": 110.55727362,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S3GadingSelatan.stream.m3u8"
+    },
+    {
+      "name": "S4 Gading Dome",
+      "lat": -7.91777005,
+      "lng": 110.55712444,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4GadingDome.stream.m3u8"
+    },
+    {
+      "name": "S4 Munggi Timur",
+      "lat": -8.00042851,
+      "lng": 110.65700895,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4MunggiTimur.stream.m3u8"
+    },
+    {
+      "name": "SD Karangrejek 2",
+      "lat": -7.979949,
+      "lng": 110.597637,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/SDKarangrejek2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ngalang (arah timur)",
+      "lat": -7.8836021,
+      "lng": 110.5796266,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S4NgalangTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ngawen (arah barat-utara)",
+      "lat": -7.83789509,
+      "lng": 110.70139427,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S3NgawenUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ngawen (arah timur-utara)",
+      "lat": -7.83794691,
+      "lng": 110.70149419,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kominfogk/streams/S3NgawenTimur.stream.m3u8"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "group": "jitv-youtube",
+  "cameras": [
+    {
+      "name": "Nol KM Yogyakarta (JITV 24 jam)",
+      "lat": -7.8003,
+      "lng": 110.3647,
+      "url": "https://www.youtube.com/watch?v=rvosEdHX190",
+      "type": "yt"
+    },
+    {
+      "name": "JITV Jogja Istimewa TV (24 jam)",
+      "lat": null,
+      "lng": null,
+      "url": "https://www.youtube.com/watch?v=4lu9zR-13JA",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV JOGJA LIVE 24 JAM - PANTAI BARON",
+      "lat": -8.128483,
+      "lng": 110.54878,
+      "url": "https://www.youtube.com/watch?v=uYMuanjIGbo",
+      "type": "yt"
+    },
+    {
+      "name": "CCTV JOGJA LIVE 24 JAM - ALUN ALUN KIDUL",
+      "lat": -7.811285,
+      "lng": 110.363893,
+      "url": "https://www.youtube.com/watch?v=TzRTHP6CDXg",
+      "type": "yt"
+    },
+    {
+      "name": "Plaza Malioboro (JITV 24 jam)",
+      "lat": -7.793,
+      "lng": 110.3657,
+      "url": "https://www.youtube.com/watch?v=l-QT5X9IEkE",
+      "type": "yt"
+    }
+  ]
+}
