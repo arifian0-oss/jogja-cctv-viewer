@@ -14,6 +14,13 @@ rescan or infrastructure change; history lives in DISCOVERY_PLAN.md.
   `~/workspace/research_notes/jogja-cctv/` and `~/workspace/`) are manual
   syncs — refresh jobs only update data.js, so rotations drift them until
   synced.
+- **Matcher hardened again** — after the Nov 9 refresh wrongly pointed
+  Kodim Gunungkidul at Bunderan Kodim's stream (fixed back to
+  `QiIkBSYNZMU`): a replacement ID must not already belong to another
+  entry, and the entry must match the title with strictly more distinctive
+  place tokens than any other entry in the same source (ties refuse).
+  `tools/test-matcher.py` covers the legacy cases plus the Kodim
+  regression in both refresh scripts.
 
 ## Done 2026-11-12
 - **Data split** — the 801-camera dataset moved out of the single-line

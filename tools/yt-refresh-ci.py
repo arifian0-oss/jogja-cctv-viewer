@@ -100,6 +100,83 @@ def channel_streams(channel_url):
             res.append((vid, title.strip()))
     return res
 
+# ---------------------------------------------------------------------------
+# Camera-name matcher. This block is IDENTICAL in tools/yt-refresh-ci.py
+# and ~/workspace/youtube-refresh/refresh.py — keep the two copies in sync.
+#
+# History: 2026-11-06 the matcher was hardened so generic words (bantul,
+# simpang, view, ...) can never trigger a swap. 2026-11-12 it was hardened
+# again after a false fix: "Kodim Gunungkidul" (one distinctive token) was
+# pointed at "Bunderan Kodim Gunungkidul"'s stream, because _same_camera
+# is pairwise and the old best-score pick broke ties by listing order.
+# Two rules now prevent that class of bug:
+#   1. Ownership: a replacement ID must not already belong to another
+#      entry in the database (checked by the caller via owned_vids).
+#   2. Unique-best claim: for a candidate title, the entry must match it
+#      with STRICTLY MORE distinctive place tokens than any other entry
+#      in the same source. A tie (or a better claimant) means the title
+#      is theirs or ambiguous — never guess.
+# ---------------------------------------------------------------------------
+GENERIC = {"live", "cctv", "24", "jam", "simpang", "view", "bantul",
+           "gunungkidul", "magelang", "yogyakarta", "kota", "jogja",
+           "pemantauan", "stream", "streams", "ptz"}
+DIRECTIONS = {"selatan", "utara", "barat", "timur",
+              "tenggara", "baratdaya", "timurlaut", "baratlaut"}
+
+def _words(text):
+    return set(re.sub(r'[^a-z0-9]+', ' ', text.lower()).split())
+
+def _place_tokens(ename):
+    """Distinctive place tokens of an entry name: words minus generic
+    filler, direction words and numbers. Their count is the entry's
+    specificity when two entries could claim the same title."""
+    return {w for w in _words(ename) - GENERIC - DIRECTIONS if not w.isdigit()}
+
+def _same_camera(ename, title):
+    """True only if the candidate title is the same camera, not just the
+    same regency or junction type. All distinctive (place) tokens of the
+    entry name must appear in the title; direction words and numbers
+    must agree (Paseban Utara != Paseban Barat, Patuk 1 != Patuk 2)."""
+    ewords = _words(ename) - GENERIC
+    twords = _words(title) - GENERIC
+    enum = {w for w in ewords if w.isdigit()}
+    if enum and not enum <= twords:
+        return False
+    edir = ewords & DIRECTIONS
+    if edir and not edir <= twords:
+        return False
+    eplace = _place_tokens(ename)
+    if eplace:
+        return eplace <= twords
+    # Degenerate name (no place token at all): fall back to at least two
+    # shared tokens, directions still enforced above.
+    return len(ewords & twords) >= 2
+
+def _pick_replacement(name, vid, candidates, sibling_names, owned_vids):
+    """Pick a replacement video ID for a dead entry from a source live set.
+
+    candidates: iterable of (vid, title) from the source. sibling_names:
+    names of the other entries in the same source. owned_vids: video IDs
+    currently assigned to other entries. Returns (vid, title) or (None,
+    None). A candidate is accepted only if it passes _same_camera, is not
+    owned by another entry, and no sibling matches the same title with
+    >= as many place tokens. Among accepted candidates the one sharing
+    the most words with the entry name wins."""
+    best, best_score = None, 0
+    my_place = len(_place_tokens(name))
+    for cvid, title in candidates:
+        if cvid == vid or cvid in owned_vids:
+            continue
+        if not _same_camera(name, title):
+            continue
+        if any(_same_camera(s, title) and len(_place_tokens(s)) >= my_place
+               for s in sibling_names):
+            continue
+        score = len(_words(name) & _words(title))
+        if score > best_score:
+            best, best_score = (cvid, title), score
+    return best if best else (None, None)
+
 def load_database():
     """Load data/groups.json + data/cameras/*.json + data/sources.json.
     Returns (groups, entries, docs, sources) where each entry holds a
@@ -176,53 +253,20 @@ def main():
         live_sets[key] = live
         return live
 
-    # Words that appear in nearly every Bantul/Gunungkidul/Magelang title and
-    # therefore say nothing about WHICH camera it is. They must never be the
-    # reason a replacement is picked (2026-11-06: "bantul" alone matched
-    # Lapangan Paseban onto Pasar Bantul / Srandakan / Cinomati).
-    GENERIC = {"live", "cctv", "24", "jam", "simpang", "view", "bantul",
-               "gunungkidul", "magelang", "yogyakarta", "kota", "jogja",
-               "pemantauan", "stream", "streams", "ptz"}
-    DIRECTIONS = {"selatan", "utara", "barat", "timur",
-                  "tenggara", "baratdaya", "timurlaut", "baratlaut"}
-
-    def _words(text):
-        return set(re.sub(r'[^a-z0-9]+', ' ', text.lower()).split())
-
-    def _same_camera(ename, title):
-        """True only if the candidate title is the same camera, not just the
-        same regency or junction type. All distinctive (place) tokens of the
-        entry name must appear in the title; direction words and numbers
-        must agree (Paseban Utara != Paseban Barat, Patuk 1 != Patuk 2)."""
-        ewords = _words(ename) - GENERIC
-        twords = _words(title) - GENERIC
-        enum = {w for w in ewords if w.isdigit()}
-        if enum and not enum <= twords:
-            return False
-        edir = ewords & DIRECTIONS
-        if edir and not edir <= twords:
-            return False
-        eplace = ewords - DIRECTIONS - enum
-        if eplace:
-            return eplace <= twords
-        # Degenerate name (no place token at all): fall back to at least two
-        # shared tokens, directions still enforced above.
-        return len(ewords & twords) >= 2
+    # owned_vids_all: every video ID currently assigned to a YouTube entry.
+    # A replacement must never be an ID another entry already uses
+    # (2026-11-12: "Kodim Gunungkidul" was pointed at Bunderan Kodim's
+    # stream because the old matcher never checked ownership). Updated
+    # after every successful swap below.
+    owned_vids_all = {s["vid"] for s in entries}
 
     def match_in_live_set(entry, live):
-        """Best name-match of an entry against a source live set.
-        Only titles that pass _same_camera are candidates; among them the
-        one sharing the most words wins. Returns (vid, title) or (None, None)."""
-        best, best_score = None, 0
-        for vid, title in live.items():
-            if vid == entry["vid"]:
-                continue
-            if not _same_camera(entry["name"], title):
-                continue
-            score = len(_words(entry["name"]) & _words(title))
-            if score > best_score:
-                best, best_score = (vid, title), score
-        return best if best else (None, None)
+        """Best name-match of an entry against a source live set. See
+        _pick_replacement for the ownership + unique-best-claim rules."""
+        siblings = [s["name"] for s in entries
+                    if s["slug"] == entry["slug"] and s["vid"] != entry["vid"]]
+        return _pick_replacement(entry["name"], entry["vid"], live.items(),
+                                 siblings, owned_vids_all - {entry["vid"]})
 
     dead, fixed = [], 0
     changed_paths = set()
@@ -281,6 +325,7 @@ def main():
                 if st == "is_live" and oe != 401:
                     old_vid = e["vid"]
                     swap_url(e, new_vid)
+                    owned_vids_all.add(new_vid)
                     log(f"  FIXED {e['name'][:40]}: {old_vid} -> {new_vid} ({title[:40]})")
                     fixed += 1
                 else:
