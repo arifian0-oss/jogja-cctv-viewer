@@ -1,0 +1,221 @@
+{
+  "group": "bantul-regency-site",
+  "cameras": [
+    {
+      "name": "Bundaran Srandakan",
+      "lat": -7.90456,
+      "lng": 110.34531,
+      "url": "https://stream.bantulkab.go.id/memfs/3685768a-94ea-4ac4-aef1-1a91dd1a3c1e.m3u8"
+    },
+    {
+      "name": "Gerbang Pemda II Manding View Selatan",
+      "lat": -7.90438,
+      "lng": 110.34535,
+      "url": "https://stream.bantulkab.go.id/memfs/bd7c1728-f86f-4a7b-b759-82c7320f5040.m3u8"
+    },
+    {
+      "name": "Gerbang Pemda II Manding View Utara",
+      "lat": -7.88776,
+      "lng": 110.32737,
+      "url": "https://stream.bantulkab.go.id/memfs/488d8a30-d485-4532-90be-dbd5655f2b24.m3u8"
+    },
+    {
+      "name": "Makam Kotagede - Kalurahan Jagalan",
+      "lat": -7.829712,
+      "lng": 110.398158,
+      "url": "https://stream.bantulkab.go.id/memfs/fabc5c97-17be-4c1b-93a2-fdf5b3bc03e1.m3u8"
+    },
+    {
+      "name": "Makam Pajimatan Imogiri - Tangga Atas",
+      "lat": -7.92057,
+      "lng": 110.39573,
+      "url": "https://stream.bantulkab.go.id/memfs/20870ab0-03fa-49f3-b499-382acc94a676.m3u8"
+    },
+    {
+      "name": "Makam Pajimatan Imogiri - Terminal View Selatan",
+      "lat": -7.880147,
+      "lng": 110.332552,
+      "url": "https://stream.bantulkab.go.id/memfs/96cf71a7-c6d6-4634-acf3-43dbc47ce84e.m3u8"
+    },
+    {
+      "name": "Masjid Agung - Ruang Bermain 01",
+      "lat": -7.880071,
+      "lng": 110.332502,
+      "url": "https://stream.bantulkab.go.id/memfs/e7cc3b8e-74da-44e6-a6c9-783fe6e9cfd5.m3u8"
+    },
+    {
+      "name": "Masjid Agung - Ruang Bermain 02",
+      "lat": -7.880252,
+      "lng": 110.332768,
+      "url": "https://stream.bantulkab.go.id/memfs/b3ac084f-c75c-45d4-a093-717e997cc478.m3u8"
+    },
+    {
+      "name": "Masjid Agung - Ruang Bermain 03",
+      "lat": -7.879797,
+      "lng": 110.333021,
+      "url": "https://stream.bantulkab.go.id/memfs/d1bd78e1-0a23-4d08-a47f-84f9e1fae9ca.m3u8"
+    },
+    {
+      "name": "Masjid Agung - Ruang Bermain 04",
+      "lat": -7.88451,
+      "lng": 110.33131,
+      "url": "https://stream.bantulkab.go.id/memfs/ac18010c-1051-4749-af35-03c3d18e0d5f.m3u8"
+    },
+    {
+      "name": "Simpang Gose View Barat Daya",
+      "lat": -7.891073,
+      "lng": 110.325823,
+      "url": "https://stream.bantulkab.go.id/memfs/6dffc8de-cd16-4caa-a161-1fed712ea8f8.m3u8"
+    },
+    {
+      "name": "Simpang Gose View Tenggara",
+      "lat": -7.890809,
+      "lng": 110.325877,
+      "url": "https://stream.bantulkab.go.id/memfs/758afeb5-8281-4053-ba95-5c12d41ef3a1.m3u8"
+    },
+    {
+      "name": "Simpang Gose View Timur Laut",
+      "lat": -7.870168,
+      "lng": 110.390912,
+      "url": "https://stream.bantulkab.go.id/memfs/0ab0421e-9bcd-4cea-8022-aef0d92e784f.m3u8"
+    },
+    {
+      "name": "Simpang Jejeran View Selatan",
+      "lat": -7.870024,
+      "lng": 110.390797,
+      "url": "https://stream.bantulkab.go.id/memfs/5b08c057-2b07-4b17-a49e-40d1f58cc3b7.m3u8"
+    },
+    {
+      "name": "Simpang Jejeran View Utara",
+      "lat": -7.879576,
+      "lng": 110.333344,
+      "url": "https://stream.bantulkab.go.id/memfs/b9a3b5ad-9404-43db-a91a-f369eeef511a.m3u8"
+    },
+    {
+      "name": "Simpang Klodran View Barat",
+      "lat": -7.879716,
+      "lng": 110.333377,
+      "url": "https://stream.bantulkab.go.id/memfs/918ae1a2-4073-450c-9742-202f70cac18a.m3u8"
+    },
+    {
+      "name": "Simpang Klodran View Selatan",
+      "lat": -7.879628,
+      "lng": 110.333491,
+      "url": "https://stream.bantulkab.go.id/memfs/d595eb28-2232-4eb5-936a-9508dac6a179.m3u8"
+    },
+    {
+      "name": "Simpang Klodran View Utara",
+      "lat": -7.888132,
+      "lng": 110.327121,
+      "url": "https://stream.bantulkab.go.id/memfs/e53ccfe9-dc51-4e99-8106-d8aeca971f16.m3u8"
+    },
+    {
+      "name": "Simpang Korpri View Barat",
+      "lat": -7.888132,
+      "lng": 110.327121,
+      "url": "https://stream.bantulkab.go.id/memfs/38fe6b1c-2563-4c03-bc81-6737c9e4b48c.m3u8"
+    },
+    {
+      "name": "Simpang Korpri View Selatan",
+      "lat": -7.89259,
+      "lng": 110.3343,
+      "url": "https://stream.bantulkab.go.id/memfs/f33a4a0f-2746-408e-88ec-55c83b625b78.m3u8"
+    },
+    {
+      "name": "Simpang Lima Bejen View Barat",
+      "lat": -7.89271,
+      "lng": 110.3349,
+      "url": "https://stream.bantulkab.go.id/memfs/6f2e19d8-0269-4c9d-a9e6-60ebdb285900.m3u8"
+    },
+    {
+      "name": "Simpang Lima Bejen View Timur Selatan",
+      "lat": -7.89231,
+      "lng": 110.33448,
+      "url": "https://stream.bantulkab.go.id/memfs/0628dbb6-e7f0-4b07-afae-171693e8520a.m3u8"
+    },
+    {
+      "name": "Simpang Lima Bejen View Utara",
+      "lat": -7.90524,
+      "lng": 110.320774,
+      "url": "https://stream.bantulkab.go.id/memfs/ddb035fe-5450-4f43-8cca-a7510f333540.m3u8"
+    },
+    {
+      "name": "Simpang Palbapang View Barat",
+      "lat": -7.90553,
+      "lng": 110.32084,
+      "url": "https://stream.bantulkab.go.id/memfs/d1123bc9-ea65-4d4a-86be-c123ad7b485b.m3u8"
+    },
+    {
+      "name": "Simpang Palbapang View Selatan",
+      "lat": -7.90518,
+      "lng": 110.32121,
+      "url": "https://stream.bantulkab.go.id/memfs/f6654a21-2ab2-4a0f-937d-41fcd7ca6d13.m3u8"
+    },
+    {
+      "name": "Simpang Paseban View Barat",
+      "lat": -7.8885,
+      "lng": 110.32782,
+      "url": "https://stream.bantulkab.go.id/memfs/5de5699b-0227-44d8-99a4-bb513f8c2dbc.m3u8"
+    },
+    {
+      "name": "Simpang Paseban View Selatan",
+      "lat": -7.8885,
+      "lng": 110.32782,
+      "url": "https://stream.bantulkab.go.id/memfs/d2728a49-8a62-4d02-903a-6467727853b5.m3u8"
+    },
+    {
+      "name": "Simpang Paseban View Utara",
+      "lat": -7.873866,
+      "lng": 110.379891,
+      "url": "https://stream.bantulkab.go.id/memfs/c7bf64d5-9248-4cba-a944-c6ec425674d0.m3u8"
+    },
+    {
+      "name": "Stadion Sultan Agung - Pintu Masuk",
+      "lat": -7.872777,
+      "lng": 110.383036,
+      "url": "https://stream.bantulkab.go.id/memfs/b7497d14-7eb8-4f17-97b5-efe710616c2c.m3u8"
+    },
+    {
+      "name": "Stadion Sultan Agung - Timur Stadion View Barat",
+      "lat": -7.872777,
+      "lng": 110.3832,
+      "url": "https://stream.bantulkab.go.id/memfs/0ea9cc1a-743a-4cfe-b7ff-496917206924.m3u8"
+    },
+    {
+      "name": "Tanjakan Cinomati",
+      "lat": -7.88574,
+      "lng": 110.44448,
+      "url": "https://stream.bantulkab.go.id/memfs/26db46a5-6347-4c2e-9c2e-be99e5a4eb09.m3u8"
+    },
+    {
+      "name": "Bendung Merdiko Niten",
+      "lat": -7.83984,
+      "lng": 110.34818,
+      "url": "https://stream.bantulkab.go.id/memfs/803b3df5-f009-4b2a-8984-be6618cf9f54.m3u8"
+    },
+    {
+      "name": "Pasar Bantul",
+      "lat": -7.88451,
+      "lng": 110.33131,
+      "url": "https://stream.bantulkab.go.id/memfs/2acc430a-a201-43a4-bc2c-a98eef05f786.m3u8"
+    },
+    {
+      "name": "Simpang Palbapang View Timur",
+      "lat": -7.90518,
+      "lng": 110.32121,
+      "url": "https://stream.bantulkab.go.id/memfs/b617651b-1e25-410f-bc2b-2ae0a451d4f4.m3u8"
+    },
+    {
+      "name": "Simpang Palbapang View Utara",
+      "lat": -7.90505,
+      "lng": 110.32105,
+      "url": "https://stream.bantulkab.go.id/memfs/3bc1bd0b-7861-4a83-b135-d3c23d4b3794.m3u8"
+    },
+    {
+      "name": "Stadion Sultan Agung - Timur Stadion View Timur",
+      "lat": -7.872777,
+      "lng": 110.3832,
+      "url": "https://stream.bantulkab.go.id/memfs/959e2ea1-9f3e-4263-8063-5be53f605429.m3u8"
+    }
+  ]
+}

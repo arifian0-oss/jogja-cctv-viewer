@@ -1,0 +1,23 @@
+{
+  "group": "malioboro",
+  "cameras": [
+    {
+      "name": "Malioboro Depan Vredeburg Arah Gedung Agung",
+      "lat": -7.800318,
+      "lng": 110.364944,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-uptmalioboro/streams/UPTMalio_NolKmGedungAgung.stream.m3u8"
+    },
+    {
+      "name": "Malioboro Nolkm Arah Timur",
+      "lat": -7.80128,
+      "lng": 110.365027,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-uptmalioboro/streams/UPTMalio_NolKm_Timur.stream.m3u8"
+    },
+    {
+      "name": "Malioboro Nolkm Arah Utara",
+      "lat": -7.801004,
+      "lng": 110.364955,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-uptmalioboro/streams/UPTMalio_NolKmUtara.stream.m3u8"
+    }
+  ]
+}

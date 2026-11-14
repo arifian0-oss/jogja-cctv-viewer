@@ -1,0 +1,89 @@
+{
+  "group": "kulon-progo",
+  "cameras": [
+    {
+      "name": "Alun-alun Wates sebelah Utara (tiang bendera)",
+      "lat": -7.857558,
+      "lng": 110.157422,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/AlunAlunUtara1.stream.m3u8"
+    },
+    {
+      "name": "Depan Pemkab Kulonprogo",
+      "lat": -7.858596,
+      "lng": 110.159598,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/TamanPemda.stream.m3u8"
+    },
+    {
+      "name": "Halaman Pemda Kulonprogo",
+      "lat": -7.858421,
+      "lng": 110.159624,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/HalamanPemda.stream.m3u8"
+    },
+    {
+      "name": "Perlintasan KA (Barat)",
+      "lat": -7.859987,
+      "lng": 110.154994,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/TetegKulon.stream.m3u8"
+    },
+    {
+      "name": "Perlintasan KA (Timur) JPO",
+      "lat": -7.85826,
+      "lng": 110.160873,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/TetegWetan.stream.m3u8"
+    },
+    {
+      "name": "Pojok Taman Bermain 2  Alun-alun Wates",
+      "lat": -7.857809,
+      "lng": 110.158248,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/PojokTamanBermain2.stream.m3u8"
+    },
+    {
+      "name": "Pojok Taman Bermain Alun-alun Wates",
+      "lat": -7.857416,
+      "lng": 110.15798,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/PojokTamanBermain.stream.m3u8"
+    },
+    {
+      "name": "Simpang Karangnongko (view barat)",
+      "lat": -7.865466,
+      "lng": 110.156132,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/KarangnongkoBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Karangnongko (view timur )",
+      "lat": -7.865544,
+      "lng": 110.156322,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/Karangnongko.stream.m3u8"
+    },
+    {
+      "name": "Simpang Karangnongko (view timur selatan)",
+      "lat": -7.865704,
+      "lng": 110.156308,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/KarangnongkoSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kodim Kulon Progo",
+      "lat": -7.857212,
+      "lng": 110.157984,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/Kodim.stream.m3u8"
+    },
+    {
+      "name": "Pojok Barat Alun-alun Wates",
+      "lat": -7.85936504,
+      "lng": 110.15646214,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/LabKes.stream.m3u8"
+    },
+    {
+      "name": "Simpang Terminal Wates",
+      "lat": -7.86468751,
+      "lng": 110.15170117,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/Terminal.stream.m3u8"
+    },
+    {
+      "name": "Simpang Watulunyu",
+      "lat": -7.85556908,
+      "lng": 110.16463739,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-kp/streams/Watulunyu.stream.m3u8"
+    }
+  ]
+}

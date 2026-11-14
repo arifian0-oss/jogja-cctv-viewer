@@ -1,0 +1,33 @@
+{
+  "group": "youtube-24-7",
+  "cameras": [
+    {
+      "name": "Gunung Merapi — North Side (Srumbung)",
+      "lat": -7.55,
+      "lng": 110.43,
+      "url": "https://www.youtube.com/watch?v=q63lbqCzliQ",
+      "type": "yt"
+    },
+    {
+      "name": "Gunung Merapi 4K Live (afarTV)",
+      "lat": -7.612,
+      "lng": 110.44,
+      "url": "https://www.youtube.com/watch?v=EyjE15NkVbU",
+      "type": "yt"
+    },
+    {
+      "name": "Merapi multi-cam + seismogram (Frekom_86)",
+      "lat": -7.54,
+      "lng": 110.44,
+      "url": "https://www.youtube.com/watch?v=8X7gHBhD1Tw",
+      "type": "yt"
+    },
+    {
+      "name": "Gunung Merapi 4K VR180 (afarTV)",
+      "lat": -7.612,
+      "lng": 110.44,
+      "url": "https://www.youtube.com/watch?v=mSsEn7X_hgQ",
+      "type": "yt"
+    }
+  ]
+}

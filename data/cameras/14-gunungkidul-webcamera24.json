@@ -1,0 +1,152 @@
+{
+  "group": "gunungkidul-webcamera24",
+  "cameras": [
+    {
+      "name": "SDN Karangrejek 2 (school traffic cam), Wonosari",
+      "lat": -7.985,
+      "lng": 110.595,
+      "url": "https://www.youtube.com/watch?v=UtHqoSIKaqY",
+      "type": "yt"
+    },
+    {
+      "name": "RSUD Wonosari Intersection (S4 RSUD)",
+      "lat": -7.963,
+      "lng": 110.593,
+      "url": "https://www.youtube.com/watch?v=h401su-Vdg0",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Munggi Barat",
+      "lat": -8.000559,
+      "lng": 110.65696,
+      "url": "https://www.youtube.com/watch?v=HCEaPhg9Vmk",
+      "type": "yt"
+    },
+    {
+      "name": "Bunderan Kodim Gunungkidul",
+      "lat": -7.963724,
+      "lng": 110.606305,
+      "url": "https://www.youtube.com/watch?v=FQ5n4lLHq7I",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Karangmojo Barat",
+      "lat": -7.953031,
+      "lng": 110.679242,
+      "url": "https://www.youtube.com/watch?v=J2Tw8DsVh00",
+      "type": "yt"
+    },
+    {
+      "name": "SMP 2 Patuk (Timur)",
+      "lat": -7.870477,
+      "lng": 110.523562,
+      "url": "https://www.youtube.com/watch?v=R8iN8shIjNk",
+      "type": "yt"
+    },
+    {
+      "name": "Pancuran Selatan (Simpang Pancuran)",
+      "lat": -7.9707,
+      "lng": 110.590135,
+      "url": "https://www.youtube.com/watch?v=g-xjmgrY7Bw",
+      "type": "yt"
+    },
+    {
+      "name": "Siyono Roundabout Crosswalk (PTZ view)",
+      "lat": -7.95027,
+      "lng": 110.585748,
+      "url": "https://www.youtube.com/watch?v=DlDHnMyJfRU",
+      "type": "yt"
+    },
+    {
+      "name": "Kapanewon Rongkop (Barat)",
+      "lat": -8.083485,
+      "lng": 110.764054,
+      "url": "https://www.youtube.com/watch?v=KHioPSPXQIo",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang 4 RSUD Wonosari (PTZ)",
+      "lat": -7.962459,
+      "lng": 110.60278,
+      "url": "https://www.youtube.com/watch?v=g9I7Nq9LezE",
+      "type": "yt"
+    },
+    {
+      "name": "Parkiran Embung Nglanggeran",
+      "lat": -7.84673,
+      "lng": 110.547106,
+      "url": "https://www.youtube.com/watch?v=tzHaLeJl3h0",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Jetis (PTZ), Saptosari",
+      "lat": -8.037845,
+      "lng": 110.488893,
+      "url": "https://www.youtube.com/watch?v=dCDZCg71da0",
+      "type": "yt"
+    },
+    {
+      "name": "Kalurahan Jetis (Fix view), Saptosari",
+      "lat": -8.038127,
+      "lng": 110.489191,
+      "url": "https://www.youtube.com/watch?v=ZahB3-q_V9A",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang 3 Kapanewon Nglipar (Barat)",
+      "lat": -7.880721,
+      "lng": 110.61982,
+      "url": "https://www.youtube.com/watch?v=FZWO6rX4OHk",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Empat Baleharjo Barat",
+      "lat": -7.979137,
+      "lng": 110.61432,
+      "url": "https://www.youtube.com/watch?v=4ql2DKvmWK0",
+      "type": "yt"
+    },
+    {
+      "name": "Terminal Semin (YouTube live)",
+      "lat": -7.867392,
+      "lng": 110.733035,
+      "url": "https://www.youtube.com/watch?v=fcTnL15ZOdY",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang 3 Nglipar (Timur)",
+      "lat": -7.880826,
+      "lng": 110.62021,
+      "url": "https://www.youtube.com/watch?v=iJgVg391-4A",
+      "type": "yt"
+    },
+    {
+      "name": "SD Pucung (YouTube live)",
+      "lat": -8.066446,
+      "lng": 110.54225,
+      "url": "https://www.youtube.com/watch?v=Js-OKFa6ifs",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga Ngawen (Utara)",
+      "lat": -7.837848,
+      "lng": 110.701405,
+      "url": "https://www.youtube.com/watch?v=JUTc9wX7KHY",
+      "type": "yt"
+    },
+    {
+      "name": "Kapanewon Rongkop (Timur)",
+      "lat": -8.083485,
+      "lng": 110.764054,
+      "url": "https://www.youtube.com/watch?v=J9Gkxc0IGkU",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Tiga Ngawen (Timur)",
+      "lat": -7.837848,
+      "lng": 110.701405,
+      "url": "https://www.youtube.com/watch?v=9QhnHfCR8C0",
+      "type": "yt"
+    }
+  ]
+}

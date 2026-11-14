@@ -1,0 +1,269 @@
+{
+  "group": "dishub-atcs",
+  "cameras": [
+    {
+      "name": "Bandara Adi Sucipto Barat",
+      "lat": -7.783427,
+      "lng": 110.437707,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/BandaraBarat.stream.m3u8"
+    },
+    {
+      "name": "Bandara Adi Sucipto Selatan",
+      "lat": -7.783742,
+      "lng": 110.437909,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/BandaraSelatan.stream.m3u8"
+    },
+    {
+      "name": "Blok O",
+      "lat": -7.798633,
+      "lng": 110.409899,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/BlokO.stream.m3u8"
+    },
+    {
+      "name": "Blok O (arah timur)",
+      "lat": -7.798607,
+      "lng": 110.410045,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/BlokOTimur.stream.m3u8"
+    },
+    {
+      "name": "Glagah view Timur",
+      "lat": -7.888055,
+      "lng": 110.092886,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/GlagahTimur.stream.m3u8"
+    },
+    {
+      "name": "Gramedia1",
+      "lat": -7.783027,
+      "lng": 110.374721,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Gramedia1.stream.m3u8"
+    },
+    {
+      "name": "Maguwo2",
+      "lat": -7.783351,
+      "lng": 110.429673,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Maguwo2.stream.m3u8"
+    },
+    {
+      "name": "Seturan view Selatan",
+      "lat": -7.761907,
+      "lng": 110.411909,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/SeturanSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Bantulan",
+      "lat": -7.774695,
+      "lng": 110.321891,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Bantulan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Borobudur Plaza view Barat",
+      "lat": -7.778307,
+      "lng": 110.36107,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/BorobudurPlaza.stream.m3u8"
+    },
+    {
+      "name": "Simpang Brosot",
+      "lat": -7.94036,
+      "lng": 110.234074,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Brosot.stream.m3u8"
+    },
+    {
+      "name": "Simpang Demangan",
+      "lat": -7.783004,
+      "lng": 110.387862,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Demangan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Denggung",
+      "lat": -7.721785,
+      "lng": 110.361426,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Denggung.stream.m3u8"
+    },
+    {
+      "name": "Simpang Dongkelan view Barat",
+      "lat": -7.827665,
+      "lng": 110.353798,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/DongkelanBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Druwo",
+      "lat": -7.835376,
+      "lng": 110.365626,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Druwo.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gamping (arah barat)",
+      "lat": -7.800413,
+      "lng": 110.325045,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/GampingBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gamping (arah selatan)",
+      "lat": -7.800444,
+      "lng": 110.325194,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/GampingSelatan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gamping (arah timur)",
+      "lat": -7.800451,
+      "lng": 110.325343,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/GampingTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang JatiKencana (arah Barat)",
+      "lat": -7.781937,
+      "lng": 110.352843,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/JatiKencanaBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Jejeran",
+      "lat": -7.870069,
+      "lng": 110.391086,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Jejeran.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kentungan (arah barat)",
+      "lat": -7.754704,
+      "lng": 110.383317,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/KentunganBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Kentungan (arah utara)",
+      "lat": -7.754567,
+      "lng": 110.383404,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/KentunganUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Ketandan view Barat",
+      "lat": -7.811606,
+      "lng": 110.408905,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/KetandanBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Manding",
+      "lat": -7.895439,
+      "lng": 110.352418,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Manding.stream.m3u8"
+    },
+    {
+      "name": "Simpang Melia Purosani",
+      "lat": -7.796686,
+      "lng": 110.368883,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Melia.stream.m3u8"
+    },
+    {
+      "name": "Simpang Melia Purosani ( view Timur-Selatan)",
+      "lat": -7.796885,
+      "lng": 110.369178,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/MeliaTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pelemgurih (lampu merah timur)",
+      "lat": -7.799981,
+      "lng": 110.330257,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Pelemgurih2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pelemgurih (lampu merah utara)",
+      "lat": -7.799327,
+      "lng": 110.33004,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Pelemgurih1.stream.m3u8"
+    },
+    {
+      "name": "Simpang Piyungan (Traffic Counting)",
+      "lat": -7.838159,
+      "lng": 110.476049,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Piyungan_TC.stream.m3u8"
+    },
+    {
+      "name": "Simpang Prambanan (Traffic Counting)",
+      "lat": -7.755413,
+      "lng": 110.488943,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Prambanan_TC.stream.m3u8"
+    },
+    {
+      "name": "Simpang Prambanan (arah timur)",
+      "lat": -7.755495,
+      "lng": 110.489275,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Prambanan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Srandakan",
+      "lat": -7.930648,
+      "lng": 110.272796,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Srandakan.stream.m3u8"
+    },
+    {
+      "name": "Simpang Srandakan (arah barat)",
+      "lat": -7.930839,
+      "lng": 110.272645,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/SrandakanBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Srandakan (arah timur)",
+      "lat": -7.930657,
+      "lng": 110.27294,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/SrandakanTimur.stream.m3u8"
+    },
+    {
+      "name": "Simpang Tambak (arah Barat)",
+      "lat": -7.870665,
+      "lng": 110.141893,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/TambakBarat.stream.m3u8"
+    },
+    {
+      "name": "Simpang Tugu (arah Timur)",
+      "lat": -7.78275,
+      "lng": 110.36697,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Tugu3.stream.m3u8"
+    },
+    {
+      "name": "Besi",
+      "lat": -7.70051587,
+      "lng": 110.4152766,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Besi.stream.m3u8"
+    },
+    {
+      "name": "Simpang Dongkelan",
+      "lat": -7.82784643,
+      "lng": 110.35396414,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Dongkelan2.stream.m3u8"
+    },
+    {
+      "name": "Simpang Gamping",
+      "lat": -7.80051873,
+      "lng": 110.32511891,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Gamping.stream.m3u8"
+    },
+    {
+      "name": "Simpang Maguwo view Utara 2",
+      "lat": -7.78313901,
+      "lng": 110.42981739,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/MaguwoUtara.stream.m3u8"
+    },
+    {
+      "name": "Simpang Pedes",
+      "lat": -7.81221638,
+      "lng": 110.27107852,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Pedes.stream.m3u8"
+    },
+    {
+      "name": "Simpang Wojo",
+      "lat": -7.8364142,
+      "lng": 110.37429747,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Wojo.stream.m3u8"
+    },
+    {
+      "name": "Glagah",
+      "lat": -7.903594,
+      "lng": 110.073021,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/Glagah.stream.m3u8"
+    },
+    {
+      "name": "DemakIjo2",
+      "lat": -7.777164,
+      "lng": 110.331705,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/atcs/streams/DemakIjo2.stream.m3u8"
+    }
+  ]
+}

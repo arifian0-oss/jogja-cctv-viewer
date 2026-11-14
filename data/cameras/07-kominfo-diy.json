@@ -1,0 +1,83 @@
+{
+  "group": "kominfo-diy",
+  "cameras": [
+    {
+      "name": "Candi Ijo",
+      "lat": -7.784379,
+      "lng": 110.512664,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewCandiIjo.stream.m3u8"
+    },
+    {
+      "name": "Depan Plaza/Mall Malioboro",
+      "lat": -7.793014,
+      "lng": 110.365725,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewDepanMall.stream.m3u8"
+    },
+    {
+      "name": "Embung Nglanggeran",
+      "lat": -7.84673,
+      "lng": 110.547106,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewNglanggeran.stream.m3u8"
+    },
+    {
+      "name": "Titik Nol Kilometer (view dari pojok BNI)",
+      "lat": -7.801565,
+      "lng": 110.364663,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewNolKilo.stream.m3u8"
+    },
+    {
+      "name": "Tugu (view dari atas)",
+      "lat": -7.782636,
+      "lng": 110.367479,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewTugu.stream.m3u8"
+    },
+    {
+      "name": "Tugu (view dari simpang)",
+      "lat": -7.783228,
+      "lng": 110.366917,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewSimpangTugu.stream.m3u8"
+    },
+    {
+      "name": "Alun Alun Kidul",
+      "lat": -7.811285,
+      "lng": 110.363893,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewAlunAlunKidul.stream.m3u8"
+    },
+    {
+      "name": "Depan Pasar Beringharjo",
+      "lat": -7.798546,
+      "lng": 110.364979,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewDepanBeringharjo.stream.m3u8"
+    },
+    {
+      "name": "Embung Tambakboyo",
+      "lat": -7.754747,
+      "lng": 110.414659,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewTambakboyo.stream.m3u8"
+    },
+    {
+      "name": "Gunung Merapi (view dari Museum)",
+      "lat": -7.615944,
+      "lng": 110.424372,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewGunungMerapi.stream.m3u8"
+    },
+    {
+      "name": "Kebun Buah Mangunan",
+      "lat": -7.941025,
+      "lng": 110.424256,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewMangunan.stream.m3u8"
+    },
+    {
+      "name": "Pantai Pandansari",
+      "lat": -7.9994579,
+      "lng": 110.25294654,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewPandansari.stream.m3u8"
+    },
+    {
+      "name": "Pantai Sadeng Gunungkidul",
+      "lat": -8.189188,
+      "lng": 110.799262,
+      "url": "https://cctv.jogjaprov.go.id/cctv-proxy/cctv-public/streams/ViewSadeng.stream.m3u8"
+    }
+  ]
+}

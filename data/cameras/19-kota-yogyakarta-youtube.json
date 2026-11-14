@@ -1,0 +1,215 @@
+{
+  "group": "kota-yogyakarta-youtube",
+  "cameras": [
+    {
+      "name": "Simpang Gramedia (PTZ)",
+      "lat": -7.783,
+      "lng": 110.375,
+      "url": "https://www.youtube.com/watch?v=1REI7RE3aVE",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Gramedia V. Timur",
+      "lat": -7.783,
+      "lng": 110.375,
+      "url": "https://www.youtube.com/watch?v=D_R5EpqQIpo",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Gramedia V. Utara-Timur",
+      "lat": -7.783,
+      "lng": 110.375,
+      "url": "https://www.youtube.com/watch?v=uvKSTjmFxG4",
+      "type": "ytx"
+    },
+    {
+      "name": "Gerbang Masuk Utara V. Timur",
+      "lat": -7.799,
+      "lng": 110.391,
+      "url": "https://www.youtube.com/watch?v=oA772wZyA6M",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Demangan V. Selatan",
+      "lat": -7.783,
+      "lng": 110.388,
+      "url": "https://www.youtube.com/watch?v=Ck45cxJAh-s",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang DeBritto (Depan Hotel Grand Mercure)",
+      "lat": -7.783,
+      "lng": 110.392,
+      "url": "https://www.youtube.com/watch?v=6WPZdHCJca4",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Tunjung (PTZ)",
+      "lat": -7.794,
+      "lng": 110.378,
+      "url": "https://www.youtube.com/watch?v=WJNV93vVGc0",
+      "type": "ytx"
+    },
+    {
+      "name": "Jl. Mas Suharto V. Utara",
+      "lat": -7.793,
+      "lng": 110.371,
+      "url": "https://www.youtube.com/watch?v=UJY8kI0VmXk",
+      "type": "ytx"
+    },
+    {
+      "name": "Jl. Mas Suharto V. Selatan",
+      "lat": -7.794,
+      "lng": 110.369,
+      "url": "https://www.youtube.com/watch?v=nkmTk_0DjYM",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Basen V. Utara",
+      "lat": -7.821,
+      "lng": 110.401,
+      "url": "https://www.youtube.com/watch?v=26VaIeuYr2c",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang PKU Muhammadiyah (PTZ)",
+      "lat": -7.801,
+      "lng": 110.362,
+      "url": "https://www.youtube.com/watch?v=uhBoA42z7Ww",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Gambiran (Warungboto) V. Selatan",
+      "lat": -7.814,
+      "lng": 110.392,
+      "url": "https://www.youtube.com/watch?v=K7a6YEUL0kE",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Sentul (PTZ)",
+      "lat": -7.802,
+      "lng": 110.379,
+      "url": "https://www.youtube.com/watch?v=4JtfLLSgN9Q",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Karang Tunggal (Kol. Sugiyono) V. Timur",
+      "lat": -7.815,
+      "lng": 110.373,
+      "url": "https://www.youtube.com/watch?v=UTR-nG4SK7E",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Karang Tunggal (Kol. Sugiyono) V. Barat",
+      "lat": -7.815,
+      "lng": 110.373,
+      "url": "https://www.youtube.com/watch?v=UUj6fNons8E",
+      "type": "ytx"
+    },
+    {
+      "name": "Kotabaru - Jl. Juadi",
+      "lat": -7.786,
+      "lng": 110.375,
+      "url": "https://www.youtube.com/watch?v=DRFRfDa8xyw",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Terban V. Utara",
+      "lat": -7.783,
+      "lng": 110.372,
+      "url": "https://www.youtube.com/watch?v=yNrXqq-rQSY",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Terban V. Barat",
+      "lat": -7.783,
+      "lng": 110.372,
+      "url": "https://www.youtube.com/watch?v=heXWmGGHC9U",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Terban V. Timur",
+      "lat": -7.783,
+      "lng": 110.373,
+      "url": "https://www.youtube.com/watch?v=EX47R3JdZe4",
+      "type": "ytx"
+    },
+    {
+      "name": "Margo Utomo - Optic Tugu",
+      "lat": -7.788,
+      "lng": 110.366,
+      "url": "https://www.youtube.com/watch?v=ghJg364QRkQ",
+      "type": "yt"
+    },
+    {
+      "name": "Simpang Jogokariyan V. Selatan",
+      "lat": -7.825,
+      "lng": 110.368,
+      "url": "https://www.youtube.com/watch?v=BdPvBNLy5kc",
+      "type": "ytx"
+    },
+    {
+      "name": "Depan Pasar Demangan V. Selatan (Jl. Affandi)",
+      "lat": -7.781,
+      "lng": 110.388,
+      "url": "https://www.youtube.com/watch?v=3bbw26sh-OU",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang APMD (PTZ)",
+      "lat": -7.793,
+      "lng": 110.393,
+      "url": "https://www.youtube.com/watch?v=u-8iSRWgi_c",
+      "type": "ytx"
+    },
+    {
+      "name": "Kotabaru - Jl. Yos Sudarso",
+      "lat": -7.788,
+      "lng": 110.375,
+      "url": "https://www.youtube.com/watch?v=_8Sru9lBzXI",
+      "type": "ytx"
+    },
+    {
+      "name": "Kotabaru - Jl. Sajiono",
+      "lat": -7.786,
+      "lng": 110.374,
+      "url": "https://www.youtube.com/watch?v=q2gARNvcNHc",
+      "type": "ytx"
+    },
+    {
+      "name": "Simpang Tugu",
+      "lat": -7.783,
+      "lng": 110.367,
+      "url": "https://www.youtube.com/watch?v=1v52cQ1qJBA",
+      "type": "yt"
+    },
+    {
+      "name": "Margo Utomo - Jl. Gowongan Lor",
+      "lat": -7.785,
+      "lng": 110.367,
+      "url": "https://www.youtube.com/watch?v=PyMV3BPlcug",
+      "type": "yt"
+    },
+    {
+      "name": "Margo Utomo - Selatan Olive",
+      "lat": -7.787,
+      "lng": 110.366,
+      "url": "https://www.youtube.com/watch?v=ijG22Q85GRg",
+      "type": "yt"
+    },
+    {
+      "name": "Margo Utomo - Wijaya Baru Travel",
+      "lat": -7.786,
+      "lng": 110.367,
+      "url": "https://www.youtube.com/watch?v=QG9tPPtnk-o",
+      "type": "yt"
+    },
+    {
+      "name": "Margo Utomo - Utara Teteg",
+      "lat": -7.79,
+      "lng": 110.366,
+      "url": "https://www.youtube.com/watch?v=JUI1Wx4E25Q",
+      "type": "yt"
+    }
+  ]
+}
